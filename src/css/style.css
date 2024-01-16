@@ -264,3 +264,22 @@
 .news-side-cta:hover {
   background-color: var(--primary);
 }
+
+/* NEWS CARD RIGHT NOW */
+
+.new-side-card {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: calc(8px * 1.5) 0 calc(8px * 0.5);
+  padding-left: 2.4rem;
+  padding-right: 2.4rem;
+  padding-bottom: 2.4rem;
+  border-bottom: 1px solid rgba(128, 128, 128, 0.558);
+}
+
+.news-side-text-img {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
