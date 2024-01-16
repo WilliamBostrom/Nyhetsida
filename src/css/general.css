@@ -53,14 +53,29 @@ body {
 .heading-medium {
   font-size: 2rem;
 }
+.heading-news {
+  font-size: 2.6rem;
+  padding: calc(8px * 1.5) 0 calc(8px * 0.5);
+  padding-left: 2.4rem;
+  padding-right: 2.4rem;
+  max-width: 370px;
+}
+
 .heading-large {
   font-size: 4.1rem;
   padding: calc(8px * 1.5) 0 calc(8px * 0.5);
+  padding-left: 2.4rem;
+  padding-right: 2.4rem;
+  font-weight: 800;
+  line-height: 1.1;
+  display: inline-block;
 }
 
 .text-normal {
   font-size: 1.9rem;
   padding: calc(8px * 1.5) 0 calc(8px * 0.5);
+  padding-left: 2.4rem;
+  padding-right: 2.4rem;
 }
 
 /* grid */

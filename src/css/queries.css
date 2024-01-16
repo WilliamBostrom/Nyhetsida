@@ -3,17 +3,6 @@
 /* ****************** */
 
 @media (max-width: 84em) {
-  .hero {
-    max-width: 120rem;
-  }
-
-  .heading-primary {
-    font-size: 4.4rem;
-  }
-
-  .gallery {
-    grid-template-columns: repeat(2, 1fr);
-  }
 }
 /* ****************** */
 /* BELOW 1200px (landscap tablets desktops)*/
@@ -33,7 +22,9 @@
   .news-main {
     width: 90%;
   }
-
+  .news-main-card-img {
+    width: 102%;
+  }
   .news-main-side {
     display: none;
   }
