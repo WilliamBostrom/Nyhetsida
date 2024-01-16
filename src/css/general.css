@@ -1,0 +1,92 @@
+/*
+SPACING SYSTEM (rem)
+.2 / .4 / .8 / 1.2 / 1.6 / 2.4 / 3.2 / 4.8 / 6.4 / 8.0 / 9.6 / 12.8
+
+FONT SIZE SYSTEM (rem)
+1 / 1.2 / 1.4 / 1.6 / 1.8 / 2.0 / 2.4 / 3.0 / 3.6 / 4.4 / 5.2 / 6.2 / 7.4 / 8.6 / 9.8
+*/
+
+:root {
+  --background_primary: #fff;
+  --background_secondary: #fafafa;
+
+  --primary: #5c8e81;
+  --primary_darken: #496f65;
+
+  --text_primary: #222;
+  --text_secondary: #888;
+
+  --shadow-ambient--primary: 0 0 5px 0 #dfdfdf;
+}
+
+/*  GENERAL STYLING */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-family: "Rubik", sans-serif;
+  line-height: 1;
+  font-weight: 400;
+  background-color: var(--background_secondary);
+  color: var(--text_primary);
+  overflow-x: hidden;
+  height: 300vh;
+}
+
+.container {
+  max-width: 120rem;
+  padding: 0 3.2rem;
+  margin: 0 auto;
+}
+
+/* grid */
+
+.grid {
+  display: grid;
+  column-gap: 6.4rem;
+  row-gap: 9.6rem;
+}
+.grid--2-cols {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.grid--3-cols {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.grid--4-cols {
+  grid-template-columns: repeat(4, 1fr);
+}
+
+.grid--5-cols {
+  grid-template-columns: repeat(5, 1fr);
+}
+
+/* Knappar */
+
+.btn,
+.btn:link,
+.btn:visited {
+  display: inline-block;
+  font-size: 2rem;
+  font-weight: 600;
+  text-decoration: none;
+  padding: 1.6rem 3.2rem;
+  border-radius: 9px;
+
+  /* Alltid transistion på orginal */
+  transition: all 0.3s;
+
+  /* För endast btn */
+  border: none;
+  cursor: pointer;
+  font-family: inherit;
+}
