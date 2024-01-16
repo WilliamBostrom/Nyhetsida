@@ -4,7 +4,7 @@
 
 .header {
   background-color: var(--background_primary);
-  height: 5.4rem;
+  height: 5.5rem;
   padding: 0 4.8rem;
   box-shadow: var(--shadow-ambient--primary);
   position: sticky;
@@ -45,8 +45,8 @@
   font-weight: 500;
   font-size: 1.4rem;
   transition: all 0.3s;
-  height: 5.4rem;
-  width: 12.2rem;
+  height: 4.6rem;
+  /*  width: 12.2rem; */
   display: flex;
   align-items: center;
   justify-content: center;
