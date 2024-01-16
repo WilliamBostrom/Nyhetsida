@@ -1,27 +1,14 @@
-///////////////////////
-//  Fixa sticky header som börjar när hero sec slutar
+////
+// Början för få fram extra meny
 
-const sectionHeroEl = document.querySelector(".section-hero");
+const mobileBtn = document.querySelector(".btn-mobile-nav");
+const menuIcon = document.querySelector('.icon-mobil-nav[name="menu"]');
+const closeIcon = document.querySelector('.icon-mobil-nav[name="close"]');
+let visible = false;
 
-const obs = new IntersectionObserver(
-  function (entries) {
-    const ent = entries[0];
-    console.log(ent);
+mobileBtn.addEventListener("click", function (e) {
+  visible = !visible; // Byt värdet mellan true och false vid varje klick
 
-    if (ent.isIntersecting === false) {
-      document.body.classList.add("sticky");
-    }
-
-    if (ent.isIntersecting === true) {
-      document.body.classList.remove("sticky");
-    }
-    // else document.querySelector(".header").classList.remove("sticky");
-  },
-  {
-    // in the
-    root: null,
-    threshold: 0,
-    rootMargin: "-100px",
-  }
-);
-obs.observe(sectionHeroEl);
+  menuIcon.style.display = visible ? "none" : "block";
+  closeIcon.style.display = visible ? "block" : "none";
+});

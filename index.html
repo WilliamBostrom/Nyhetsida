@@ -4,6 +4,15 @@
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@4.5.10-0/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule=""
+      src="https://unpkg.com/ionicons@4.5.10-0/dist/ionicons/ionicons.js"
+    ></script>
     <!-- Google tag (gtag.js) -->
     <script
       async
@@ -23,15 +32,21 @@
   <body>
     <header class="header">
       <div class="header-container container">
-        <a href="#">
-          <img
-            src="./src/img/testlogo.png"
-            alt="bild här"
-            class="logo"
-            width=""
-          />
-        </a>
-        <nav class="main-nav">
+        <div class="header-nav-grid">
+          <div class="nav-left">
+            <button class="btn-mobile-nav">
+              <ion-icon class="icon-mobil-nav" name="menu"></ion-icon>
+              <ion-icon class="icon-mobil-nav" name="close"></ion-icon>
+            </button>
+            <a href="#">
+              <img
+                src="./src/img/testlogo.png"
+                alt="bild här"
+                class="logo"
+                width=""
+              />
+            </a>
+          </div>
           <div class="main-nav-list">
             <a class="main-nav-link link" href="#new">Toppnyheter</a>
             <a class="main-nav-link link" href="#latest">Senaste nytt</a>
@@ -63,11 +78,11 @@
             </div>
             <div><a class="main-nav-link nav-cta" href="#cta">Logga in</a></div>
           </div>
-        </nav>
+        </div>
       </div>
     </header>
     <section class="section-hero">
-      <section class="news-container container">
+      <section class="news-container container stickys">
         <div class="news-main">
           <div class="news-heading">
             <h3 class="heading-small">
