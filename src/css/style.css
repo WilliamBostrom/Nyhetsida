@@ -124,7 +124,7 @@
   display: flex;
   height: 3.44rem;
   align-items: center;
-  gap: 4.8rem;
+  /* gap: 4.8rem; */
   padding: 1rem 2rem;
   border-radius: 40px;
   font-weight: 500;
