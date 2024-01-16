@@ -117,6 +117,7 @@
 .main-nav-link.nav-cta:hover,
 .main-nav-link.nav-cta:active {
   background-color: var(--primary);
+  font-weight: 400;
 }
 
 .main-nav-link-cta.nav-cta-2:link,
@@ -221,6 +222,32 @@
 
 .news-secondary-box {
   display: flex;
+  justify-content: space-between;
   padding: calc(8px * 1.5) 0;
   border-bottom: 1px solid rgba(128, 128, 128, 0.558);
+}
+
+.news-side-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.news-side-cta {
+  cursor: pointer;
+  margin-top: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 3.44rem;
+  padding: 1rem 2rem;
+  width: 30rem;
+  border-radius: 40px;
+  font-size: 1.4rem;
+  color: var(--background_primary);
+  background-color: var(--primary_darken);
+}
+
+.news-side-cta:hover {
+  background-color: var(--primary);
 }
