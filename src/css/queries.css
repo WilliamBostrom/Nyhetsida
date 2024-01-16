@@ -82,6 +82,17 @@
     /*font=size ska bli i rm 9px = 9 / 16px =56.25% */
     font-size: 50%;
   }
+  /*  .header {
+    padding: 0.5rem 0;
+  } */
+  .container {
+    padding: 0rem 0.5rem;
+  }
+
+  .main-nav-link-cta.nav-cta-2:link,
+  .main-nav-link-cta.nav-cta-2:visited {
+    display: none;
+  }
 }
 
 /* ****************** */
