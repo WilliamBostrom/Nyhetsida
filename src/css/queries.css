@@ -108,4 +108,10 @@
 /* ****************** */
 
 @media (max-width: 34em) {
+  .nav-left {
+    padding-left: 0.8rem;
+  }
+  .main-nav-buttons-box {
+    padding-right: 0.8rem;
+  }
 }
