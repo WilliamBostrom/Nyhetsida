@@ -5,14 +5,19 @@
     <link rel="icon" type="image/svg+xml" href="" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-G7C7W0HLT1"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-G7C7W0HLT1"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
 
-  gtag('config', 'G-G7C7W0HLT1');
-</script>
+      gtag("config", "G-G7C7W0HLT1");
+    </script>
     <title>Nyhetssida</title>
   </head>
   <body>
@@ -61,7 +66,42 @@
         </nav>
       </div>
     </header>
-    <section class="section-hero"></section>
+    <section class="section-hero">
+      <section class="news-container container">
+        <div class="news-main">
+          <div class="news-heading">
+            <h3 class="heading-small">
+              Valet i USA | <a href="">PRIMÄRVALET</a>
+            </h3>
+            <div class="news-main-card">
+              <img
+                class="news-main-card-img"
+                src="./src/img/testbild.jpg"
+                alt=""
+                srcset=""
+                width="100%"
+              />
+              <div>
+                <h3 class="heading-large">JavaScript är roligare än css</h3>
+              </div>
+              <div>
+                <p class="text-normal">
+                  Lorem ipsum, dolor sit amet consectetur adipisicing elit. Vel
+                  exercitationem ea numquam maxime molestiae odit ipsa voluptas
+                  eveniet recusandae ad mollitia unde sit corporis labore quasi
+                  amet.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="news-main-side">
+          <div class="news-heading">
+            <h3 class="heading-medium">Bevakningar</h3>
+          </div>
+        </div>
+      </section>
+    </section>
     <script type="module" src="/main.js"></script>
   </body>
 </html>

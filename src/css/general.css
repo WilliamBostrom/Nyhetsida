@@ -38,13 +38,29 @@ body {
   background-color: var(--background_secondary);
   color: var(--text_primary);
   overflow-x: hidden;
-  height: 300vh;
 }
 
 .container {
   max-width: 120rem;
   padding: 0 3.2rem;
   margin: 0 auto;
+}
+
+/* text-headings */
+.heading-small {
+  font-size: 1.7rem;
+}
+.heading-medium {
+  font-size: 2rem;
+}
+.heading-large {
+  font-size: 4.1rem;
+  padding: calc(8px * 1.5) 0 calc(8px * 0.5);
+}
+
+.text-normal {
+  font-size: 1.9rem;
+  padding: calc(8px * 1.5) 0 calc(8px * 0.5);
 }
 
 /* grid */
