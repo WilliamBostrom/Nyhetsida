@@ -128,7 +128,8 @@
   background-color: var(--primary);
   font-weight: 400;
 }
-
+.side-nav-link.nav-cta-2:link,
+.side-nav-link.nav-cta-2:visited,
 .main-nav-link-cta.nav-cta-2:link,
 .main-nav-link-cta.nav-cta-2:visited {
   list-style: none;
@@ -143,6 +144,14 @@
   font-size: 1.4rem;
   color: var(--text_primary);
   border: 1px solid var(--primary_darken);
+}
+
+.side-nav-link.nav-cta-2:link,
+.side-nav-link.nav-cta-2:visited {
+  margin: 0 auto;
+  width: 80%;
+  display: none;
+  justify-content: center;
 }
 
 /* ****************** */

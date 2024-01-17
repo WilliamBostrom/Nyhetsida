@@ -104,6 +104,11 @@
   .main-nav-link-cta.nav-cta-2:visited {
     display: none;
   }
+
+  .side-nav-link.nav-cta-2:link,
+  .side-nav-link.nav-cta-2:visited {
+    display: flex;
+  }
 }
 
 /* ****************** */
