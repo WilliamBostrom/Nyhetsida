@@ -88,6 +88,10 @@ body {
   margin-top: 3.4rem;
 }
 
+.small-img {
+  max-width: 15rem;
+}
+
 /* grid */
 
 .grid {

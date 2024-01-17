@@ -22,3 +22,8 @@ mobileBtn.addEventListener("click", function () {
     side_nav.style.visibility = "hidden";
   }
 });
+
+// uppdatera år i footer
+const yearEl = document.querySelector(".year");
+const currentYear = new Date().getFullYear();
+yearEl.textContent = currentYear;
