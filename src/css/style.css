@@ -2,6 +2,10 @@
 /* HEADER */
 /* ****************** */
 
+/* body {
+  position: relative;
+} */
+
 .header {
   background-color: var(--background_primary);
   height: 5.1rem;
@@ -64,6 +68,7 @@
   width: 19.2rem;
 }
 
+.side-nav-search-container,
 .main-nav-search-container {
   position: relative;
   border: 1px solid #ddd;
@@ -74,6 +79,7 @@
   width: 35rem;
 }
 
+.side-nav-search-input,
 .main-nav-search-input {
   background: inherit;
   border: none;
@@ -83,9 +89,12 @@
   vertical-align: -2px;
   display: flex;
 }
+
+.side-nav-search-input svg,
 .main-nav-search-input svg {
   fill: #ddd;
 }
+.side-nav-search-button,
 .main-nav-search-button {
   background: none;
   border: none;
@@ -136,7 +145,7 @@
 }
 
 /* ****************** */
-/* MOBIL */
+/* SIDE MENU */
 /* ****************** */
 
 .btn-mobile-nav {
@@ -155,6 +164,53 @@
 .icon-mobil-nav[name="close"] {
   display: none;
 }
+
+.side-nav {
+  background-color: white;
+  box-shadow: 3px 3px 3px 0 #dfdfdf;
+  position: fixed;
+  top: 5.1rem;
+  left: 0;
+  width: 30rem;
+  height: 50rem;
+  transition: all 3.7s ease-in;
+  display: none;
+  opacity: 0;
+  border-bottom-right-radius: 0.5rem;
+  visibility: hidden;
+}
+
+.side-nav-container {
+  padding: 1rem 2rem;
+}
+
+.side-nav-search-container {
+  margin: 20px 0;
+  width: 90%;
+  display: none;
+}
+
+.side-nav-ul-list {
+  list-style: none;
+  line-height: 3;
+  margin-left: 2rem;
+}
+
+.side-nav-ul-list li a {
+  text-decoration: none;
+  color: var(--text_primary);
+  font-size: 1.4rem;
+  cursor: pointer;
+}
+
+.side-nav-li-heading {
+  font-size: 1.6rem;
+  font-weight: 600;
+}
+
+/* <div class="side-nav-list">
+          <ul class="side-nav-ul-list">
+            <li class="side-nav-li-heading">Nyheter</li> */
 
 /* ****************** */
 /* NEWS SECTION*/

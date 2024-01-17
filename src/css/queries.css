@@ -17,6 +17,9 @@
   .main-nav-search-container {
     display: none;
   }
+  .side-nav-search-container {
+    display: block;
+  }
   .main-nav-list {
     gap: 0 !important;
   }
@@ -78,6 +81,10 @@
     background-color: var(--background_secondary);
     margin-top: -0.3rem;
     box-shadow: 0 5px 3px 0 #dfdfdf89;
+  }
+
+  .side-nav {
+    top: 10.5rem;
   }
 
   .main-nav-buttons-box {
