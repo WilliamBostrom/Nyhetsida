@@ -45,7 +45,7 @@
   font-weight: 500;
   font-size: 1.4rem;
   transition: all 0.3s;
-  height: 4.6rem;
+  height: 100% !important;
   width: 100% !important;
   text-align: center;
   display: flex;
@@ -149,7 +149,7 @@
 .icon-mobil-nav {
   height: 5.2rem;
   width: 5.2rem;
-  color: #333;
+  color: #444;
 }
 
 .icon-mobil-nav[name="close"] {
@@ -246,7 +246,7 @@
   background-color: var(--primary);
 }
 
-/* NEWS CARD RIGHT NOW */
+/* NEWS CARD "AKTUELLT - STOR SKÄRM"*/
 
 .new-side-card {
   display: flex;
