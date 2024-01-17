@@ -169,11 +169,11 @@
   background-color: white;
   box-shadow: 3px 3px 3px 0 #dfdfdf;
   position: fixed;
-  top: 5.1rem;
+  top: 5.2rem;
   left: 0;
   width: 30rem;
   height: 50rem;
-  transition: all 3.7s ease-in;
+  transition: all 0.3s ease-in;
   display: none;
   opacity: 0;
   border-bottom-right-radius: 0.5rem;
