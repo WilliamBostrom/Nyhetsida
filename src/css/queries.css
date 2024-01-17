@@ -137,4 +137,8 @@
   .main-nav-buttons-box {
     padding-right: 0.8rem;
   }
+  .grid {
+    row-gap: 4.8rem;
+    column-gap: 4.8rem;
+  }
 }
