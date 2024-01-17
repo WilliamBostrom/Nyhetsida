@@ -91,9 +91,10 @@
   display: flex;
 }
 
-.side-nav-search-input svg,
-.main-nav-search-input svg {
+.side-nav-search-button svg,
+.main-nav-search-button svg {
   fill: #ddd;
+  width: 22px;
 }
 .side-nav-search-button,
 .main-nav-search-button {
