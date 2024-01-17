@@ -84,7 +84,10 @@
   }
 
   .side-nav {
-    top: 10.5rem;
+    top: 8.5rem;
+  }
+  .side-nav-container {
+    padding-top: 3rem;
   }
 
   .main-nav-buttons-box {
