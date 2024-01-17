@@ -4,7 +4,7 @@
 
 .header {
   background-color: var(--background_primary);
-  height: 5.5rem;
+  height: 5.1rem;
   padding: 0 4.8rem;
   box-shadow: var(--shadow-ambient--primary);
   position: sticky;
@@ -29,7 +29,7 @@
   list-style: none;
   display: flex;
   align-items: center;
-  gap: 4.8rem;
+  justify-content: space-between;
 }
 
 .nav-left {
@@ -46,7 +46,8 @@
   font-size: 1.4rem;
   transition: all 0.3s;
   height: 4.6rem;
-  /*  width: 12.2rem; */
+  width: 100% !important;
+  text-align: center;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -70,6 +71,7 @@
   padding: 0.2rem 0.5rem 0.2rem 4rem;
   line-height: 2.8rem;
   font-size: 1.4rem;
+  width: 35rem;
 }
 
 .main-nav-search-input {
