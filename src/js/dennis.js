@@ -10,7 +10,7 @@ async function getNews() {
     console.log(newsData.results);
   } catch (err) {
     console.error(err);
-    alert("Fel uppstod! Försök igen om ett tag.", err);
+    console.error("Fel uppstod! Försök igen om ett tag.", err);
   }
 }
 
