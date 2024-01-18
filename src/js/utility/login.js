@@ -45,6 +45,7 @@ const form = document.getElementById("signup-form"),
   email = document.getElementById("email"),
   password = document.getElementById("password"),
   password2 = document.getElementById("password2");
+let newUser = false;
 
 form.addEventListener("submit", async (e) => {
   e.preventDefault();
@@ -55,7 +56,8 @@ form.addEventListener("submit", async (e) => {
 
   const inputValid = await checkInput();
 
-  if (inputValid) {
+  if (inputValid.every((isValid) => isValid)) {
+    newUser = true;
     closeMembers();
 
     const obj = {
@@ -76,6 +78,7 @@ async function checkInput() {
       return field.parentElement.classList.contains("success");
     })
   );
+
   return inputValid;
 }
 
@@ -83,7 +86,7 @@ async function checkInput() {
 function checkRequired(inputAll) {
   inputAll.forEach((input) => {
     if (input.value.trim() === "") {
-      showError(input, `Användarnamn är nödvändig`);
+      showError(input, `Obligatoriskt fält`);
     } else {
       showSuccess(input);
     }
