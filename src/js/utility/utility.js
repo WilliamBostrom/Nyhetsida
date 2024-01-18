@@ -27,3 +27,9 @@ mobileBtn.addEventListener("click", function () {
 const yearEl = document.querySelector(".year");
 const currentYear = new Date().getFullYear();
 yearEl.textContent = currentYear;
+
+// BLi medlem
+
+// Logga in
+
+// skapa nya användare
