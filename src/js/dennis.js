@@ -9,9 +9,8 @@ async function getNews() {
     const newsData = response.data;
     console.log(newsData.results);
   } catch (err) {
-    console.error(err);
     console.error("Fel uppstod! Försök igen om ett tag.", err);
   }
 }
 
-getNews()
+getNews();
