@@ -30,6 +30,7 @@
     <title>Nyhetssida</title>
   </head>
   <body>
+    <!-- NAV -->
     <header class="header header-sticky">
       <div class="header-container container-2">
         <div class="header-nav-grid">
@@ -73,13 +74,16 @@
           </div>
           <div class="main-nav-buttons-box">
             <div>
-              <a class="main-nav-link-cta nav-cta-2" href="#cta">Bli medlem</a>
+              <a class="main-nav-link-cta nav-cta-2 show-members" href="#cta"
+                >Bli medlem</a
+              >
             </div>
-            <div><a class="main-nav-link nav-cta" href="#cta">Logga in</a></div>
+            <div><a class="main-nav-btn nav-cta" href="#cta">Logga in</a></div>
           </div>
         </div>
       </div>
     </header>
+    <!-- Sido-nav -->
     <div class="side-nav">
       <div class="side-nav-container">
         <div class="side-nav-search-container">
@@ -111,13 +115,53 @@
             <br />
             <li>
               <div>
-                <a class="side-nav-link nav-cta-2" href="#cta">Bli medlem</a>
+                <a class="side-nav-link nav-cta-2 show-members" href="#cta"
+                  >Bli medlem</a
+                >
               </div>
             </li>
           </ul>
         </div>
       </div>
     </div>
+    <!-- För att bli medlem -->
+    <section class="signup-container signup-box hidden">
+      <form class="form--signup" action="" id="signup-form">
+        <h2>Skapa ett konto</h2>
+
+        <div class="form-control">
+          <label for="">Användarnamn</label>
+          <input type="text" id="username" placeholder="Skriv användarnamn" />
+          <small>Error meddelande</small>
+        </div>
+
+        <div class="form-control">
+          <label for="">Email</label>
+          <input type="text" id="email" placeholder="Skriv email" />
+          <small>Error meddelande</small>
+        </div>
+
+        <div class="form-control">
+          <label for="">Lösenord</label>
+          <input type="password" id="password" placeholder="Skriv lösenord" />
+          <small>Error meddelande</small>
+        </div>
+
+        <div class="form-control">
+          <label for="">Bekräfta lösenord</label>
+          <input
+            type="password"
+            id="password2"
+            placeholder="Bekräfta lösenord"
+          />
+          <small>Error meddelande</small>
+        </div>
+
+        <button class="btn-signup">Bli medlem</button>
+      </form>
+    </section>
+    <div class="member-overlay hidden"></div>
+    <!-- MAIN NYHETER -->
     <section class="section-hero">
       <section class="news-container container stickys">
         <div class="news-main">
@@ -183,7 +227,7 @@
             </article>
           </div>
         </div>
-
+        <!-- Högra sidan nyheter = Bevakningar -->
         <div class="news-main-side">
           <div class="news-heading">
             <h3 class="heading-medium">Bevakningar</h3>
@@ -225,6 +269,7 @@
         </div>
       </section>
     </section>
+    <!-- Footer -->
     <footer class="footer">
       <div class="container grid grid-footer">
         <div class="logo-col">
@@ -264,7 +309,7 @@
         <nav class="nav-col">
           <p class="footer-heading">Konto</p>
           <ul class="footer-nav">
-            <li><a class="footer-link" href="#">Bli medlem</a></li>
+            <li><a class="footer-link show-members" href="#">Bli medlem</a></li>
             <li><a class="footer-link" href="#">Logga in</a></li>
           </ul>
         </nav>

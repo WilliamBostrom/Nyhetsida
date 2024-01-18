@@ -5,6 +5,7 @@ import "./src/css/login.css";
 
 import "./src/js/script.js";
 import "./src/js/utility/utility.js";
+import "./src/js/utility/login.js";
 
 /* Testa kod sidor = tillfälliga */
 import "./src/js/dennis.js";

@@ -1,4 +1,4 @@
-import axios from "axios";
+/* import axios from "axios";
 
 const url =
   "https://newsdata.io/api/1/news?apikey=pub_364847766bd024d75ae2f1bd0f148a57c4faf&country=se&language=sv";
@@ -13,4 +13,4 @@ async function getNews() {
   }
 }
 
-getNews();
+getNews(); */
