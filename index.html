@@ -55,7 +55,11 @@
             <a class="main-nav-link link" href="#watching">Bevakningar</a>
 
             <div class="main-nav-search-container">
-              <input class="main-nav-search-input" placeholder="Sök" />
+              <input
+                class="main-nav-search-input"
+                name="search"
+                placeholder="Sök"
+              />
               <button class="main-nav-search-button">
                 <svg
                   focusable="false"
@@ -87,7 +91,11 @@
     <div class="side-nav">
       <div class="side-nav-container">
         <div class="side-nav-search-container">
-          <input class="side-nav-search-input" placeholder="Sök" />
+          <input
+            class="side-nav-search-input"
+            name="search"
+            placeholder="Sök"
+          />
           <button class="side-nav-search-button">
             <svg
               focusable="false"
@@ -130,28 +138,46 @@
         <h2>Skapa ett konto</h2>
 
         <div class="form-control">
-          <label for="">Användarnamn</label>
-          <input type="text" id="username" placeholder="Skriv användarnamn" />
+          <label for="username">Användarnamn</label>
+          <input
+            autocomplete="username"
+            type="text"
+            id="username"
+            name="username"
+            placeholder="Skriv användarnamn"
+          />
           <small>Error meddelande</small>
         </div>
 
         <div class="form-control">
-          <label for="">Email</label>
-          <input type="text" id="email" placeholder="Skriv email" />
+          <label for="email">Email</label>
+          <input
+            autocomplete="email"
+            type="text"
+            id="email"
+            name="email"
+            placeholder="Skriv email"
+          />
           <small>Error meddelande</small>
         </div>
 
         <div class="form-control">
-          <label for="">Lösenord</label>
-          <input type="password" id="password" placeholder="Skriv lösenord" />
+          <label for="password">Lösenord</label>
+          <input
+            type="password"
+            id="password"
+            name="password"
+            placeholder="Skriv lösenord"
+          />
           <small>Error meddelande</small>
         </div>
 
         <div class="form-control">
-          <label for="">Bekräfta lösenord</label>
+          <label for="password">Bekräfta lösenord</label>
           <input
             type="password"
             id="password2"
+            name="password"
             placeholder="Bekräfta lösenord"
           />
           <small>Error meddelande</small>

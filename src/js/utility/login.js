@@ -46,13 +46,38 @@ const form = document.getElementById("signup-form"),
   password = document.getElementById("password"),
   password2 = document.getElementById("password2");
 
-form.addEventListener("submit", (e) => {
+form.addEventListener("submit", async (e) => {
   e.preventDefault();
 
   checkRequired([username, email, password, password2]);
   checkMail(email);
-  passwordCheck(password, password2);
+  matchPassword(password, password2);
+
+  const inputValid = await checkInput();
+
+  if (inputValid) {
+    closeMembers();
+
+    const obj = {
+      username: username.value,
+      email: email.value,
+      password: password.value,
+    };
+
+    createUser(obj);
+  }
 });
+
+async function checkInput() {
+  const allFields = [username, email, password, password2];
+
+  const inputValid = await Promise.all(
+    allFields.map(async (field) => {
+      return field.parentElement.classList.contains("success");
+    })
+  );
+  return inputValid;
+}
 
 // Kollar rutorna är fyllda
 function checkRequired(inputAll) {
@@ -76,11 +101,6 @@ function checkMail(input) {
   }
 }
 
-// Kolla att lösen är rätt på båda
-function passwordCheck(input1, input2) {
-  matchPassword(input1, input2);
-}
-
 // Ser att lösenordet matchar
 function matchPassword(input1, input2) {
   if (input1.value !== input2.value) {
@@ -99,9 +119,11 @@ function showError(input, message) {
 }
 
 // Lyckat skapat konto
-function showSuccess(input) {
+async function showSuccess(input) {
   const formControl = input.parentElement;
   formControl.className = "form-control success";
-  // HÄR SKA DATA PASSAS VIDARE TILL OBJ + LOCAL STORAGE
-  closeMembers();
+}
+
+function createUser(obj) {
+  console.log(obj);
 }
