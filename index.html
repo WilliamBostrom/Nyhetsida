@@ -82,7 +82,9 @@
                 >Bli medlem</a
               >
             </div>
-            <div><a class="main-nav-btn nav-cta" href="#cta">Logga in</a></div>
+            <div class="login-container">
+              <a class="main-nav-btn nav-cta login" href="#cta">Logga in</a>
+            </div>
           </div>
         </div>
       </div>
@@ -187,6 +189,38 @@
       </form>
     </section>
     <div class="member-overlay hidden"></div>
+    <!-- LOGGA IN -->
+    <section class="signin-container hidden-signin">
+      <form class="form--signup" action="" id="signin-form">
+        <h2>Skapa ett konto</h2>
+
+        <div class="form-control">
+          <label for="username">Användarnamn</label>
+          <input
+            autocomplete="username"
+            type="text"
+            id="username-signin"
+            name="username"
+            placeholder="Skriv användarnamn"
+          />
+          <small>Error meddelande</small>
+        </div>
+
+        <div class="form-control">
+          <label for="password">Lösenord</label>
+          <input
+            type="password"
+            id="password-signin"
+            name="password"
+            placeholder="Skriv lösenord"
+          />
+          <small>Error meddelande</small>
+        </div>
+
+        <button class="btn-signin">Logga in</button>
+      </form>
+    </section>
+    <div class="signin-overlay hidden-signin"></div>
     <!-- MAIN NYHETER -->
     <section class="section-hero">
       <section class="news-container container stickys">
@@ -336,7 +370,7 @@
           <p class="footer-heading">Konto</p>
           <ul class="footer-nav">
             <li><a class="footer-link show-members" href="#">Bli medlem</a></li>
-            <li><a class="footer-link" href="#">Logga in</a></li>
+            <li><a class="footer-link login" href="#">Logga in</a></li>
           </ul>
         </nav>
         <nav class="nav-col">

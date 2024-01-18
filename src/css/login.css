@@ -75,6 +75,7 @@
   visibility: visible;
 }
 
+.form--signup .btn-signin,
 .form--signup .btn-signup {
   width: 100%;
   background-color: var(--primary_darken);
@@ -88,8 +89,23 @@
   cursor: pointer;
 }
 
+.form--signup .btn-signin:hover,
 .form--signup .btn-signup:hover {
   background-color: var(--primary);
+}
+
+/* Logga in rutan */
+.signin-container {
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 30%;
+  z-index: 4;
+  background-color: var(--background_primary);
+  border-radius: 5px;
+  box-shadow: var(--shadow-ambient--primary);
+  width: 40rem;
 }
 
 /* Modal för styling */
@@ -97,11 +113,11 @@
 body.modal-open {
   overflow: hidden;
 }
-
+.hidden-signin,
 .hidden {
   display: none;
 }
-
+.signin-overlay,
 .member-overlay {
   position: absolute;
   top: 0;
