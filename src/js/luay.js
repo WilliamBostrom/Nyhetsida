@@ -58,18 +58,25 @@ function displayFetchis(fetchData, checkingIndex) {
 const searchBox = document.querySelector(".main-nav-search-input");
 searchBox.addEventListener("keyup", () => {
   const searchText = searchBox.value.toLowerCase();
-  const newsItems = document.querySelectorAll(".news-item");
+  const newsBoxes = document.querySelectorAll(".news-secondary-box");
 
-  newsItems.forEach((item) => {
-    const title = item.querySelector("h2").textContent.toLowerCase();
+  newsBoxes.forEach((box) => {
+    const title = box.querySelector(".heading-news").textContent.toLowerCase();
     if (title.includes(searchText)) {
-      item.style.display = "";
+      box.classList.remove("hidden");
     } else {
-      item.style.display = "none";
+      box.classList.add("hidden");
     }
   });
-});
 
-document.addEventListener("DOMContentLoaded", () => {
-  fetchNews();
+  // Uppdaterar visningen för första artikeln
+  if (firstMainHeader.innerText.toLowerCase().includes(searchText)) {
+    firstMainImg.style.display = "";
+    firstMainHeader.style.display = "";
+    firstMainLorem.style.display = "";
+  } else {
+    firstMainImg.style.display = "none";
+    firstMainHeader.style.display = "none";
+    firstMainLorem.style.display = "none";
+  }
 });

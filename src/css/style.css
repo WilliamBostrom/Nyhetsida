@@ -267,6 +267,10 @@ h2 {
   margin-left: 25px;
 }
 
+.hidden {
+  display: none;
+}
+
 .news-main {
   width: 74rem;
   height: 300rem;
