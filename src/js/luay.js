@@ -1,5 +1,8 @@
 import axios from "axios";
 
+
+let fetchData = [];
+let checkingIndex = 0;
 async function fetchNews() {
   const apiKey =
     "pub_364847766bd024d75ae2f1bd0f148a57c4faf&country=se&language=sv";
@@ -8,37 +11,47 @@ async function fetchNews() {
   try {
     const response = await axios.get(API_URL);
     const newsData = response.data;
-    displayNews(newsData);
     console.log(newsData);
-  } catch (error) {
-    console.error("Error fetching news:", error);
-  }
+    fetchData = newsData.results.map((news) => ({
+      title: news.title,
+      img: news.image_url,
+      source: news.source_id,
+      link: news.link,
+      description: news.description,
+    }));
+    console.log(fetchData);
+    displayFetchis(fetchData, checkingIndex);
+} catch (error) {
+  console.error("Error fetching news:", error)
 }
+}
+fetchNews();
 
-function displayNews(newsData) {
-  const newsContainer = document.querySelector(".news-main");
-  newsContainer.innerHTML = "";
+const firstMainImg = document.getElementById("first-main-img");
 
-  if (newsData && newsData.results) {
-    newsData.results.forEach((newsItem) => {
-      const article = document.createElement("article");
-      article.className = "news-item";
+const firstMainHeader = document.getElementById("first-main-heading");
 
-      if (newsItem.image_url) {
-        const image = document.createElement("img");
-        image.src = newsItem.image_url;
-        article.appendChild(image);
-      }
+const firstMainLorem = document.getElementById("first-main-lorem");
 
-      const content = document.createElement("div");
-      content.innerHTML = `<h2>${newsItem.title}</h2> <p>${newsItem.description}</p> <a href="${newsItem.link}" target="_blank">Läs mer</a>`;
-      article.appendChild(content);
+function displayFetchis(fetchData, checkingIndex) {
+  firstMainImg.src = fetchData[checkingIndex].img;
+  firstMainHeader.innerText = fetchData[checkingIndex].title;
+  firstMainLorem.innerText = fetchData[checkingIndex].description;
 
-      newsContainer.appendChild(article);
-    });
-  } else {
-    console.error("Invalid news data structure:", newsData);
-  }
+  const newsSecondary = document.querySelector(".news-secondary");
+  newsSecondary.innerHTML = fetchData
+  .map((news, checkingIndex) => {
+    if(checkingIndex >= 1) {
+      return `<div class="news-secondary-box">
+      <div class="news-secondary-textbox">
+      <h3 class="heading-news">${news.title}</h3>
+      <p class="text-normal">${news.description}</p>
+      <a href="${news.link}" target="_blank">Läs mer</a></div>
+      <img class="small-img" src="${news.img}" alt="" srcset="" width="40%" height="40%"/>
+</div>`;
+    }
+  })
+  .join();
 }
 
 // Sökfunktionalitet
