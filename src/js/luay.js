@@ -1,4 +1,4 @@
-import axios from "axios";
+/* import axios from "axios";
 
 async function fetchNews() {
   const apiKey =
@@ -60,3 +60,4 @@ searchBox.addEventListener("keyup", () => {
 document.addEventListener("DOMContentLoaded", () => {
   fetchNews();
 });
+*/
