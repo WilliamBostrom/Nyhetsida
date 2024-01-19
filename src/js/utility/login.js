@@ -212,7 +212,9 @@ formSignin.addEventListener("submit", (e) => {
       loginContainer.innerHTML = `<a class="main-nav-btn nav-cta logout" href="#cta">Logga ut</a>`;
       welcome.innerHTML = ` <span
       ><p class="text-normal">
-        <b>Välkommen in ${matchingUser.name}!</b>
+        <b>Välkommen in ${
+          matchingUser.name.charAt(0).toUpperCase() + string.slice(1)
+        }!</b>
       </p>
       <p class="text-normal">
         Tryck på en kategori för att lägga till i dina bevakningar.
