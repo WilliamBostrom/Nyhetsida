@@ -28,7 +28,15 @@ const yearEl = document.querySelector(".year");
 const currentYear = new Date().getFullYear();
 yearEl.textContent = currentYear;
 
-// BLi medlem
+// Active nav-bar
+const navLinksEl = document.querySelectorAll(".main-nav-link");
+
+navLinksEl.forEach((navLink) => {
+  navLink.addEventListener("click", () => {
+    document.querySelector(".active").classList.remove("active");
+    navLink.classList.add("active");
+  });
+});
 
 // Logga in
 

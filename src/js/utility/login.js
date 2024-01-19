@@ -107,7 +107,8 @@ formSignin.addEventListener("submit", (e) => {
       closeLogin();
       //Logga ut
       const btnLogOut = document.querySelector(".logout");
-      btnLogOut.addEventListener("click", () => {
+      btnLogOut.addEventListener("click", (e) => {
+        e.preventDefault();
         alert("Du är utloggad");
         isLoggedIn = false;
         loginContainer.innerHTML = `<a class="main-nav-btn nav-cta login" href="#cta">Logga in</a>`;

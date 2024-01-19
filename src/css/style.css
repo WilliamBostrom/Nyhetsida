@@ -8,7 +8,7 @@
 
 .header {
   background-color: var(--background_primary);
-  height: 5.1rem;
+  height: 5.5rem;
   padding: 0 4.8rem;
   box-shadow: var(--shadow-ambient--primary);
   position: sticky;
@@ -69,6 +69,11 @@
 
 .main-nav-link-link {
   width: 19.2rem;
+}
+
+.active {
+  color: var(--primary);
+  border-bottom: 2px solid var(--primary_darken);
 }
 
 .side-nav-search-container,
@@ -221,10 +226,6 @@
   font-weight: 600;
 }
 
-/* <div class="side-nav-list">
-          <ul class="side-nav-ul-list">
-            <li class="side-nav-li-heading">Nyheter</li> */
-
 /* ****************** */
 /* NEWS SECTION*/
 /* ****************** */
@@ -236,10 +237,9 @@
   gap: 2rem;
   justify-content: center;
 }
-
+/* 
 .news-main {
   width: 74rem;
-  /*  height: 550rem; */
   height: 300em;
   background-color: var(--background_primary);
   border-radius: 0.3rem;
@@ -253,8 +253,8 @@
 
 .news-item img {
   max-width: 74rem;
-}
-
+} */
+/* 
 h2 {
   font-size: 4rem;
   margin-top: 10px;
@@ -264,10 +264,9 @@ p, a {
   font-size: 1.5rem;
   margin-top: 10px;
 }
-
+ */
 .news-main {
   width: 74rem;
-  /*  height: 550rem; */
   height: 300rem;
   background-color: var(--background_primary);
   border-radius: 0.3rem;
