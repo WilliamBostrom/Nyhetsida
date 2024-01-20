@@ -152,6 +152,7 @@ const formSignin = document.getElementById("signin-form"),
   signInOverlay = document.querySelector(".signin-overlay"),
   signInContainer = document.querySelector(".signin-container");
 
+let signInName = usernameSignin.value;
 let isLoggedIn = false;
 let loginContainer = document.querySelector(".login-container");
 let welcome = document.querySelector(".welcome-in");
@@ -194,7 +195,7 @@ function openLogin() {
 
 const welcomeName = document.querySelector(".welcome-name");
 
-formSignin.addEventListener("submit", (e) => {
+/* formSignin.addEventListener("submit", (e) => {
   e.preventDefault();
   const storedUserJSON = localStorage.getItem("usersData");
 
@@ -233,6 +234,50 @@ formSignin.addEventListener("submit", (e) => {
   } else {
     showError(usernameSignin, "Ingen användare hittad");
   }
+}); */
+
+function handleLogin(username, password) {
+  const storedUserJSON = localStorage.getItem("usersData");
+
+  if (storedUserJSON) {
+    const usersArray = JSON.parse(storedUserJSON);
+    const matchingUser = usersArray.find((user) => {
+      return username === user.name && password === user.password;
+    });
+    let newName =
+      matchingUser.name.charAt(0).toUpperCase() + matchingUser.name.slice(1);
+
+    if (matchingUser) {
+      // Inloggning lyckad
+      isLoggedIn = true;
+      getUserLocation();
+      alert(`Välkommen in ${newName}`);
+      welcome.style.display = "block";
+      loginContainer.innerHTML = `<a class="main-nav-btn nav-cta logout" href="#cta">Logga ut</a>`;
+      welcomeName.innerHTML = `${newName}`;
+      closeLogin();
+
+      // Logga ut
+      const btnLogOut = document.querySelector(".logout");
+      btnLogOut.addEventListener("click", () => {
+        alert("Du är utloggad");
+        isLoggedIn = false;
+        welcome.style.display = "none";
+        loginContainer.innerHTML = `<a class="main-nav-btn nav-cta login" href="#cta">Logga in</a>`;
+      });
+    } else {
+      showError(usernameSignin, "Felaktigt användarnamn eller lösenord");
+    }
+  } else {
+    showError(usernameSignin, "Ingen användare hittad");
+  }
+}
+
+formSignin.addEventListener("submit", (e) => {
+  e.preventDefault();
+  const username = usernameSignin.value;
+  const password = loginPassword.value;
+  handleLogin(username, password);
 });
 
 //////// BONUS STYLING FÖR INLOGGAD
@@ -306,9 +351,6 @@ function translateWeatherCondition(condition) {
 
   return conditionMap[condition] || condition;
 }
-
-// Användning:
-const translatedCondition = translateWeatherCondition("Light rain");
 
 const radioAudio = document.querySelector(".audio");
 

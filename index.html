@@ -49,7 +49,7 @@
             </a>
           </div>
           <div class="main-nav-list">
-            <a class="main-nav-link active" href="#new">Toppnyheter</a>
+            <a id="topnews" class="main-nav-link active" href="#new">Toppnyheter</a>
             <a class="main-nav-link" href="#latest">Senaste nytt</a>
             <a class="main-nav-link" href="#" id="favourites">Favoriter</a>
             <a class="main-nav-link" href="#" id="monitor">Bevakningar</a>
@@ -355,14 +355,12 @@
                 />
                 <h2 class="heading-medium">Inrikes</h2>
               </div>
-              <div class="star-container">
-                <img
-                  onclick="monitorThis(this)"
-                  data-item-status="utrikes"
-                  class="star-icon"
-                  src="src/img/star-!select.svg"
-                  alt=""
-                />
+              <div
+                class="star-container"
+                onclick="monitorThis(this)"
+                data-item-status="inrikes"
+              >
+                <img class="star-icon" src="src/img/star-!select.svg" alt="" />
                 <img
                   class="selected-star-icon"
                   src="src/img/star-select.svg"
@@ -379,14 +377,12 @@
                 />
                 <h2 class="heading-medium">Utrikes</h2>
               </div>
-              <div class="star-container">
-                <img
-                  onclick="monitorThis(this)"
-                  data-item-status="utrikes"
-                  class="star-icon"
-                  src="src/img/star-!select.svg"
-                  alt=""
-                />
+              <div
+                class="star-container"
+                onclick="monitorThis(this)"
+                data-item-status="utrikes"
+              >
+                <img class="star-icon" src="src/img/star-!select.svg" alt="" />
                 <img
                   class="selected-star-icon"
                   src="src/img/star-select.svg"

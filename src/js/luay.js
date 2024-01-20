@@ -3,10 +3,11 @@ import axios from "axios";
 let fetchData = [];
 let checkingIndex = 0;
 let isAtTop = false;
-
+const searchQuery = "Expressen";
 const API_KEY =
   "pub_364847766bd024d75ae2f1bd0f148a57c4faf&country=se&language=sv";
-const API_URL = `https://newsdata.io/api/1/news?apikey=${API_KEY}`;
+const API_URL = `https://newsdata.io/api/1/news?apikey=${API_KEY}&q=${searchQuery}&country=se&language=sv`;
+// const API_URL = `https://newsdata.io/api/1/news?apikey=${API_KEY}`;
 
 async function fetchNews() {
   try {
@@ -28,7 +29,7 @@ async function fetchNews() {
 }
 
 // Lägger till en händelselyssnare för att kolla när man scrollar till toppen
-window.addEventListener("scroll", () => {
+/* window.addEventListener("scroll", () => {
   if (window.scrollY === 0) {
     // Du är vid toppen av sidan
     isAtTop = true;
@@ -42,7 +43,7 @@ window.addEventListener("scroll", () => {
   }
 });
 
-fetchNews();
+fetchNews(); */
 
 const firstMainImg = document.getElementById("first-main-img");
 const firstMainHeader = document.getElementById("first-main-heading");

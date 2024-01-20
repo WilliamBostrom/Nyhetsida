@@ -145,6 +145,12 @@ body {
   font-family: inherit;
 }
 
+.btn-link:link,
+.btn-link:visited {
+  color: var(--primary_darken);
+  cursor: pointer;
+}
+
 .btn-text:link,
 .btn-text:visited {
   color: var(--primary_darken);

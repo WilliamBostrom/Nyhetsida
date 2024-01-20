@@ -227,6 +227,14 @@
 }
 
 /* ****************** */
+/* BEVAKNINGAR / FAVORITER */
+/* ****************** */
+.container-nocontent {
+  width: 75%;
+  margin: 4.2rem auto 6rem auto;
+}
+
+/* ****************** */
 /* NEWS SECTION*/
 /* ****************** */
 .section-hero {
