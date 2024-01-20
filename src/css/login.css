@@ -134,7 +134,7 @@ body.modal-open {
 
 /* Inloggnings containern */
 .welcome-in {
-  margin: 5.6rem 0;
+  margin: 5.6rem auto;
 }
 
 /* Lägga väder och radio snyggt */

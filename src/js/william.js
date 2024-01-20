@@ -23,3 +23,24 @@ monitorBtn.addEventListener("click", () => {
 }); */
 
 // function displayMonitor() {}
+
+// Hämta en lista med alla element som har klassen "monitor-image"
+const imageElements = document.querySelectorAll(".star-icon");
+
+// Lägg till en click-lyssnare för varje bild
+imageElements.forEach(function (element) {
+  element.addEventListener("click", function () {
+    // Anropa monitorThis-funktionen och skicka med elementet som argument
+    monitorThis(element);
+  });
+});
+
+// MonitorThis-funktionen
+function monitorThis(element) {
+  // Hämta värdet av data-item-status-attributet
+  const itemStatus = element.getAttribute("data-item-status");
+
+  // Gör något med värdet, t.ex. logga det
+  console.log("Item status:", itemStatus);
+  // ... gör andra saker här baserat på värdet
+}

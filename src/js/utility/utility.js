@@ -6,12 +6,11 @@ const side_nav = document.querySelector(".side-nav");
 let visible = false;
 
 mobileBtn.addEventListener("click", function () {
-  visible = !visible; // Toggle the value between true and false on each click
+  visible = !visible;
 
   menuIcon.style.display = visible ? "none" : "block";
   closeIcon.style.display = visible ? "block" : "none";
 
-  // Toggle styles for side_nav based on the value of 'visible'
   if (visible) {
     side_nav.style.display = "block";
     side_nav.style.opacity = 1;

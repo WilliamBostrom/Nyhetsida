@@ -221,6 +221,35 @@
       </form>
     </section>
     <div class="signin-overlay hidden-signin"></div>
+    <!-- Test styling för inloggs ruta -->
+    <!--         <section class="container welcome-in">
+          <h1 class="heading-large text-center">
+            Välkommen in <span class="welcome-name">Kalle</span>
+          </h1>
+          <div class="welcome-bonus">
+            <div class="welcome-radio">
+              <h2 class="heading-medium">Lyssna på senaste nyheterna</h2>
+              <audio src="google.se"></audio>
+            </div>
+            <div class="welcome-weather">
+              <h2 class="heading-medium">Dagens väder</h2>
+              <div class="weather-container">
+                <div class="welcome-weather-container text-normal">
+                  <img id="weather-img" src="" alt="" srcset="" />
+                </div>
+                <div class="weahter-display">
+                  <div><p class="text-normal">Idag</p></div>
+                  <div class="weather-temp-grades">
+                    <p id="weather-temp" class="text-normal">Grader</p>
+                    <div>
+                      <p id="weather-condition" class="text-normal">Moln</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section> -->
     <!-- MAIN NYHETER -->
     <section class="section-hero">
       <section class="news-container container stickys">
@@ -254,7 +283,7 @@
             </div>
             <article class="news-secondary">
               <div class="news-secondary-box">
-         <!--        <div class="news-secondary-textbox">
+                <div class="news-secondary-textbox">
                   <h3 class="heading-news">Team Enkelt jobbar på designen</h3>
                   <p class="text-normal">
                     Lorem ipsum dolor sit amet consectetur, adipisicing elit.
@@ -270,7 +299,7 @@
                   height="40%"
                 />
               </div>
-              <div class="news-secondary-box">
+              <!--      <div class="news-secondary-box">
                 <div class="news-secondary-textbox">
                   <h3 class="heading-news">Team Enkelt jobbar på designen</h3>
                   <p class="text-normal">
@@ -321,10 +350,16 @@
                   alt=""
                   width="80px"
                 />
-                <h2 class="heading-medium">Enklare</h2>
+                <h2 class="heading-medium">Inrikes</h2>
               </div>
               <div class="star-container">
-                <img class="star-icon" src="src/img/star-!select.svg" alt="" />
+                <img
+                  onclick="monitorThis(this)"
+                  data-item-status="utrikes"
+                  class="star-icon"
+                  src="src/img/star-!select.svg"
+                  alt=""
+                />
                 <img
                   class="selected-star-icon"
                   src="src/img/star-select.svg"
@@ -339,10 +374,16 @@
                   alt=""
                   width="80px"
                 />
-                <h2 class="heading-medium">Enklare</h2>
+                <h2 class="heading-medium">Utrikes</h2>
               </div>
               <div class="star-container">
-                <img class="star-icon" src="src/img/star-!select.svg" alt="" />
+                <img
+                  onclick="monitorThis(this)"
+                  data-item-status="utrikes"
+                  class="star-icon"
+                  src="src/img/star-!select.svg"
+                  alt=""
+                />
                 <img
                   class="selected-star-icon"
                   src="src/img/star-select.svg"

@@ -239,22 +239,107 @@ formSignin.addEventListener("submit", (e) => {
 
 //////// BONUS STYLING FÖR INLOGGAD
 
+const apiKeyWeather = "f8a39f1388cb43adad4191756241601";
+const weatherImg = document.getElementById("weather-img");
+const weatherCond = document.getElementById("weather-condition");
+const weatherTemp = document.getElementById("weather-temp");
+
 const dataCoord = {
   lat: null,
   lng: null,
 };
+
+function translateWeatherCondition(condition) {
+  const conditionMap = {
+    Clear: "Klart",
+    "Partly cloudy": "Delvis molnigt",
+    Cloudy: "Molnigt",
+    Overcast: "Överlagt",
+    Mist: "Dimma",
+    "Patchy rain possible": "Möjligt med skurar",
+    "Patchy snow possible": "Möjligt med snöfall",
+    "Patchy sleet possible": "Möjligt med snöblandat regn",
+    "Patchy freezing drizzle possible": "Möjligt med lätt isregn",
+    "Thundery outbreaks possible": "Möjligt med åskskurar",
+    "Blowing snow": "Snödrev",
+    Blizzard: "Snöstorm",
+    Fog: "Dimma",
+    "Freezing fog": "Frostdimma",
+    "Patchy light drizzle": "Lätt duggregn",
+    "Light drizzle": "Lätt duggregn",
+    "Freezing drizzle": "Lätt isregn",
+    "Heavy freezing drizzle": "Kraftigt isregn",
+    "Patchy light rain": "Lätt regn",
+    "Light rain": "Lätt regn",
+    "Moderate rain at times": "Måttligt regn ibland",
+    "Moderate rain": "Måttligt regn",
+    "Heavy rain at times": "Kraftigt regn ibland",
+    "Heavy rain": "Kraftigt regn",
+    "Light freezing rain": "Lätt isregn",
+    "Moderate or heavy freezing rain": "Måttligt eller kraftigt isregn",
+    "Light sleet": "Lätt snöblandat regn",
+    "Moderate or heavy sleet": "Måttligt eller kraftigt snöblandat regn",
+    "Patchy light snow": "Lätt snöfall",
+    "Light snow": "Lätt snöfall",
+    "Patchy moderate snow": "Måttligt snöfall ibland",
+    "Moderate snow": "Måttligt snöfall",
+    "Patchy heavy snow": "Kraftigt snöfall ibland",
+    "Heavy snow": "Kraftigt snöfall",
+    "Ice pellets": "Iskorn",
+    "Light rain shower": "Lätt regnskur",
+    "Moderate or heavy rain shower": "Måttlig eller kraftig regnskur",
+    "Torrential rain shower": "Skyfall",
+    "Light sleet showers": "Lätta snöblandade regnskurar",
+    "Moderate or heavy sleet showers":
+      "Måttliga eller kraftiga snöblandade regnskurar",
+    "Light snow showers": "Lätta snöskurar",
+    "Moderate or heavy snow showers": "Måttliga eller kraftiga snöskurar",
+    "Light showers of ice pellets": "Lätta skurar av iskorn",
+    "Moderate or heavy showers of ice pellets":
+      "Måttliga eller kraftiga skurar av iskorn",
+    "Patchy light rain with thunder": "Lätt regn med åska",
+    "Moderate or heavy rain with thunder":
+      "Måttligt eller kraftigt regn med åska",
+    "Patchy light snow with thunder": "Lätt snöfall med åska",
+    "Moderate or heavy snow with thunder":
+      "Måttligt eller kraftigt snöfall med åska",
+  };
+
+  return conditionMap[condition] || condition;
+}
+
+// Användning:
+const translatedCondition = translateWeatherCondition("Light rain");
+console.log(translatedCondition); // Output: 'Lätt regn'
+
 async function getData() {
-  let lat = dataCoord.lat;
-  let lng = dataCoord.lng;
-  await fetch(
-    `http://api.weatherapi.com/v1/forecast.json?key=${apiKey}&q=${lat},${lng}&days=3`
-  )
-    .then((res) => {
-      if (!res.ok) throw new Error("Warning");
-      return res.json();
-    })
-    .then((data) => console.log(data))
-    .catch((err) => console.log(err));
+  let lat = dataCoord.lat || 59.32;
+  let lng = dataCoord.lng || 18.05;
+  try {
+    const response = await axios.get(
+      `http://api.weatherapi.com/v1/forecast.json?key=${apiKeyWeather}&q=${lat},${lng}&days=3`
+    );
+    if (response.status !== 200) throw new Error("Warning");
+    console.log(response.data.current);
+
+    const translatedCondition = translateWeatherCondition(
+      response.data.current.condition.text
+    );
+
+    weatherCond.innerText = translatedCondition;
+    weatherTemp.innerText = response.data.current.temp_c;
+    weatherImg.src = response.data.current.condition.icon;
+
+    const radioResponse = await axios.get(
+      `https://api.sr.se/api/v2/channels/?format=json`
+    );
+    if (radioResponse.status !== 200) throw new Error("Warning");
+
+    console.log(radioResponse.data);
+    // Hantera ditt andra svar här
+  } catch (err) {
+    console.warn(err);
+  }
 }
 function getUserLocation() {
   navigator.geolocation.getCurrentPosition(function (position) {
