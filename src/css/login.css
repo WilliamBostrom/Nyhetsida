@@ -128,3 +128,39 @@ body.modal-open {
   backdrop-filter: blur(3px);
   z-index: 3;
 }
+/* /////////////// */
+/* IFALL INLOGGAD */
+/* /////////////// */
+
+/* Inloggnings containern */
+.welcome-in {
+  margin: 5.6rem 0;
+}
+
+/* Lägga väder och radio snyggt */
+.welcome-bonus {
+  margin-top: 2.4rem;
+  display: flex;
+  gap: 10px;
+}
+
+/* Inloggads väder */
+.welcome-weather {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid black;
+  width: 30rem;
+}
+.weather-container {
+  display: flex;
+  align-items: center;
+}
+
+.weather-temp-grades {
+  display: flex;
+}
+
+/* .weahter-display {
+  display: flex;
+  flex-direction: column;
+} */

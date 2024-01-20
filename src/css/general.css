@@ -83,6 +83,10 @@ body {
   padding-right: 2.4rem;
 }
 
+.text-center {
+  text-align: center;
+}
+
 /* HELPER */
 .margin-big {
   margin-top: 3.4rem;
@@ -134,4 +138,29 @@ body {
   border: none;
   cursor: pointer;
   font-family: inherit;
+}
+
+.btn-text:link,
+.btn-text:visited {
+  color: var(--primary_darken);
+  display: inline-block;
+  text-decoration: none;
+  border-bottom: 1px solid var(--primary_darken);
+  padding: 3px;
+  transition: all 0.2s;
+  font-size: 1.5rem;
+  margin-top: 10px;
+  margin-left: 25px;
+}
+
+.btn-text:hover {
+  background-color: var(--primary);
+  color: #fff;
+  box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.15);
+  transform: translateY(-2px);
+}
+
+.btn-text:active {
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+  transform: translateY(0);
 }

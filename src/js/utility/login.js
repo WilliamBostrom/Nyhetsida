@@ -1,4 +1,5 @@
 export { isLoggedIn, usersData };
+import axios from "axios";
 //////////////////////
 /* Modal bli medlem */
 /////////////////////
@@ -204,17 +205,17 @@ formSignin.addEventListener("submit", (e) => {
         loginPassword.value === user.password
       );
     });
+    let newName =
+      matchingUser.name.charAt(0).toUpperCase() + matchingUser.name.slice(1);
 
     if (matchingUser) {
       // Inloggning lyckad
       isLoggedIn = true;
-      alert(`Välkommen in ${matchingUser.name}`);
+      alert(`Välkommen in ${newName}`);
       loginContainer.innerHTML = `<a class="main-nav-btn nav-cta logout" href="#cta">Logga ut</a>`;
       welcome.innerHTML = ` <span
       ><p class="text-normal">
-        <b>Välkommen in ${
-          matchingUser.name.charAt(0).toUpperCase() + string.slice(1)
-        }!</b>
+        <b>Välkommen in ${newName}!</b>
       </p>
       <p class="text-normal">
         Tryck på en kategori för att lägga till i dina bevakningar.
@@ -235,3 +236,31 @@ formSignin.addEventListener("submit", (e) => {
     showError(usernameSignin, "Ingen användare hittad");
   }
 });
+
+//////// BONUS STYLING FÖR INLOGGAD
+
+const dataCoord = {
+  lat: null,
+  lng: null,
+};
+async function getData() {
+  let lat = dataCoord.lat;
+  let lng = dataCoord.lng;
+  await fetch(
+    `http://api.weatherapi.com/v1/forecast.json?key=${apiKey}&q=${lat},${lng}&days=3`
+  )
+    .then((res) => {
+      if (!res.ok) throw new Error("Warning");
+      return res.json();
+    })
+    .then((data) => console.log(data))
+    .catch((err) => console.log(err));
+}
+function getUserLocation() {
+  navigator.geolocation.getCurrentPosition(function (position) {
+    dataCoord.lat = position.coords.latitude;
+    dataCoord.lng = position.coords.longitude;
+    getData();
+  });
+}
+getUserLocation();
