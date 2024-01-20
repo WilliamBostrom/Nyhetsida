@@ -135,21 +135,29 @@ body.modal-open {
 /* Inloggnings containern */
 .welcome-in {
   margin: 5.6rem auto;
+  width: 75rem;
+  background-color: var(--background_primary);
+  box-shadow: var(--shadow-ambient--primary);
+  padding: 2rem;
+  display: none;
 }
 
 /* Lägga väder och radio snyggt */
 .welcome-bonus {
   margin-top: 2.4rem;
   display: flex;
-  gap: 10px;
+
+  justify-content: space-around;
 }
 
 /* Inloggads väder */
 .welcome-weather {
   display: flex;
   flex-direction: column;
-  border: 1px solid black;
+  /* border: 1px solid black; */
   width: 30rem;
+  padding: 1rem;
+  box-shadow: var(--shadow-ambient--primary);
 }
 .weather-container {
   display: flex;
@@ -164,3 +172,19 @@ body.modal-open {
   display: flex;
   flex-direction: column;
 } */
+
+.header-weather {
+  align-self: center;
+}
+.welcome-header {
+  margin: 0 auto;
+}
+
+.welcome-radio {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  box-shadow: var(--shadow-ambient--primary);
+}

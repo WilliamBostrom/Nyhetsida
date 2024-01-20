@@ -155,7 +155,7 @@ const formSignin = document.getElementById("signin-form"),
 
 let isLoggedIn = false;
 let loginContainer = document.querySelector(".login-container");
-let welcome = document.querySelector(".new-side-random-shit");
+let welcome = document.querySelector(".welcome-in");
 
 btnOpenLogin.forEach(function (btn) {
   btn.addEventListener("click", function () {
@@ -193,6 +193,8 @@ function openLogin() {
 /////////////////////////////
 /* För att logga in */
 
+const welcomeName = document.querySelector(".welcome-name");
+
 formSignin.addEventListener("submit", (e) => {
   e.preventDefault();
   const storedUserJSON = localStorage.getItem("usersData");
@@ -211,22 +213,19 @@ formSignin.addEventListener("submit", (e) => {
     if (matchingUser) {
       // Inloggning lyckad
       isLoggedIn = true;
+      getUserLocation();
       alert(`Välkommen in ${newName}`);
+      welcome.style.display = "block";
       loginContainer.innerHTML = `<a class="main-nav-btn nav-cta logout" href="#cta">Logga ut</a>`;
-      welcome.innerHTML = ` <span
-      ><p class="text-normal">
-        <b>Välkommen in ${newName}!</b>
-      </p>
-      <p class="text-normal">
-        Tryck på en kategori för att lägga till i dina bevakningar.
-      </p></span
-    >`;
+      welcomeName.innerHTML = `${newName}`;
       closeLogin();
+
       // Logga ut
       const btnLogOut = document.querySelector(".logout");
       btnLogOut.addEventListener("click", () => {
         alert("Du är utloggad");
         isLoggedIn = false;
+        welcome.style.display = "none";
         loginContainer.innerHTML = `<a class="main-nav-btn nav-cta login" href="#cta">Logga in</a>`;
       });
     } else {
@@ -256,6 +255,7 @@ function translateWeatherCondition(condition) {
     Cloudy: "Molnigt",
     Overcast: "Överlagt",
     Mist: "Dimma",
+    Sunny: "Sol",
     "Patchy rain possible": "Möjligt med skurar",
     "Patchy snow possible": "Möjligt med snöfall",
     "Patchy sleet possible": "Möjligt med snöblandat regn",
@@ -312,6 +312,8 @@ function translateWeatherCondition(condition) {
 const translatedCondition = translateWeatherCondition("Light rain");
 console.log(translatedCondition); // Output: 'Lätt regn'
 
+const radioAudio = document.querySelector(".audio");
+
 async function getData() {
   let lat = dataCoord.lat || 59.32;
   let lng = dataCoord.lng || 18.05;
@@ -335,12 +337,12 @@ async function getData() {
     );
     if (radioResponse.status !== 200) throw new Error("Warning");
 
-    console.log(radioResponse.data);
-    // Hantera ditt andra svar här
+    radioAudio.src = radioResponse.data.channels[3].liveaudio.url;
   } catch (err) {
     console.warn(err);
   }
 }
+
 function getUserLocation() {
   navigator.geolocation.getCurrentPosition(function (position) {
     dataCoord.lat = position.coords.latitude;
@@ -348,4 +350,3 @@ function getUserLocation() {
     getData();
   });
 }
-getUserLocation();

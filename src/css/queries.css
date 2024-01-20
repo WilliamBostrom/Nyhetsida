@@ -44,6 +44,9 @@
     /*font=size ska bli i rm 9px = 9 / 16px =56.25% */
     font-size: 50%;
   }
+
+  .welcome-in {
+    width: 95% !important;
 }
 
 /* ****************** */
@@ -124,6 +127,16 @@
     grid-column: span 2;
     margin-bottom: 3.2rem;
   }
+
+  .welcome-bonus {
+    flex-direction: column-reverse;
+    align-items: center;
+    gap: 3rem;
+  }
+
+  .welcome-radio {
+    gap: 3rem;
+  }
 }
 
 /* ****************** */
@@ -134,9 +147,11 @@
   .nav-left {
     padding-left: 0.8rem;
   }
+
   .main-nav-buttons-box {
     padding-right: 0.8rem;
   }
+  
   .grid {
     row-gap: 4.8rem;
     column-gap: 4.8rem;
