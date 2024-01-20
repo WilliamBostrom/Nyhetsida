@@ -350,3 +350,5 @@ function getUserLocation() {
     getData();
   });
 }
+
+getData();
