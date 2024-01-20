@@ -319,7 +319,7 @@ async function getData() {
   let lng = dataCoord.lng || 18.05;
   try {
     const response = await axios.get(
-      `http://api.weatherapi.com/v1/forecast.json?key=${apiKeyWeather}&q=${lat},${lng}&days=3`
+      `https://api.weatherapi.com/v1/forecast.json?key=${apiKeyWeather}&q=${lat},${lng}&days=3`
     );
     if (response.status !== 200) throw new Error("Warning");
     console.log(response.data.current);
