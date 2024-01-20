@@ -71,14 +71,4 @@ searchBox.addEventListener("keyup", () => {
     }
   });
 
-  // Uppdaterar visningen för första artikeln
-  if (firstMainHeader.innerText.toLowerCase().includes(searchText)) {
-    firstMainImg.style.display = "";
-    firstMainHeader.style.display = "";
-    firstMainLorem.style.display = "";
-  } else {
-    firstMainImg.style.display = "none";
-    firstMainHeader.style.display = "none";
-    firstMainLorem.style.display = "none";
-  }
-});
+

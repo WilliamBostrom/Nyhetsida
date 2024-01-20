@@ -361,6 +361,22 @@
   align-items: center;
   gap: 1.5rem;
 }
+.star-container {
+  display: inline-block;
+}
+.star-icon, .selected-star-icon {
+  display: block;
+  width: 2.5rem;
+}
+.selected-star-icon {
+  display: none;
+}
+.star-container:hover .selected-star-icon {
+  display: block;
+}
+.star-container:hover .star-icon {
+  display: none;
+}
 
 /* ****************** */
 /* SECTION FOOTER*/
