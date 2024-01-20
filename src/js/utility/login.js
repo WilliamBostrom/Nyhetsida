@@ -71,7 +71,6 @@ form.addEventListener("submit", async (e) => {
     const userJSON = JSON.stringify(createdUser);
     usersData.push(createdUser);
     localStorage.setItem("usersData", JSON.stringify(usersData));
-    console.log(usersData);
     localStorage.setItem("currentUser", userJSON);
 
     closeMembers();
@@ -310,7 +309,6 @@ function translateWeatherCondition(condition) {
 
 // Användning:
 const translatedCondition = translateWeatherCondition("Light rain");
-console.log(translatedCondition); // Output: 'Lätt regn'
 
 const radioAudio = document.querySelector(".audio");
 
@@ -322,7 +320,6 @@ async function getData() {
       `https://api.weatherapi.com/v1/forecast.json?key=${apiKeyWeather}&q=${lat},${lng}&days=3`
     );
     if (response.status !== 200) throw new Error("Warning");
-    console.log(response.data.current);
 
     const translatedCondition = translateWeatherCondition(
       response.data.current.condition.text
