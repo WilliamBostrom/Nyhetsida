@@ -29,7 +29,7 @@ async function fetchNews() {
 }
 
 // Lägger till en händelselyssnare för att kolla när man scrollar till toppen
-/* window.addEventListener("scroll", () => {
+window.addEventListener("scroll", () => {
   if (window.scrollY === 0) {
     // Du är vid toppen av sidan
     isAtTop = true;
@@ -43,7 +43,7 @@ async function fetchNews() {
   }
 });
 
-fetchNews(); */
+fetchNews();
 
 const firstMainImg = document.getElementById("first-main-img");
 const firstMainHeader = document.getElementById("first-main-heading");
