@@ -152,7 +152,7 @@ const formSignin = document.getElementById("signin-form"),
   signInOverlay = document.querySelector(".signin-overlay"),
   signInContainer = document.querySelector(".signin-container");
 
-let signInName = usernameSignin.value;
+
 let isLoggedIn = false;
 let loginContainer = document.querySelector(".login-container");
 let welcome = document.querySelector(".welcome-in");
@@ -191,50 +191,8 @@ function openLogin() {
 /////////////////////////////
 /* FÖR ATT LOGGA IN OCH UT */
 /////////////////////////////
-/* För att logga in */
 
 const welcomeName = document.querySelector(".welcome-name");
-
-/* formSignin.addEventListener("submit", (e) => {
-  e.preventDefault();
-  const storedUserJSON = localStorage.getItem("usersData");
-
-  if (storedUserJSON) {
-    const usersArray = JSON.parse(storedUserJSON);
-    const matchingUser = usersArray.find((user) => {
-      return (
-        usernameSignin.value === user.name &&
-        loginPassword.value === user.password
-      );
-    });
-    let newName =
-      matchingUser.name.charAt(0).toUpperCase() + matchingUser.name.slice(1);
-
-    if (matchingUser) {
-      // Inloggning lyckad
-      isLoggedIn = true;
-      getUserLocation();
-      alert(`Välkommen in ${newName}`);
-      welcome.style.display = "block";
-      loginContainer.innerHTML = `<a class="main-nav-btn nav-cta logout" href="#cta">Logga ut</a>`;
-      welcomeName.innerHTML = `${newName}`;
-      closeLogin();
-
-      // Logga ut
-      const btnLogOut = document.querySelector(".logout");
-      btnLogOut.addEventListener("click", () => {
-        alert("Du är utloggad");
-        isLoggedIn = false;
-        welcome.style.display = "none";
-        loginContainer.innerHTML = `<a class="main-nav-btn nav-cta login" href="#cta">Logga in</a>`;
-      });
-    } else {
-      showError(usernameSignin, "Felaktigt användarnamn eller lösenord");
-    }
-  } else {
-    showError(usernameSignin, "Ingen användare hittad");
-  }
-}); */
 
 function handleLogin(username, password) {
   const storedUserJSON = localStorage.getItem("usersData");
@@ -291,6 +249,46 @@ const dataCoord = {
   lat: null,
   lng: null,
 };
+
+const radioAudio = document.querySelector(".audio");
+
+async function getData() {
+  let lat = dataCoord.lat || 59.32;
+  let lng = dataCoord.lng || 18.05;
+  try {
+    const response = await axios.get(
+      `https://api.weatherapi.com/v1/forecast.json?key=${apiKeyWeather}&q=${lat},${lng}&days=3`
+    );
+    if (response.status !== 200) throw new Error("Warning");
+
+    const translatedCondition = translateWeatherCondition(
+      response.data.current.condition.text
+    );
+
+    weatherCond.innerText = translatedCondition;
+    weatherTemp.innerText = response.data.current.temp_c;
+    weatherImg.src = response.data.current.condition.icon;
+
+    const radioResponse = await axios.get(
+      `https://api.sr.se/api/v2/channels/?format=json`
+    );
+    if (radioResponse.status !== 200) throw new Error("Warning");
+
+    radioAudio.src = radioResponse.data.channels[3].liveaudio.url;
+  } catch (err) {
+    console.warn(err);
+  }
+}
+
+function getUserLocation() {
+  navigator.geolocation.getCurrentPosition(function (position) {
+    dataCoord.lat = position.coords.latitude;
+    dataCoord.lng = position.coords.longitude;
+    getData();
+  });
+}
+
+getData();
 
 function translateWeatherCondition(condition) {
   const conditionMap = {
@@ -351,43 +349,3 @@ function translateWeatherCondition(condition) {
 
   return conditionMap[condition] || condition;
 }
-
-const radioAudio = document.querySelector(".audio");
-
-async function getData() {
-  let lat = dataCoord.lat || 59.32;
-  let lng = dataCoord.lng || 18.05;
-  try {
-    const response = await axios.get(
-      `https://api.weatherapi.com/v1/forecast.json?key=${apiKeyWeather}&q=${lat},${lng}&days=3`
-    );
-    if (response.status !== 200) throw new Error("Warning");
-
-    const translatedCondition = translateWeatherCondition(
-      response.data.current.condition.text
-    );
-
-    weatherCond.innerText = translatedCondition;
-    weatherTemp.innerText = response.data.current.temp_c;
-    weatherImg.src = response.data.current.condition.icon;
-
-    const radioResponse = await axios.get(
-      `https://api.sr.se/api/v2/channels/?format=json`
-    );
-    if (radioResponse.status !== 200) throw new Error("Warning");
-
-    radioAudio.src = radioResponse.data.channels[3].liveaudio.url;
-  } catch (err) {
-    console.warn(err);
-  }
-}
-
-function getUserLocation() {
-  navigator.geolocation.getCurrentPosition(function (position) {
-    dataCoord.lat = position.coords.latitude;
-    dataCoord.lng = position.coords.longitude;
-    getData();
-  });
-}
-
-getData();

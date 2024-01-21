@@ -12,6 +12,7 @@ const sectionHero = document.querySelector(".section-hero");
 let isMonitorClicked = false;
 let isFavouritesClicked = false;
 let newContent = document.createElement("div");
+
 // Funktion för att hantera innehållet
 async function handleContentClick(title, message) {
   if (!isLoggedIn) {
@@ -25,7 +26,6 @@ async function handleContentClick(title, message) {
       (user) => user.name === usernameSignin.value
     );
     let content;
-
     if (userIndex !== -1) {
       content = `<h1 class="heading-large">${title}</h1><p class="text-normal"> Finns inga ${message} att se än</p>`;
     } else {
@@ -33,7 +33,6 @@ async function handleContentClick(title, message) {
     }
     newContent.className = "container-nocontent";
     newContent.innerHTML = content;
-
     sectionNews.parentNode.insertBefore(newContent, sectionNews.nextSibling);
   }
 }
@@ -61,10 +60,7 @@ favouritesBtn.addEventListener("click", () => {
   }
 });
 
-/////////////////////////////////
-/* TILLFÄLLIG TOPPNYHETSKNAPP */
-/////////////////////////////////
-
+// Toppnyheterknappen
 const topNews = document.getElementById("topnews");
 topNews.addEventListener("click", () => {
   sectionHero.style.display = "block";
