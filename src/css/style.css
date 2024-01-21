@@ -71,7 +71,7 @@
   width: 19.2rem;
 }
 
-.active {
+.activate {
   color: var(--primary);
   border-bottom: 2px solid var(--primary_darken);
 }
@@ -488,4 +488,3 @@ footer {
 .footer-link:active {
   color: #555;
 }
-
