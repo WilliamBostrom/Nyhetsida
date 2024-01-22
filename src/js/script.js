@@ -124,9 +124,9 @@ function findDuplicates(fetchData) {
 
 fetchNews(API_URL_TOP);
 
-const firstMainImg = document.getElementById("first-main-img");
-const firstMainHeader = document.getElementById("first-main-heading");
-const firstMainLorem = document.getElementById("first-main-lorem");
+// const firstMainImg = document.getElementById("first-main-img");
+// const firstMainHeader = document.getElementById("first-main-heading");
+// const firstMainLorem = document.getElementById("first-main-lorem");
 
 function displayFetchis(fetchData) {
   // Clear previous content in firstMain and news-secondary
@@ -202,6 +202,9 @@ function displayFetchis(fetchData) {
 }
 
 // Sökfunktionalitet
+// ...
+
+// Sökfunktionalitet
 const searchBox = document.querySelector(".main-nav-search-input");
 searchBox.addEventListener("keyup", () => {
   const searchText = searchBox.value.toLowerCase();
@@ -217,16 +220,20 @@ searchBox.addEventListener("keyup", () => {
     }
   });
 
-  // Uppdaterar visningen för första artikeln
-  if (firstMainHeader.innerText.toLowerCase().includes(searchText)) {
-    firstMainImg.style.display = "";
-    firstMainHeader.style.display = "";
-    firstMainLorem.style.display = "";
-  } else {
-    firstMainImg.style.display = "none";
-    firstMainHeader.style.display = "none";
-    firstMainLorem.style.display = "none";
-  }
+  // Use querySelectorAll to get all elements matching the query
+  const mainCards = document.querySelectorAll(".news-main-card");
+
+  mainCards.forEach((card) => {
+    const title = card
+      .querySelector(".heading-large")
+      .textContent.toLowerCase();
+    console.log(title);
+    if (title.includes(searchText)) {
+      card.classList.remove("hidden");
+    } else {
+      card.classList.add("hidden");
+    }
+  });
 });
 
 /* INLOGGAD */

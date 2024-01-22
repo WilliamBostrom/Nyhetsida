@@ -9,6 +9,6 @@ import "./src/js/utility/login.js";
 
 /* Testa kod sidor = tillfälliga */
 import "./src/js/dennis.js";
-import "./src/js/luay.js";
+// import "./src/js/luay.js";
 import "./src/js/simon.js";
 // import "./src/js/william.js";
