@@ -1,6 +1,9 @@
 import axios from "axios";
 
+// Willes nycklar
 // const apiKey = "pub_36673e2a264d14a136dc8d64987d21585bdf5";
+// senaste nyckeln
+// const apiKey = "pub_3689763523f92753a85b5bf7a4f2ffadb650a";
 
 import { isLoggedIn, usersData } from "./utility/login";
 
