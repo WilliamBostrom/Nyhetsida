@@ -15,10 +15,10 @@ const newMainCard = document.querySelector(".news-main-card");
 
 // WILLES NYCKEL
 /* const apiKey = "pub_36673e2a264d14a136dc8d64987d21585bdf5"; */
-/* const apiKey = "pub_3689763523f92753a85b5bf7a4f2ffadb650a"; */
+const apiKey = "pub_3689763523f92753a85b5bf7a4f2ffadb650a";
 
 // DENNIS NYCKEL
-const apiKey = "pub_36893493e88538fc3b8e75bdf04433cf20888";
+/* const apiKey = "pub_36893493e88538fc3b8e75bdf04433cf20888"; */
 
 const searchQuery = "sverige";
 const searchQuery1 = "aftonbladet";
@@ -171,26 +171,26 @@ function displayFetchis(fetchData) {
     } else {
       // Display in news-secondary for other indices
       newsSecondary.innerHTML += `
-      <div class="news-secondary-box"">
-        <div class="news-secondary-textbox">
-          <div class="star-container">
-            <img class="star-icon" src="src/img/star-!select.svg" alt="" />
-            <img
-              class="selected-star-icon"
-              src="src/img/star-select.svg"
-              alt=""
-              onclick="favourite(${index})"
-            />
-          </div>
-          <h3 class="heading-news">${news.title}</h3>
-          <p class="text-normal">${news.description}</p>
-          <a
-            class="btn-text"
-            href="${news.link}"
-            target="_blank"
-            >Läs mer &rarr;</a
-          >
-        </div>
+      <div class="news-secondary-box">
+      <div class="news-secondary-textbox">
+      <h3 class="heading-news">${news.title}</h3>
+      <p class="text-normal">${news.description}</p>
+      <a
+      class="btn-text"
+      href="${news.link}"
+      target="_blank"
+      >Läs mer &rarr;</a
+      >
+      </div>
+      <div class="star-container2">
+        <img class="star-icon" src="src/img/star-!select.svg" alt="" />
+        <img
+          class="selected-star-icon"
+          src="src/img/star-select.svg"
+          alt=""
+          onclick="favourite(${index})"
+        />
+      </div>
         <img class="small-img" src="${
           news.img || ""
         }" alt="" srcset="" width="40%"
