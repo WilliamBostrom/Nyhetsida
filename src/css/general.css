@@ -192,6 +192,7 @@ body.active .btn-text:link {
   font-size: 1.5rem;
   margin-top: 10px;
   margin-left: 25px;
+  max-width: 9rem
 }
 
 .btn-text:hover {

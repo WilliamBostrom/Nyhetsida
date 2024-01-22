@@ -142,36 +142,61 @@ function displayFetchis(fetchData) {
     if (index % 3 === 0) {
       // Display in firstMain for every third index
       newsSecondary.innerHTML += `
-      <div class="news-main-card" onclick=favourite(${index})>
-              <img
-                id="first-main-img"
-                class="news-main-card-img"
-                src="${news.img}"
-                alt=""
-                srcset=""
-                width="100%"
-              />
-              <div>
-                <h3 class="heading-large" id="first-main-heading">${news.title}</h3>
-              </div>
-              <div>
-                <p class="text-normal" id="first-main-lorem">${news.description}</p>
-              </div>
-            </div>`;
+      <div class="news-main-card">
+        <img
+          id="first-main-img"
+          class="news-main-card-img"
+          src="${news.img}"
+          alt=""
+          srcset=""
+          width="100%"
+        />
+        <div class="star-container">
+          <img class="star-icon" src="src/img/star-!select.svg" alt="" />
+          <img
+            class="selected-star-icon"
+            src="src/img/star-select.svg"
+            alt=""
+            onclick="favourite(${index})"
+          />
+        </div>
+        <div>
+          <h3 class="heading-large" id="first-main-heading">${news.title}</h3>
+        </div>
+        <div>
+          <p class="text-normal" id="first-main-lorem">${news.description}</p>
+        </div>
+        <a class="btn-text" href="${news.link}" target="_blank">Läs mer &rarr;</a>
+      </div>`;
     } else {
       // Display in news-secondary for other indices
-      newsSecondary.innerHTML += `<div class="news-secondary-box" onclick=favourite(${index})>
+      newsSecondary.innerHTML += `
+      <div class="news-secondary-box"">
         <div class="news-secondary-textbox">
+          <div class="star-container">
+            <img class="star-icon" src="src/img/star-!select.svg" alt="" />
+            <img
+              class="selected-star-icon"
+              src="src/img/star-select.svg"
+              alt=""
+              onclick="favourite(${index})"
+            />
+          </div>
           <h3 class="heading-news">${news.title}</h3>
           <p class="text-normal">${news.description}</p>
-          <a class="btn-text" href="${
-            news.link
-          }" target="_blank">Läs mer &rarr;</a>
+          <a
+            class="btn-text"
+            href="${news.link}"
+            target="_blank"
+            >Läs mer &rarr;</a
+          >
         </div>
         <img class="small-img" src="${
           news.img || ""
-        }" alt="" srcset="" width="40%" height="40%"/>
-      </div>`;
+        }" alt="" srcset="" width="40%"
+        height="40%"/>
+      </div>
+      `;
     }
   });
 }
