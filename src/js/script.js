@@ -4,6 +4,8 @@ let fetchData = [];
 let checkingIndex = 0;
 let isAtTop = false;
 
+const newMainCard = document.querySelector(".news-main-card");
+
 // Luays key
 /* const API_KEY =
   "pub_364847766bd024d75ae2f1bd0f148a57c4faf&country=se&language=sv"; */
@@ -19,12 +21,14 @@ const API_URL_TOP = `https://newsdata.io/api/1/news?apikey=${apiKey}&q=${searchQ
 
 const latestNews = document.getElementById("latestnews");
 latestNews.addEventListener("click", async () => {
+  newMainCard.style.display = "none";
   await fetchNews(API_URL_LATEST);
 });
 
 // Toppnyheterknappen
 const topNews = document.getElementById("topnews");
 topNews.addEventListener("click", async () => {
+  newMainCard.style.display = "block";
   await fetchNews(API_URL_TOP);
 });
 
