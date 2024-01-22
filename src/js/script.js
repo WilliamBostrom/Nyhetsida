@@ -209,6 +209,7 @@ searchBox.addEventListener("keyup", () => {
 
   newsBoxes.forEach((box) => {
     const title = box.querySelector(".heading-news").textContent.toLowerCase();
+    console.log(title);
     if (title.includes(searchText)) {
       box.classList.remove("hidden");
     } else {
@@ -230,12 +231,10 @@ searchBox.addEventListener("keyup", () => {
 
 /* INLOGGAD */
 
-const monitorBtn = document.getElementById("monitor");
 const favouritesBtn = document.getElementById("favourites");
 const sectionNews = document.querySelector(".header");
 const sectionHero = document.querySelector(".section-hero");
 
-let isMonitorClicked = false;
 let isFavouritesClicked = false;
 let newContent = document.createElement("div");
 
@@ -271,23 +270,10 @@ async function handleContentClick(title, message) {
   }
 }
 
-// Bevakningsknappen
-monitorBtn.addEventListener("click", async () => {
-  if (!isMonitorClicked) {
-    isMonitorClicked = true;
-    isFavouritesClicked = false;
-    newContent.innerHTML = "";
-    handleContentClick("Bevakningar", "bevakningar");
-  } else {
-    return;
-  }
-});
-
 // Favoritknappen
 favouritesBtn.addEventListener("click", () => {
   if (!isFavouritesClicked) {
     isFavouritesClicked = true;
-    isMonitorClicked = false;
     handleContentClick("Favoriter", "favoriter");
   } else {
     return;

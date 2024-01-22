@@ -66,7 +66,6 @@ form.addEventListener("submit", async (e) => {
       password: password.value,
       email: email.value,
       favorites: [],
-      monitor: [],
     };
 
     // const userJSON = JSON.stringify(createdUser);
