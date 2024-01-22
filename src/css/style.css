@@ -397,23 +397,24 @@
   margin-top: 1rem;
 }
 .star-container2 {
-  display: flex;
-  justify-content: flex-end;
-  margin-right: 1rem;
-  margin-top: 1rem;
+  position: absolute;
+  top: 0.5rem;
+  right: 0.5rem;
 }
+
 .star-icon,
 .selected-star-icon {
   display: block;
   width: 2.5rem;
-
 }
 .selected-star-icon {
   display: none;
 }
+.star-container2:hover .selected-star-icon,
 .star-container:hover .selected-star-icon {
   display: block;
 }
+.star-container2:hover .star-icon,
 .star-container:hover .star-icon {
   display: none;
 }
