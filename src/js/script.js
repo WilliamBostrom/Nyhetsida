@@ -114,7 +114,7 @@ function displayFetchis(fetchData, checkingIndex) {
 </div>`;
       }
     })
-    .join();
+    .join("");
 }
 
 // Sökfunktionalitet
