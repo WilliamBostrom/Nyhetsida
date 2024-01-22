@@ -4,8 +4,10 @@ let fetchData = [];
 let checkingIndex = 0;
 let isAtTop = false;
 const searchQuery = "Expressen";
-const API_KEY =
-  "pub_364847766bd024d75ae2f1bd0f148a57c4faf&country=se&language=sv";
+/* const API_KEY =
+  "pub_364847766bd024d75ae2f1bd0f148a57c4faf&country=se&language=sv"; */
+
+const API_KEY = "pub_36893493e88538fc3b8e75bdf04433cf20888";
 const API_URL = `https://newsdata.io/api/1/news?apikey=${API_KEY}&q=${searchQuery}&country=se&language=sv`;
 // const API_URL = `https://newsdata.io/api/1/news?apikey=${API_KEY}`;
 
@@ -21,10 +23,38 @@ async function fetchNews() {
       link: news.link,
       description: news.description,
     }));
-    console.log(fetchData);
-    displayFetchis(fetchData, checkingIndex);
+    findDuplicates(fetchData);
+    /* console.log(fetchData);
+    displayFetchis(fetchData, checkingIndex); */
   } catch (error) {
     console.error("Error fetching news:", error);
+  }
+}
+
+// Funktion för att ta bort dubletter
+function findDuplicates(fetchData) {
+  const seenTitles = new Set();
+  console.log("Set: ", seenTitles);
+
+  const removedDuplicates = fetchData.filter((article) => {
+    if (seenTitles.has(article.title)) {
+      // Om dublett hittas så exkluderas objektet ut
+      return false;
+    }
+
+    // Lägg till titeln för att kunna se visade titlar
+    seenTitles.add(article.title);
+
+    // ingen dublett hittad
+    return true;
+  });
+
+  if (removedDuplicates.length > 0) {
+    console.log("Dubletter hittade:", seenTitles);
+    displayFetchis(removedDuplicates, checkingIndex);
+  } else {
+    console.log("Inga dubletter hittade.");
+    displayFetchis(fetchData, checkingIndex);
   }
 }
 
@@ -45,7 +75,7 @@ async function fetchNews() {
 
 */
 
-fetchNews(); 
+fetchNews();
 
 const firstMainImg = document.getElementById("first-main-img");
 const firstMainHeader = document.getElementById("first-main-heading");
