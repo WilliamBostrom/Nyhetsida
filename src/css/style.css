@@ -289,11 +289,10 @@
 
 .news-main {
   width: 75rem;
-  height: 260rem;
+  height: auto;
   background-color: var(--background_primary);
   border-radius: 0.3rem;
   box-shadow: var(--shadow-ambient--primary);
-  overflow: auto;
 }
 .news-main-side {
   width: 34rem;
@@ -316,8 +315,6 @@
 .news-main-card-img {
   width: 100%;
   height: auto;
-  margin-top: 1.7rem;
-  margin-left: -1rem;
   justify-self: flex-end;
 }
 
