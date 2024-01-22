@@ -1,8 +1,11 @@
 import axios from "axios";
 
+import { isLoggedIn, usersData } from "./utility/login";
+
 let fetchData = [];
 let checkingIndex = 0;
 let isAtTop = false;
+let userIndex;
 
 const newMainCard = document.querySelector(".news-main-card");
 
@@ -128,9 +131,9 @@ function displayFetchis(fetchData, checkingIndex) {
 
   const newsSecondary = document.querySelector(".news-secondary");
   newsSecondary.innerHTML = fetchData
-    .map((news, checkingIndex) => {
-      if (checkingIndex >= 1) {
-        return `<div class="news-secondary-box">
+    .map((news, index) => {
+      if (index >= 1) {
+        return `<div class="news-secondary-box" onclick=favourite(${index})>
       <div class="news-secondary-textbox">
       <h3 class="heading-news">${news.title}</h3>
       <p class="text-normal">${news.description}</p>
@@ -172,3 +175,99 @@ searchBox.addEventListener("keyup", () => {
     firstMainLorem.style.display = "none";
   }
 });
+
+/* INLOGGAD */
+
+const monitorBtn = document.getElementById("monitor");
+const favouritesBtn = document.getElementById("favourites");
+const sectionNews = document.querySelector(".header");
+const sectionHero = document.querySelector(".section-hero");
+
+let isMonitorClicked = false;
+let isFavouritesClicked = false;
+let newContent = document.createElement("div");
+
+// Funktion för att hantera innehållet
+async function handleContentClick(title, message) {
+  if (!isLoggedIn) {
+    sectionHero.style.display = "none";
+    newContent.className = "container-nocontent";
+    newContent.innerHTML = `<h1 class="heading-large">${title}</h1><p class="text-normal"> Du behöver <a class="btn-link">logga in</a> för att se ${message}.</p>`;
+    sectionNews.parentNode.insertBefore(newContent, sectionNews.nextSibling);
+  } else {
+    const usernameSignin = document.getElementById("username-signin");
+    userIndex = await usersData.findIndex(
+      (user) => user.name === usernameSignin.value
+    );
+
+    const storedUsersData = JSON.parse(localStorage.getItem("usersData")) || [];
+    if (storedUsersData.length > 0 && storedUsersData[userIndex]) {
+      usersData[userIndex] = storedUsersData[userIndex];
+    }
+
+    DisplayPerson(userIndex);
+    let content;
+    if (userIndex !== -1) {
+      sectionHero.style.display = "none";
+      content = `<h1 class="heading-large">${title}</h1><p class="text-normal"> Finns inga ${message} att se än</p>`;
+    } else {
+      content = `<h1 class="heading-large">${title}</h1><p class="text-normal"> Det finns inga ${message} att se här än</p>`;
+    }
+    newContent.className = "container-nocontent";
+    newContent.innerHTML = content;
+    sectionNews.parentNode.insertBefore(newContent, sectionNews.nextSibling);
+  }
+}
+
+// Bevakningsknappen
+monitorBtn.addEventListener("click", async () => {
+  if (!isMonitorClicked) {
+    isMonitorClicked = true;
+    isFavouritesClicked = false;
+    newContent.innerHTML = "";
+    handleContentClick("Bevakningar", "bevakningar");
+  } else {
+    return;
+  }
+});
+
+// Favoritknappen
+favouritesBtn.addEventListener("click", () => {
+  if (!isFavouritesClicked) {
+    isFavouritesClicked = true;
+    isMonitorClicked = false;
+    handleContentClick("Favoriter", "favoriter");
+  } else {
+    return;
+  }
+});
+
+/* FÖR FAVORITER */
+
+let favArray = [];
+window.favourite = async function (index) {
+  if (!isLoggedIn) {
+    alert("Måste logga in först");
+  } else {
+    let confirmFav = confirm("Lägg till i favoriter");
+    if (confirmFav) {
+      let copiedNews = { ...fetchData[index] };
+      favArray.push(copiedNews);
+      console.log(copiedNews);
+      console.log(favArray);
+      const usernameSignin = document.getElementById("username-signin");
+      const usernameValue = usernameSignin.value;
+      const storedUsersData =
+        JSON.parse(localStorage.getItem("usersData")) || [];
+      userIndex = storedUsersData.findIndex(
+        (user) => user.name === usernameValue
+      );
+
+      if (userIndex >= 0) {
+        storedUsersData[userIndex].favorites.push(copiedNews);
+        localStorage.setItem("usersData", JSON.stringify(storedUsersData));
+        alert("Nyheter har lagts till i favoriter!");
+      }
+    }
+  }
+};
