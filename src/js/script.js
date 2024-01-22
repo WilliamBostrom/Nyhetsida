@@ -124,16 +124,7 @@ function findDuplicates(fetchData) {
 
 fetchNews(API_URL_TOP);
 
-// const firstMainImg = document.getElementById("first-main-img");
-// const firstMainHeader = document.getElementById("first-main-heading");
-// const firstMainLorem = document.getElementById("first-main-lorem");
-
 function displayFetchis(fetchData) {
-  // Clear previous content in firstMain and news-secondary
-  /* firstMainImg.src = "";
-  firstMainHeader.innerText = "";
-  firstMainLorem.innerText = "";
-  newsSecondary.innerHTML = ""; */
   const newsSecondary = document.querySelector(".news-secondary");
 
   // Loop through the fetchData array
