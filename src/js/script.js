@@ -15,21 +15,46 @@ const apiKey = "pub_36673e2a264d14a136dc8d64987d21585bdf5";
 
 const searchQuery = "sverige";
 const searchQuery1 = "aftonbladet";
+const searchInrikes = "inrikes";
+const searchSport = "sport";
+const searchUtrikes = "utrikes";
 
 const API_URL_LATEST = `https://newsdata.io/api/1/news?apikey=${apiKey}&q=${searchQuery}&country=se&language=sv`;
 const API_URL_TOP = `https://newsdata.io/api/1/news?apikey=${apiKey}&q=${searchQuery1}&country=se&language=sv`;
+const API_URL_INRIKES = `https://newsdata.io/api/1/news?apikey=${apiKey}&q=${searchInrikes}&country=se&language=sv`;
+const API_URL_SPORT = `https://newsdata.io/api/1/news?apikey=${apiKey}&q=${searchSport}&country=se&language=sv`;
+const API_URL_UTRIKES = `https://newsdata.io/api/1/news?apikey=${apiKey}&q=${searchUtrikes}&country=se&language=sv`;
 
 const latestNews = document.getElementById("latestnews");
 latestNews.addEventListener("click", async () => {
-  newMainCard.style.display = "none";
+  // newMainCard.style.display = "none";
   await fetchNews(API_URL_LATEST);
 });
 
 // Toppnyheterknappen
 const topNews = document.getElementById("topnews");
 topNews.addEventListener("click", async () => {
-  newMainCard.style.display = "block";
+  // newMainCard.style.display = "block";
   await fetchNews(API_URL_TOP);
+});
+
+const domestic = document.querySelector(".inrikes");
+domestic.addEventListener("click", async () => {
+  console.log("hej");
+  // newMainCard.style.display = "block";
+  await fetchNews(API_URL_INRIKES);
+});
+const sport = document.querySelector(".sport");
+sport.addEventListener("click", async () => {
+  console.log("hej");
+  // newMainCard.style.display = "block";
+  await fetchNews(API_URL_SPORT);
+});
+const utrikes = document.querySelector(".utrikes");
+utrikes.addEventListener("click", async () => {
+  console.log("hej");
+  // newMainCard.style.display = "block";
+  await fetchNews(API_URL_UTRIKES);
 });
 
 async function fetchNews(API_URL) {
