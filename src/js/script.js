@@ -201,14 +201,13 @@ function displayFetchis(fetchData) {
   });
 }
 
-// Sökfunktionalitet
-// ...
 
 // Sökfunktionalitet
 const searchBox = document.querySelector(".main-nav-search-input");
 searchBox.addEventListener("keyup", () => {
   const searchText = searchBox.value.toLowerCase();
   const newsBoxes = document.querySelectorAll(".news-secondary-box");
+  const mainCards = document.querySelectorAll(".news-main-card");
 
   newsBoxes.forEach((box) => {
     const title = box.querySelector(".heading-news").textContent.toLowerCase();
@@ -219,9 +218,6 @@ searchBox.addEventListener("keyup", () => {
       box.classList.add("hidden");
     }
   });
-
-  // Use querySelectorAll to get all elements matching the query
-  const mainCards = document.querySelectorAll(".news-main-card");
 
   mainCards.forEach((card) => {
     const title = card
