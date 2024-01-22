@@ -18,7 +18,7 @@ const newMainCard = document.querySelector(".news-main-card");
 /* const apiKey = "pub_3689763523f92753a85b5bf7a4f2ffadb650a"; */
 
 // DENNIS NYCKEL
-const apiKey = "pub_36893493e88538fc3b8e75bdf04433cf20888"
+const apiKey = "pub_36893493e88538fc3b8e75bdf04433cf20888";
 
 const searchQuery = "sverige";
 const searchQuery1 = "aftonbladet";
@@ -142,7 +142,7 @@ function displayFetchis(fetchData) {
     if (index % 3 === 0) {
       // Display in firstMain for every third index
       newsSecondary.innerHTML += `
-      <div class="news-main-card">
+      <div class="news-main-card" onclick=favourite(${index})>
               <img
                 id="first-main-img"
                 class="news-main-card-img"
@@ -160,13 +160,17 @@ function displayFetchis(fetchData) {
             </div>`;
     } else {
       // Display in news-secondary for other indices
-      newsSecondary.innerHTML += `<div class="news-secondary-box">
+      newsSecondary.innerHTML += `<div class="news-secondary-box" onclick=favourite(${index})>
         <div class="news-secondary-textbox">
           <h3 class="heading-news">${news.title}</h3>
           <p class="text-normal">${news.description}</p>
-          <a class="btn-text" href="${news.link}" target="_blank">Läs mer &rarr;</a>
+          <a class="btn-text" href="${
+            news.link
+          }" target="_blank">Läs mer &rarr;</a>
         </div>
-        <img class="small-img" src="${news.img || ""}" alt="" srcset="" width="40%" height="40%"/>
+        <img class="small-img" src="${
+          news.img || ""
+        }" alt="" srcset="" width="40%" height="40%"/>
       </div>`;
     }
   });
