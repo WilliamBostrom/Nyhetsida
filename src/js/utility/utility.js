@@ -14,6 +14,7 @@ mobileBtn.addEventListener("click", function () {
   if (visible) {
     side_nav.style.display = "block";
     side_nav.style.opacity = 1;
+    side_nav.style.zIndex = 1;
     side_nav.style.visibility = "visible";
   } else {
     side_nav.style.display = "none";
