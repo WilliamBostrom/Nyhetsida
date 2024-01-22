@@ -38,7 +38,7 @@ function findDuplicates(fetchData) {
 
   const removedDuplicates = fetchData.filter((article) => {
     if (seenTitles.has(article.title)) {
-      // Om dublett hittas så exkluderas objektet ut
+      // Om dublett hittas så exkluderas objektet ur den nya arrayen
       return false;
     }
 
