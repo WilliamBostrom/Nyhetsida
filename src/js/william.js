@@ -12,6 +12,7 @@ const sectionHero = document.querySelector(".section-hero");
 let isMonitorClicked = false;
 let isFavouritesClicked = false;
 let newContent = document.createElement("div");
+let userIndex;
 
 // Funktion för att hantera innehållet
 async function handleContentClick(title, message) {
@@ -22,11 +23,19 @@ async function handleContentClick(title, message) {
     sectionNews.parentNode.insertBefore(newContent, sectionNews.nextSibling);
   } else {
     const usernameSignin = document.getElementById("username-signin");
-    const userIndex = await usersData.findIndex(
+    userIndex = await usersData.findIndex(
       (user) => user.name === usernameSignin.value
     );
+
+    const storedUsersData = JSON.parse(localStorage.getItem("usersData")) || [];
+    if (storedUsersData.length > 0 && storedUsersData[userIndex]) {
+      usersData[userIndex] = storedUsersData[userIndex];
+    }
+
+    DisplayPerson(userIndex);
     let content;
     if (userIndex !== -1) {
+      sectionHero.style.display = "none";
       content = `<h1 class="heading-large">${title}</h1><p class="text-normal"> Finns inga ${message} att se än</p>`;
     } else {
       content = `<h1 class="heading-large">${title}</h1><p class="text-normal"> Det finns inga ${message} att se här än</p>`;
@@ -38,7 +47,7 @@ async function handleContentClick(title, message) {
 }
 
 // Bevakningsknappen
-monitorBtn.addEventListener("click", () => {
+monitorBtn.addEventListener("click", async () => {
   if (!isMonitorClicked) {
     isMonitorClicked = true;
     isFavouritesClicked = false;
@@ -72,20 +81,42 @@ topNews.addEventListener("click", () => {
 });
 
 // Början på filtrera ut "Bevakningar"
-/* 
-// Hämta en lista med alla element som har klassen "monitor-image"
-const imageElements = document.querySelectorAll(".star-container");
 
+const imageElements = document.querySelectorAll(".star-container");
 imageElements.forEach(function (element) {
   element.addEventListener("click", function () {
-    monitorThis(element);
+    const usernameSignin = document.getElementById("username-signin");
+    const userIndex = usersData.findIndex(
+      (user) => user.name === usernameSignin.value
+    );
+    monitorThis(element, userIndex);
   });
 });
 
-let monitorQuery;
-function monitorThis(element) {
-  const itemStatus = element.getAttribute("data-item-inrikes");
-  monitorQuery = itemStatus;
-  console.log(monitorQuery);
+// Uppdaterad monitorThis-funktion med userIndex
+function monitorThis(element, userIndex) {
+  const itemStatus = element.getAttribute("data-item-status");
+  let monitorQuery = itemStatus;
+  const storedUsersData = JSON.parse(localStorage.getItem("usersData")) || [];
+  if (storedUsersData[userIndex].monitor.includes(monitorQuery)) {
+    return;
+  } else {
+    storedUsersData[userIndex].monitor.push(monitorQuery);
+    localStorage.setItem("usersData", JSON.stringify(storedUsersData));
+  }
+  DisplayPerson(userIndex);
 }
- */
+
+function DisplayPerson(userIndex) {
+  console.log(usersData[userIndex]);
+  let monitor = usersData[userIndex].monitor;
+
+  if (monitor.length > 0) {
+    const firstValue = monitor[0];
+    const secondValue = monitor[1];
+    console.log("Första:", firstValue);
+    console.log("Andra:", secondValue);
+  } else {
+    console.log("Inga favoriter tillagda ännu.");
+  }
+}

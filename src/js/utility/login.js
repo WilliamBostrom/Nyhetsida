@@ -66,12 +66,13 @@ form.addEventListener("submit", async (e) => {
       password: password.value,
       email: email.value,
       favorites: [],
+      monitor: [],
     };
 
-    const userJSON = JSON.stringify(createdUser);
+    // const userJSON = JSON.stringify(createdUser);
     usersData.push(createdUser);
     localStorage.setItem("usersData", JSON.stringify(usersData));
-    localStorage.setItem("currentUser", userJSON);
+    // localStorage.setItem("currentUser", userJSON);
 
     closeMembers();
     openLogin();
@@ -151,7 +152,6 @@ const formSignin = document.getElementById("signin-form"),
   btnOpenLogin = document.querySelectorAll(".login"),
   signInOverlay = document.querySelector(".signin-overlay"),
   signInContainer = document.querySelector(".signin-container");
-
 
 let isLoggedIn = false;
 let loginContainer = document.querySelector(".login-container");
