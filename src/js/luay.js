@@ -75,7 +75,7 @@ function findDuplicates(fetchData) {
 
 */
 
-fetchNews();
+// fetchNews();
 
 const firstMainImg = document.getElementById("first-main-img");
 const firstMainHeader = document.getElementById("first-main-heading");
