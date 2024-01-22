@@ -14,7 +14,11 @@ const newMainCard = document.querySelector(".news-main-card");
   "pub_364847766bd024d75ae2f1bd0f148a57c4faf&country=se&language=sv"; */
 
 // WILLES NYCKEL
-const apiKey = "pub_36673e2a264d14a136dc8d64987d21585bdf5";
+/* const apiKey = "pub_36673e2a264d14a136dc8d64987d21585bdf5"; */
+/* const apiKey = "pub_3689763523f92753a85b5bf7a4f2ffadb650a"; */
+
+// DENNIS NYCKEL
+const apiKey = "pub_36893493e88538fc3b8e75bdf04433cf20888"
 
 const searchQuery = "sverige";
 const searchQuery1 = "aftonbladet";
@@ -124,29 +128,48 @@ const firstMainImg = document.getElementById("first-main-img");
 const firstMainHeader = document.getElementById("first-main-heading");
 const firstMainLorem = document.getElementById("first-main-lorem");
 
-function displayFetchis(fetchData, checkingIndex) {
-  firstMainImg.src = fetchData[checkingIndex].img;
-  firstMainHeader.innerText = fetchData[checkingIndex].title;
-  firstMainLorem.innerText = fetchData[checkingIndex].description;
-
+function displayFetchis(fetchData) {
+  // Clear previous content in firstMain and news-secondary
+  /* firstMainImg.src = "";
+  firstMainHeader.innerText = "";
+  firstMainLorem.innerText = "";
+  newsSecondary.innerHTML = ""; */
   const newsSecondary = document.querySelector(".news-secondary");
-  newsSecondary.innerHTML = fetchData
-    .map((news, index) => {
-      if (index >= 1) {
-        return `<div class="news-secondary-box" onclick=favourite(${index})>
-      <div class="news-secondary-textbox">
-      <h3 class="heading-news">${news.title}</h3>
-      <p class="text-normal">${news.description}</p>
-      <a class="btn-text" href="${
-        news.link
-      }" target="_blank">Läs mer &rarr;</a></div>
-      <img class="small-img" src="${
-        news.img || ""
-      }" alt="" srcset="" width="40%" height="40%"/>
-</div>`;
-      }
-    })
-    .join("");
+
+  // Loop through the fetchData array
+  fetchData.forEach((news, index) => {
+    // Check if the index is a multiple of 3 (every third element)
+    if (index % 3 === 0) {
+      // Display in firstMain for every third index
+      newsSecondary.innerHTML += `
+      <div class="news-main-card">
+              <img
+                id="first-main-img"
+                class="news-main-card-img"
+                src="${news.img}"
+                alt=""
+                srcset=""
+                width="100%"
+              />
+              <div>
+                <h3 class="heading-large" id="first-main-heading">${news.title}</h3>
+              </div>
+              <div>
+                <p class="text-normal" id="first-main-lorem">${news.description}</p>
+              </div>
+            </div>`;
+    } else {
+      // Display in news-secondary for other indices
+      newsSecondary.innerHTML += `<div class="news-secondary-box">
+        <div class="news-secondary-textbox">
+          <h3 class="heading-news">${news.title}</h3>
+          <p class="text-normal">${news.description}</p>
+          <a class="btn-text" href="${news.link}" target="_blank">Läs mer &rarr;</a>
+        </div>
+        <img class="small-img" src="${news.img || ""}" alt="" srcset="" width="40%" height="40%"/>
+      </div>`;
+    }
+  });
 }
 
 // Sökfunktionalitet
