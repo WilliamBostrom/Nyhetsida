@@ -314,10 +314,11 @@
 }
 
 .news-main-card-img {
-  width: 103%;
+  width: 100%;
   height: auto;
   margin-top: 1.7rem;
   margin-left: -1rem;
+  justify-self: flex-end;
 }
 
 .news-main-card {
