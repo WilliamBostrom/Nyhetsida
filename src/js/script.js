@@ -201,7 +201,6 @@ function displayFetchis(fetchData) {
   });
 }
 
-
 // Sökfunktionalitet
 const searchBox = document.querySelector(".main-nav-search-input");
 searchBox.addEventListener("keyup", () => {
