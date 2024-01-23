@@ -15,53 +15,46 @@ const newMainCard = document.querySelector(".news-main-card");
 
 // WILLES NYCKEL
 /* const apiKey = "pub_36673e2a264d14a136dc8d64987d21585bdf5"; */
-const apiKey = "pub_3689763523f92753a85b5bf7a4f2ffadb650a";
+// const apiKey = "pub_3689763523f92753a85b5bf7a4f2ffadb650a";
 
 // DENNIS NYCKEL
 /* const apiKey = "pub_36893493e88538fc3b8e75bdf04433cf20888"; */
 
 const searchQuery = "sverige";
-const searchQuery1 = "aftonbladet";
+const searchQuery1 = "dn";
 const searchInrikes = "inrikes";
 const searchSport = "sport";
 const searchUtrikes = "utrikes";
-
-const API_URL_LATEST = `https://newsdata.io/api/1/news?apikey=${apiKey}&q=${searchQuery}&country=se&language=sv`;
+const apiKey = "pub_36673e2a264d14a136dc8d64987d21585bdf5";
 const API_URL_TOP = `https://newsdata.io/api/1/news?apikey=${apiKey}&q=${searchQuery1}&country=se&language=sv`;
-const API_URL_INRIKES = `https://newsdata.io/api/1/news?apikey=${apiKey}&q=${searchInrikes}&country=se&language=sv`;
-const API_URL_SPORT = `https://newsdata.io/api/1/news?apikey=${apiKey}&q=${searchSport}&country=se&language=sv`;
-const API_URL_UTRIKES = `https://newsdata.io/api/1/news?apikey=${apiKey}&q=${searchUtrikes}&country=se&language=sv`;
+
+function buildApiUrl(category) {
+  return `https://newsdata.io/api/1/news?apikey=${apiKey}&q=${category}&country=se&language=sv`;
+}
 
 const latestNews = document.getElementById("latestnews");
-latestNews.addEventListener("click", async () => {
-  // newMainCard.style.display = "none";
-  await fetchNews(API_URL_LATEST);
+latestNews.addEventListener("click", () => {
+  updateContent(buildApiUrl(searchQuery));
 });
 
-// Toppnyheterknappen
 const topNews = document.getElementById("topnews");
-topNews.addEventListener("click", async () => {
-  // newMainCard.style.display = "block";
-  await fetchNews(API_URL_TOP);
+topNews.addEventListener("click", () => {
+  updateContent(buildApiUrl(searchQuery1));
 });
 
 const domestic = document.querySelector(".inrikes");
-domestic.addEventListener("click", async () => {
-  console.log("hej");
-  // newMainCard.style.display = "block";
-  await fetchNews(API_URL_INRIKES);
+domestic.addEventListener("click", () => {
+  updateContent(buildApiUrl(searchInrikes));
 });
+
 const sport = document.querySelector(".sport");
-sport.addEventListener("click", async () => {
-  console.log("hej");
-  // newMainCard.style.display = "block";
-  await fetchNews(API_URL_SPORT);
+sport.addEventListener("click", () => {
+  updateContent(buildApiUrl(searchSport));
 });
+
 const utrikes = document.querySelector(".utrikes");
-utrikes.addEventListener("click", async () => {
-  console.log("hej");
-  // newMainCard.style.display = "block";
-  await fetchNews(API_URL_UTRIKES);
+utrikes.addEventListener("click", () => {
+  updateContent(buildApiUrl(searchUtrikes));
 });
 
 async function fetchNews(API_URL) {
@@ -69,18 +62,30 @@ async function fetchNews(API_URL) {
     const response = await axios.get(API_URL);
     const newsData = response.data;
     console.log(newsData);
-    fetchData = newsData.results.map((news) => ({
+    const fetchData = newsData.results.map((news) => ({
       title: news.title,
       img: news.image_url,
       source: news.source_id,
       link: news.link,
       description: news.description,
     }));
-    findDuplicates(fetchData);
+    return fetchData;
   } catch (error) {
     console.error("Error fetching news:", error);
+    throw error;
   }
 }
+
+async function updateContent(API_URL) {
+  try {
+    const fetchData = await fetchNews(API_URL);
+    findDuplicates(fetchData);
+  } catch (error) {
+    console.error("Error updating content:", error);
+  }
+}
+
+// ... (Din övriga kod)
 
 // Funktion för att ta bort dubletter
 function findDuplicates(fetchData) {
@@ -122,17 +127,19 @@ function findDuplicates(fetchData) {
 
 */
 
-fetchNews(API_URL_TOP);
-
+// fetchNews(API_URL_TOP);
+updateContent(buildApiUrl(searchQuery1));
 function displayFetchis(fetchData) {
   const newsSecondary = document.querySelector(".news-secondary");
 
+  newsSecondary.innerHTML = "";
   // Loop through the fetchData array
-  fetchData.forEach((news, index) => {
-    // Check if the index is a multiple of 3 (every third element)
-    if (index % 3 === 0) {
-      // Display in firstMain for every third index
-      newsSecondary.innerHTML += `
+  fetchData
+    .map((news, index) => {
+      // Check if the index is a multiple of 3 (every third element)
+      if (index % 3 === 0) {
+        // Display in firstMain for every third index
+        newsSecondary.innerHTML += `
       <div class="news-main-card">
         <img
           id="first-main-img"
@@ -159,9 +166,9 @@ function displayFetchis(fetchData) {
         </div>
         <a class="btn-text" href="${news.link}" target="_blank">Läs mer &rarr;</a>
       </div>`;
-    } else {
-      // Display in news-secondary for other indices
-      newsSecondary.innerHTML += `
+      } else {
+        // Display in news-secondary for other indices
+        newsSecondary.innerHTML += `
       <div class="news-secondary-box">
       <div class="news-secondary-textbox">
       <h3 class="heading-news">${news.title}</h3>
@@ -188,8 +195,9 @@ function displayFetchis(fetchData) {
         height="40%"/>
       </div>
       `;
-    }
-  });
+      }
+    })
+    .join("");
 }
 
 // Sökfunktionalitet
