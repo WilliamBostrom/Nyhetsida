@@ -200,35 +200,30 @@ function displayFetchis(fetchData) {
     .join("");
 }
 
-// Sökfunktionalitet
-const searchBox = document.querySelector(".main-nav-search-input");
-searchBox.addEventListener("keyup", () => {
-  const searchText = searchBox.value.toLowerCase();
+// Sökfunktionen som ansvarar för att båda main-nav-search-input och side-nav-search-input fungerar 
+function performSearch(searchText) {
+  const lowercaseSearchText = searchText.toLowerCase();
   const newsBoxes = document.querySelectorAll(".news-secondary-box");
   const mainCards = document.querySelectorAll(".news-main-card");
 
-  newsBoxes.forEach((box) => {
-    const title = box.querySelector(".heading-news").textContent.toLowerCase();
-    console.log(title);
-    if (title.includes(searchText)) {
-      box.classList.remove("hidden");
-    } else {
-      box.classList.add("hidden");
-    }
-  });
+  const searchForElements = [...newsBoxes, ...mainCards];
 
-  mainCards.forEach((card) => {
-    const title = card
-      .querySelector(".heading-large")
-      .textContent.toLowerCase();
-    console.log(title);
-    if (title.includes(searchText)) {
-      card.classList.remove("hidden");
-    } else {
-      card.classList.add("hidden");
-    }
+  searchForElements.forEach((element) => {
+    const title = element.querySelector(".heading-news, .heading-large").textContent.toLowerCase();
+    element.classList.toggle("hidden", !title.includes(lowercaseSearchText));
+  });
+}
+
+const searchBoxes = document.querySelectorAll(".main-nav-search-input, .side-nav-search-input");
+
+searchBoxes.forEach((searchBox) => {
+  searchBox.addEventListener("keyup", () => {
+    const searchText = searchBox.value;
+    performSearch(searchText);
   });
 });
+
+
 
 /* INLOGGAD */
 
