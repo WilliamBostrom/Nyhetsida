@@ -5,23 +5,40 @@ const side_nav = document.querySelector(".side-nav");
 
 let visible = false;
 
-mobileBtn.addEventListener("click", function () {
-  visible = !visible;
+function openSideNav() {
+  visible = true;
+  menuIcon.style.display = "none";
+  closeIcon.style.display = "block";
+  side_nav.style.display = "block";
+  side_nav.style.opacity = 1;
+  side_nav.style.zIndex = 1;
+  side_nav.style.visibility = "visible";
+}
 
-  menuIcon.style.display = visible ? "none" : "block";
-  closeIcon.style.display = visible ? "block" : "none";
+function closeSideNav() {
+  visible = false;
+  menuIcon.style.display = "block";
+  closeIcon.style.display = "none";
+  side_nav.style.display = "none";
+  side_nav.style.opacity = 0;
+  side_nav.style.visibility = "hidden";
+}
 
-  if (visible) {
-    side_nav.style.display = "block";
-    side_nav.style.opacity = 1;
-    side_nav.style.zIndex = 1;
-    side_nav.style.visibility = "visible";
+mobileBtn.addEventListener("click", function (e) {
+  e.stopPropagation();
+  if (!visible) {
+    openSideNav();
   } else {
-    side_nav.style.display = "none";
-    side_nav.style.opacity = 0;
-    side_nav.style.visibility = "hidden";
+    closeSideNav();
   }
 });
+
+document.addEventListener("click", function (e) {
+  if (visible && e.target !== side_nav && !side_nav.contains(e.target) && e.target !== mobileBtn) {
+    closeSideNav();
+  }
+});
+
 
 // uppdatera år i footer
 const yearEl = document.querySelector(".year");
