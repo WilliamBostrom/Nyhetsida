@@ -249,8 +249,6 @@ const dataCoord = {
   lng: null,
 };
 
-const radioAudio = document.querySelector(".audio");
-
 async function getData() {
   let lat = dataCoord.lat || 59.32;
   let lng = dataCoord.lng || 18.05;
@@ -267,13 +265,6 @@ async function getData() {
     weatherCond.innerText = translatedCondition;
     weatherTemp.innerText = response.data.current.temp_c;
     weatherImg.src = response.data.current.condition.icon;
-
-    const radioResponse = await axios.get(
-      `https://api.sr.se/api/v2/channels/?format=json`
-    );
-    if (radioResponse.status !== 200) throw new Error("Warning");
-
-    radioAudio.src = radioResponse.data.channels[3].liveaudio.url;
   } catch (err) {
     console.warn(err);
   }
@@ -287,7 +278,7 @@ function getUserLocation() {
   });
 }
 
-getData();
+getUserLocation();
 
 function translateWeatherCondition(condition) {
   const conditionMap = {
@@ -347,4 +338,72 @@ function translateWeatherCondition(condition) {
   };
 
   return conditionMap[condition] || condition;
+}
+
+let channels = [];
+let currentChannelIndex = 0;
+let audioPlayer = document.querySelector('audio'); 
+let mp3Player = document.querySelector('.mp3-player');
+// Här hämtar jag kanaldata från en SR radio med hjälp av Axios.
+axios.get('http://api.sr.se/api/v2/channels?format=json&size=100')
+  .then(response => {
+    channels = response.data.channels;
+    console.log(channels)
+    updatePlayer(currentChannelIndex);
+  })
+  .catch(error => {
+    console.error('Ett fel inträffade:', error);
+  });
+
+// Här lägger jag till eventlyssnare för att hantera kontrollknappar för kanalbyte och för att stoppa radion.
+document.querySelector('.prev-btn').addEventListener('click', prevChannel);
+document.querySelector('.next-btn').addEventListener('click', nextChannel);
+document.querySelector('.play-btn').addEventListener('click', togglePlay);
+
+// Här definierar jag en funktion för att uppdatera spelaren med aktuell kanal.
+function updatePlayer(channelIndex) {
+  const channel = channels[channelIndex];
+
+  // Uppdaterar bilden och bakgrundsfärgen som följer med i anropet för spelaren.
+  const player = document.querySelector('.mp3-player');
+  player.style.backgroundImage = `url(${channel.image})`;
+  player.style.backgroundColor = `#${channel.color}`;
+  player.style.backgroundSize = '90%';
+  
+  audioPlayer.src = channel.liveaudio.url;
+  audioPlayer.play();
+}
+
+// Här definierar jag funktionen för att byta kanal bakåt.
+function prevChannel() {
+  if (currentChannelIndex > 0) {
+    currentChannelIndex--;
+  } else {
+    currentChannelIndex = channels.length - 1;
+  }
+  updatePlayer(currentChannelIndex);
+}
+// Här definierar jag funktionen för att byta kanal framåt.
+function nextChannel() {
+  if (currentChannelIndex < channels.length - 1) {
+    currentChannelIndex++;
+  } else {
+    currentChannelIndex = 0; 
+  }
+  updatePlayer(currentChannelIndex);
+}
+
+// Här definierar jag en funktion för att byta mellan uppspelning och paus.
+function togglePlay() {
+  if (audioPlayer.paused) {
+    audioPlayer.play();
+    document.querySelector('.play-btn i').classList.remove('fa-play');
+    document.querySelector('.play-btn i').classList.add('fa-pause');
+    mp3Player.classList.add('rotate-background');
+  } else {
+    audioPlayer.pause();
+    document.querySelector('.play-btn i').classList.remove('fa-pause');
+    document.querySelector('.play-btn i').classList.add('fa-play');
+    mp3Player.classList.remove('rotate-background'); 
+  }
 }

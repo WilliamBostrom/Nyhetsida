@@ -3,6 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     <script
@@ -234,11 +235,15 @@
       </h1>
       <div class="welcome-bonus">
         <div class="welcome-radio">
-          <h2 class="heading-medium">Lyssna på P4 nyheter</h2>
-          <audio class="audio" controls>
-            <source src="" type="audio/mpeg" />
-            Din dator supportar inte ljudspelaren
-          </audio>
+           <div class="mp3-player">
+            <!-- Kontroller för spelaren -->
+            <audio controls></audio>
+          </div>
+          <div class="controls">
+            <button class="control-btn prev-btn"><i class="fas fa-backward"></i></button>
+            <button class="control-btn play-btn"><i class="fas fa-play"></i></button>
+            <button class="control-btn next-btn"><i class="fas fa-forward"></i></button>
+          </div>
         </div>
         <div class="welcome-weather">
           <h2 class="heading-medium header-weather">Dagens väder</h2>
