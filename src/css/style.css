@@ -354,14 +354,14 @@
   text-align: center;
 }
 
-.dropdown-content a:hover {background-color: var(--primary_darken)}
+.dropdown-content a:hover {background-color: var(--primary)}
 
 .dropdown:hover .dropdown-content {
   display: block;
 }
 
 .dropdown:hover .dropbtn {
-  background-color: #2f6231;
+  background-color: var(--primary);
 }
 
 .news-main-card-img {
