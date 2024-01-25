@@ -344,12 +344,13 @@ let channels = [];
 let currentChannelIndex = 0;
 let audioPlayer = document.querySelector('audio'); 
 let mp3Player = document.querySelector('.mp3-player');
+let isPlaying = false; 
+
 // Här hämtar jag kanaldata från en SR radio med hjälp av Axios.
 axios.get('http://api.sr.se/api/v2/channels?format=json&size=100')
   .then(response => {
     channels = response.data.channels;
-    console.log(channels)
-    updatePlayer(currentChannelIndex);
+    console.log(channels);
   })
   .catch(error => {
     console.error('Ett fel inträffade:', error);
@@ -371,7 +372,9 @@ function updatePlayer(channelIndex) {
   player.style.backgroundSize = '90%';
   
   audioPlayer.src = channel.liveaudio.url;
-  audioPlayer.play();
+  if (isPlaying) {
+    audioPlayer.play();
+  }
 }
 
 // Här definierar jag funktionen för att byta kanal bakåt.
@@ -395,12 +398,14 @@ function nextChannel() {
 
 // Här definierar jag en funktion för att byta mellan uppspelning och paus.
 function togglePlay() {
-  if (audioPlayer.paused) {
-    audioPlayer.play();
+  if (!isPlaying) {
+    isPlaying = true;
+    updatePlayer(currentChannelIndex);
     document.querySelector('.play-btn i').classList.remove('fa-play');
     document.querySelector('.play-btn i').classList.add('fa-pause');
     mp3Player.classList.add('rotate-background');
   } else {
+    isPlaying = false;
     audioPlayer.pause();
     document.querySelector('.play-btn i').classList.remove('fa-pause');
     document.querySelector('.play-btn i').classList.add('fa-play');
