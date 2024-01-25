@@ -62,12 +62,13 @@ async function fetchNews(API_URL) {
     const response = await axios.get(API_URL);
     const newsData = response.data;
     console.log(newsData);
-    const fetchData = newsData.results.map((news) => ({
+    fetchData = newsData.results.map((news) => ({
       title: news.title,
       img: news.image_url,
       source: news.source_id,
       link: news.link,
       description: news.description,
+      date: news.pubDate,
     }));
     return fetchData;
   } catch (error) {
@@ -86,6 +87,71 @@ async function updateContent(API_URL) {
 }
 
 // ... (Din övriga kod)
+
+const sortByNewestDateButton = document.getElementById("sortByNewestDate");
+const sortByOldestDateButton = document.getElementById("sortByOldestDate");
+const sortByFirstAlfabetButton = document.getElementById("sortByFirstAlfabet");
+const sortByLastAlfabetButton = document.getElementById("sortByLastAlfabet");
+
+sortByNewestDateButton.addEventListener("click", () => {
+  sortArticlesByNewestDate();
+});
+
+sortByOldestDateButton.addEventListener("click", () => {
+  sortArticlesByOldestDate();
+});
+
+sortByFirstAlfabetButton.addEventListener("click", () => {
+  sortArticlesByFirstAlfabet();
+});
+
+sortByLastAlfabetButton.addEventListener("click", () => {
+  sortArticlesByLastAlfabet();
+})
+
+// Funktionen sorterar arrayen från senaste till äldsta
+function sortArticlesByNewestDate() {
+  fetchData.sort((a, b) => {
+    const dateA = new Date(a.date);
+    const dateB = new Date(b.date);
+    return dateB - dateA;
+  });
+
+  displayFetchis(fetchData);
+}
+
+// Funktionen sorterar arrayen från äldsta till senaste 
+function sortArticlesByOldestDate() {
+  fetchData.sort((a, b) => {
+    const dateA = new Date(a.date);
+    const dateB = new Date(b.date);
+    return dateA - dateB;
+  });
+
+  displayFetchis(fetchData);
+}
+
+// Funktionen sorterar arrayen efter artikelns första alfabet
+function sortArticlesByFirstAlfabet() {
+  fetchData.sort((a, b) => {
+    const titleA = a.title.toLowerCase();
+    const titleB = b.title.toLowerCase();
+    return titleA.localeCompare(titleB);
+  });
+
+  displayFetchis(fetchData);
+}
+
+// Funktionen sorterar arrayen efter artikelns sista alfabet
+function sortArticlesByLastAlfabet() {
+  fetchData.sort((a, b) => {
+    const titleA = a.title.toLowerCase();
+    const titleB = b.title.toLowerCase();
+    return titleB.localeCompare(titleA);
+  });
+
+  displayFetchis(fetchData);
+}
 
 // Funktion för att ta bort dubletter
 function findDuplicates(fetchData) {
