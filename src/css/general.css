@@ -94,7 +94,7 @@ body.active .btn-text:link {
   padding: calc(8px * 1.5) 0 calc(8px * 0.5);
   padding-left: 2.4rem;
   padding-right: 2.4rem;
-  max-width: 370px;
+  max-width: 100%;
 }
 
 .heading-welcome {
