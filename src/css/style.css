@@ -403,7 +403,7 @@
   justify-content: space-between;
   padding: calc(8px * 1.5) 0;
   border-bottom: 1px solid rgba(128, 128, 128, 0.558);
-  min-height: 17rem;
+  min-height: 20rem;
 }
 
 .news-side-button {

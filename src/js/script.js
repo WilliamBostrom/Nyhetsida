@@ -217,6 +217,7 @@ function displayFetchis(fetchData) {
                 : ""
             }
             <div class="star-container">
+            
               <img class="star-icon" src="src/img/star.svg" alt="" onclick="favourite(${index})"/>
               
             </div>
