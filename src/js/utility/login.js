@@ -342,35 +342,35 @@ function translateWeatherCondition(condition) {
 
 let channels = [];
 let currentChannelIndex = 0;
-let audioPlayer = document.querySelector('audio'); 
-let mp3Player = document.querySelector('.mp3-player');
-let isPlaying = false; 
+let audioPlayer = document.querySelector("audio");
+let mp3Player = document.querySelector(".mp3-player");
+let isPlaying = false;
 
 // Här hämtar jag kanaldata från en SR radio med hjälp av Axios.
-axios.get('http://api.sr.se/api/v2/channels?format=json&size=100')
-  .then(response => {
+axios
+  .get("http://api.sr.se/api/v2/channels?format=json&size=100")
+  .then((response) => {
     channels = response.data.channels;
-    console.log(channels);
   })
-  .catch(error => {
-    console.error('Ett fel inträffade:', error);
+  .catch((error) => {
+    console.error("Ett fel inträffade:", error);
   });
 
 // Här lägger jag till eventlyssnare för att hantera kontrollknappar för kanalbyte och för att stoppa radion.
-document.querySelector('.prev-btn').addEventListener('click', prevChannel);
-document.querySelector('.next-btn').addEventListener('click', nextChannel);
-document.querySelector('.play-btn').addEventListener('click', togglePlay);
+document.querySelector(".prev-btn").addEventListener("click", prevChannel);
+document.querySelector(".next-btn").addEventListener("click", nextChannel);
+document.querySelector(".play-btn").addEventListener("click", togglePlay);
 
 // Här definierar jag en funktion för att uppdatera spelaren med aktuell kanal.
 function updatePlayer(channelIndex) {
   const channel = channels[channelIndex];
 
   // Uppdaterar bilden och bakgrundsfärgen som följer med i anropet för spelaren.
-  const player = document.querySelector('.mp3-player');
+  const player = document.querySelector(".mp3-player");
   player.style.backgroundImage = `url(${channel.image})`;
   player.style.backgroundColor = `#${channel.color}`;
-  player.style.backgroundSize = '90%';
-  
+  player.style.backgroundSize = "90%";
+
   audioPlayer.src = channel.liveaudio.url;
   if (isPlaying) {
     audioPlayer.play();
@@ -391,7 +391,7 @@ function nextChannel() {
   if (currentChannelIndex < channels.length - 1) {
     currentChannelIndex++;
   } else {
-    currentChannelIndex = 0; 
+    currentChannelIndex = 0;
   }
   updatePlayer(currentChannelIndex);
 }
@@ -401,14 +401,14 @@ function togglePlay() {
   if (!isPlaying) {
     isPlaying = true;
     updatePlayer(currentChannelIndex);
-    document.querySelector('.play-btn i').classList.remove('fa-play');
-    document.querySelector('.play-btn i').classList.add('fa-pause');
-    mp3Player.classList.add('rotate-background');
+    document.querySelector(".play-btn i").classList.remove("fa-play");
+    document.querySelector(".play-btn i").classList.add("fa-pause");
+    mp3Player.classList.add("rotate-background");
   } else {
     isPlaying = false;
     audioPlayer.pause();
-    document.querySelector('.play-btn i').classList.remove('fa-pause');
-    document.querySelector('.play-btn i').classList.add('fa-play');
-    mp3Player.classList.remove('rotate-background'); 
+    document.querySelector(".play-btn i").classList.remove("fa-pause");
+    document.querySelector(".play-btn i").classList.add("fa-play");
+    mp3Player.classList.remove("rotate-background");
   }
 }

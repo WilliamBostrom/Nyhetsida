@@ -179,6 +179,7 @@
             type="password"
             id="password"
             name="password"
+            autocomplete="new-password"
             placeholder="Skriv lösenord"
           />
           <small>Error meddelande</small>
@@ -190,6 +191,7 @@
             type="password"
             id="password2"
             name="password"
+            autocomplete="new-password"
             placeholder="Bekräfta lösenord"
           />
           <small>Error meddelande</small>
@@ -222,6 +224,7 @@
             type="password"
             id="password-signin"
             name="password"
+            autocomplete="current-password"
             placeholder="Skriv lösenord"
           />
           <small>Error meddelande</small>
@@ -276,18 +279,17 @@
     <section class="section-hero">
       <section class="news-container container stickys">
         <!-- Högra sidan nyheter = Bevakningar -->
-        <div class="news-main-side">
+   <!--      <div class="news-main-side">
           <div class="news-heading">
-            <h3 class="heading-medium">Bevakningar</h3>
+            <h3 class="heading-medium">Favoriter</h3>
           </div>
           <div class="new-side-random-shit">
             <span
               ><p class="text-normal">
-                <b>HTML, CSS ELLER JAVASCRIPT?</b>
+                <b>Önskar du möjligheten att spara dina favoritnyheter?</b>
               </p>
               <p class="text-normal">
-                Logga in för att lägga upp bevakningar på det som du är mest
-                intresserad av
+                Logga in för att spara de artiklar som intresserar dig mest och skapa din personliga samling.
               </p></span
             >
             <div class="news-side-button">
@@ -306,7 +308,7 @@
                   alt=""
                   width="80px"
                 />
-                <h2 class="heading-medium">Inrikes</h2>
+                <h2 class="heading-medium"><a class="inrikes">Inrikes</a></h2>
               </div>
             </div>
             <div class="new-side-card">
@@ -316,16 +318,27 @@
                   alt=""
                   width="80px"
                 />
-                <h2 class="heading-medium">Utrikes</h2>
+                <h2 class="heading-medium"><a class="utrikes">Utrikes</a></h2>
               </div>
             </div>
           </div>
+            <div class="new-side-card">
+              <div class="news-side-text-img">
+                <img
+                  src="./src/img/CN-logo-transparent.svg"
+                  alt=""
+                  width="80px"
+                />
+                <h2 class="heading-medium"><a class="sport">Sport</a></h2>
+              </div>
+            </div>
+          </div> -->
         </div>
         <!-- MAIN NYHETER -->
         <div class="news-main">
           <div class="news-heading">
             <h3 class="heading-small">
-              Valet i USA | <a href="">PRIMÄRVALET</a>
+           Toppnyheter | <a href="">Chas News</a>
             </h3>
             <div class="dropdown">
               <button class="dropbtn">
@@ -343,7 +356,61 @@
           <article class="news-secondary"></article>
         </div>
         <!-- Vänstra sidan nyheter -->
-        <div class="news-main-side"></div>
+        <div class="news-main-side">
+          <div class="news-heading">
+            <h3 class="heading-medium">Favoriter</h3>
+          </div>
+          <div class="new-side-random-shit">
+            <span
+              ><p class="text-normal">
+                <b>Önskar du möjligheten att spara dina favoritnyheter?</b>
+              </p>
+              <p class="text-normal">
+                Logga in för att spara de artiklar som intresserar dig mest och skapa din personliga samling.
+              </p></span
+            >
+            <div class="news-side-button">
+              <a class="news-side-cta login">Logga in</a>
+            </div>
+          </div>
+          <br />
+          <div class="news-heading margin-big">
+            <h3 class="heading-medium">Aktuella ämnen</h3>
+          </div>
+          <div class="news-side-just-now">
+            <div class="new-side-card">
+              <div class="news-side-text-img">
+                <img
+                  src="./src/img/CN-logo-transparent.svg"
+                  alt=""
+                  width="80px"
+                />
+                <h2 class="heading-medium"><a class="inrikes">Inrikes</a></h2>
+              </div>
+            </div>
+            <div class="new-side-card">
+              <div class="news-side-text-img">
+                <img
+                  src="./src/img/CN-logo-transparent.svg"
+                  alt=""
+                  width="80px"
+                />
+                <h2 class="heading-medium"><a class="utrikes">Utrikes</a></h2>
+              </div>
+            </div>
+          </div>
+            <div class="new-side-card">
+              <div class="news-side-text-img">
+                <img
+                  src="./src/img/CN-logo-transparent.svg"
+                  alt=""
+                  width="80px"
+                />
+                <h2 class="heading-medium"><a class="sport">Sport</a></h2>
+              </div>
+            </div>
+          </div>
+        </div>
       </section>
     </section>
     <!-- Footer -->

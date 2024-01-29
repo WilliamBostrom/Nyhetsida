@@ -45,8 +45,8 @@ body.active {
   color: #fff;
 }
 
-body.active .news-main, 
-body.active header, 
+body.active .news-main,
+body.active header,
 body.active a,
 body.active .footer-link,
 body.active .copyright,
@@ -193,7 +193,7 @@ body.active .btn-text:link {
   font-size: 1.5rem;
   margin-top: 10px;
   margin-left: 25px;
-  max-width: 9rem
+  max-width: 9rem;
 }
 
 .btn-text:hover {
@@ -206,4 +206,10 @@ body.active .btn-text:link {
 .btn-text:active {
   box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
   transform: translateY(0);
+}
+
+.inrikes,
+.utrikes,
+.sport {
+  cursor: pointer;
 }

@@ -15,7 +15,7 @@ const newMainCard = document.querySelector(".news-main-card");
 
 // WILLES NYCKEL
 /* const apiKey = "pub_36673e2a264d14a136dc8d64987d21585bdf5"; */
- const apiKey = "pub_3689763523f92753a85b5bf7a4f2ffadb650a";
+const apiKey = "pub_3689763523f92753a85b5bf7a4f2ffadb650a";
 
 // DENNIS NYCKEL
 // const apiKey = "pub_36893493e88538fc3b8e75bdf04433cf20888";
@@ -42,26 +42,32 @@ topNews.addEventListener("click", () => {
   updateContent(buildApiUrl(searchQuery1));
 });
 
-const domestic = document.querySelector(".inrikes");
-domestic.addEventListener("click", () => {
-  updateContent(buildApiUrl(searchInrikes));
+const domestic = document.querySelectorAll(".inrikes");
+
+domestic.forEach((btn) => {
+  btn.addEventListener("click", () => {
+    updateContent(buildApiUrl(searchInrikes));
+  });
 });
 
-const sport = document.querySelector(".sport");
-sport.addEventListener("click", () => {
-  updateContent(buildApiUrl(searchSport));
+const sport = document.querySelectorAll(".sport");
+sport.forEach(function (btn) {
+  btn.addEventListener("click", function () {
+    updateContent(buildApiUrl(searchSport));
+  });
 });
 
-const utrikes = document.querySelector(".utrikes");
-utrikes.addEventListener("click", () => {
-  updateContent(buildApiUrl(searchUtrikes));
+const utrikes = document.querySelectorAll(".utrikes");
+utrikes.forEach((btn) => {
+  btn.addEventListener("click", () => {
+    updateContent(buildApiUrl(searchUtrikes));
+  });
 });
 
 async function fetchNews(API_URL) {
   try {
     const response = await axios.get(API_URL);
     const newsData = response.data;
-    console.log(newsData);
     fetchData = newsData.results.map((news) => ({
       title: news.title,
       img: news.image_url,
@@ -107,7 +113,7 @@ sortByFirstAlfabetButton.addEventListener("click", () => {
 
 sortByLastAlfabetButton.addEventListener("click", () => {
   sortArticlesByLastAlfabet();
-})
+});
 
 // Funktionen sorterar arrayen från senaste till äldsta
 function sortArticlesByNewestDate() {
@@ -120,7 +126,7 @@ function sortArticlesByNewestDate() {
   displayFetchis(fetchData);
 }
 
-// Funktionen sorterar arrayen från äldsta till senaste 
+// Funktionen sorterar arrayen från äldsta till senaste
 function sortArticlesByOldestDate() {
   fetchData.sort((a, b) => {
     const dateA = new Date(a.date);
@@ -211,8 +217,8 @@ function displayFetchis(fetchData) {
                 : ""
             }
             <div class="star-container">
-              <img class="star-icon" src="src/img/star-!select.svg" alt="" />
-              <img class="selected-star-icon" src="src/img/star-select.svg" alt="" onclick="favourite(${index})" />
+              <img class="star-icon" src="src/img/star.svg" alt="" onclick="favourite(${index})"/>
+              
             </div>
             <div>
               <h3 class="heading-large" id="first-main-heading">${
@@ -245,8 +251,7 @@ function displayFetchis(fetchData) {
               }" target="_blank">Läs mer &rarr;</a>
             </div>
             <div class="star-container2">
-              <img class="star-icon" src="src/img/star-!select.svg" alt="" />
-              <img class="selected-star-icon" src="src/img/star-select.svg" alt="" onclick="favourite(${index})" />
+            <img class="star-icon" src="src/img/star.svg" alt="" onclick="favourite(${index})"/>
             </div>
             ${
               news.img !== null && news.img !== undefined
