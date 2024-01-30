@@ -65,11 +65,9 @@ const firebaseConfig = {
 
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
-console.log(app);
 // Database
 const db = getFirestore();
-console.log(db);
-// Get favourites
+
 const favouritesCollection = collection(db, "favourites");
 //Auth -login
 const auth = getAuth(app);
@@ -103,6 +101,9 @@ const setupFavoritesListener = (userId, onDataReceived) => {
 // ------------------------
 // Lyssnar efter om inloggad/utloggad
 // ------------------------
+const desktopWelcome = document.querySelector(".dekstop-welcome");
+const newsHeading = document.querySelector(".news-side-check");
+const desktopMember = document.querySelector(".new-side-random-shit");
 auth.onAuthStateChanged((user) => {
   if (user) {
     const userId = user.uid;
@@ -111,6 +112,9 @@ auth.onAuthStateChanged((user) => {
       const getFavourites = setupFavoritesListener(userId);
     }
     // Visar rätt knapp vid inlogg/utloggad
+    desktopMember.style.display = "none";
+    desktopWelcome.style.display = "block";
+    newsHeading.innerHTML = `<h3 class="heading-medium">Välkommen in</h3>`;
     memberBtns.forEach((btn) => (btn.style.display = "none"));
     loginBtns.forEach((btn) => (btn.style.display = "none"));
     logoutBtn.style.display = "block";
@@ -118,6 +122,10 @@ auth.onAuthStateChanged((user) => {
     if (favouritesButtonClicked) {
       setupFavourites([]);
     }
+
+    desktopWelcome.style.display = "none";
+    newsHeading.innerHTML = `<h3 class="heading-medium">Logga in</h3>`;
+    desktopMember.style.display = "block";
     memberBtns.forEach((btn) => (btn.style.display = "flex"));
     loginBtns.forEach((btn) => (btn.style.display = "flex"));
     logoutBtn.style.display = "none";
@@ -163,7 +171,6 @@ window.favourite = async function (event) {
 /* Databas */
 // ------------------------
 const colRef = collection(db, "favourites");
-console.log(colRef);
 
 const savedDocs = () => {
   getDocs(colRef)
@@ -172,7 +179,7 @@ const savedDocs = () => {
       snapshot.docs.forEach((doc) => {
         favs.push({ ...doc.data(), id: doc.id });
       });
-      console.log(favs);
+      // console.log(favs);
     })
     .catch((err) => {
       console.log(err.message);
@@ -191,7 +198,6 @@ signupForm.addEventListener("submit", async (e) => {
   // get user info
   const memberEmail = signupEmail.value;
   const memberPassword = signupPassword.value;
-  console.log(memberEmail, memberPassword);
   // sign up user
   try {
     const auth = getAuth(app);
@@ -206,7 +212,6 @@ signupForm.addEventListener("submit", async (e) => {
       favourites: [],
     });
 
-    console.log(cred.user);
     // Återställa input i "" ?
     closeMembers();
   } catch (error) {
@@ -263,7 +268,7 @@ const setupFavourites = (data) => {
   const user = auth.currentUser;
 
   if (!user) {
-    newsSecondary.innerHTML = `<h3 class="heading-news">Logga in för att lägga till favoriter</h3>`;
+    newsSecondary.innerHTML = `<h3 class="heading-news">Logga in för att spara favoriter</h3>`;
   } else if (data.length > 0) {
     data.forEach((doc, index) => {
       const favourites = doc.data();
@@ -321,7 +326,6 @@ favouritesBtn.addEventListener("click", () => {
     );
 
     const getFavourites = setupFavoritesListener(userId, (data) => {
-      console.log(data);
       setupFavourites(data);
     });
   } else {

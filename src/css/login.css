@@ -151,6 +151,7 @@ body.modal-open {
 }
 
 /* Inloggads väder */
+.welcome-weather-2,
 .welcome-weather {
   display: flex;
   flex-direction: column;
@@ -159,6 +160,11 @@ body.modal-open {
   padding: 1rem;
   box-shadow: var(--shadow-ambient--primary);
 }
+
+.welcome-weather-2 {
+  width: 100%;
+}
+
 .weather-container {
   display: flex;
   align-items: center;
@@ -180,6 +186,7 @@ body.modal-open {
   margin: 0 auto;
 }
 
+.welcome-radio-2,
 .welcome-radio {
   display: flex;
   flex-direction: column;
@@ -188,6 +195,9 @@ body.modal-open {
   padding: 1rem;
   box-shadow: var(--shadow-ambient--primary);
   position: relative;
+}
+.welcome-radio-2 {
+  margin-top: 1rem;
 }
 
 .mp3-player {

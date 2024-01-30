@@ -308,6 +308,11 @@
   box-shadow: var(--shadow-ambient--primary);
 }
 
+.desktop-welcome,
+.new-side-random-shit {
+  display: none;
+}
+
 /* ****************** */
 /* MAIN NEWS*/
 /* ****************** */
