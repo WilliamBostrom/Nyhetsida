@@ -84,13 +84,10 @@
             </div>
           </div>
           <div class="main-nav-buttons-box">
-            <div>
-              <a class="main-nav-link-cta nav-cta-2 show-members" href="#cta"
-                >Bli medlem</a
-              >
-            </div>
+            
             <div class="login-container">
               <a class="main-nav-btn nav-cta login" href="#cta">Logga in</a>
+              <a class="main-nav-btn nav-cta logout" href="#cta">Logga ut</a>
             </div>
             <div id="toggle">
               <i class="indicator"></i>
@@ -148,7 +145,7 @@
     <section class="signup-container signup-box hidden">
       <form class="form--signup" action="" id="signup-form">
         <h2>Skapa ett konto</h2>
-
+    
         <div class="form-control">
           <label for="username">Användarnamn</label>
           <input
@@ -160,7 +157,7 @@
           />
           <small>Error meddelande</small>
         </div>
-
+    
         <div class="form-control">
           <label for="email">Email</label>
           <input
@@ -172,7 +169,7 @@
           />
           <small>Error meddelande</small>
         </div>
-
+    
         <div class="form-control">
           <label for="password">Lösenord</label>
           <input
@@ -184,7 +181,7 @@
           />
           <small>Error meddelande</small>
         </div>
-
+        <!-- 
         <div class="form-control">
           <label for="password">Bekräfta lösenord</label>
           <input
@@ -195,8 +192,8 @@
             placeholder="Bekräfta lösenord"
           />
           <small>Error meddelande</small>
-        </div>
-
+        </div> -->
+    
         <button class="btn-signup">Bli medlem</button>
       </form>
     </section>
@@ -205,31 +202,31 @@
     <section class="signin-container hidden-signin">
       <form class="form--signup" action="" id="signin-form">
         <h2>Logga in</h2>
-
+    
         <div class="form-control">
-          <label for="username">Användarnamn</label>
+          <label for="email">Email</label>
           <input
-            autocomplete="username"
-            type="text"
-            id="username-signin"
-            name="username"
-            placeholder="Skriv användarnamn"
+            autocomplete="email"
+            type="email"
+            id="login-email"
+            name="email"
+            placeholder="Skriv email"
           />
           <small>Error meddelande</small>
         </div>
-
+    
         <div class="form-control">
           <label for="password">Lösenord</label>
           <input
             type="password"
-            id="password-signin"
+            id="login-password"
             name="password"
             autocomplete="current-password"
             placeholder="Skriv lösenord"
           />
           <small>Error meddelande</small>
         </div>
-
+    
         <button class="btn-signin">Logga in</button>
       </form>
     </section>

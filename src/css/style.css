@@ -163,6 +163,11 @@
   justify-content: center;
 }
 
+.login,
+.logout {
+  display: none;
+}
+
 #toggle {
   position: relative;
   display: block;
@@ -458,19 +463,22 @@
 .star-container {
   display: flex;
   justify-content: flex-end;
+  margin-right: 1rem;
+  margin-top: 1rem;
 }
 .star-container2 {
   position: absolute;
-  top: 0rem;
-  right: 0rem;
+  top: 0.5rem;
+  right: 0.5rem;
 }
 
-.star-icon {
-  cursor: pointer;
+.star-icon,
+.selected-star-icon {
   display: block;
-  width: 3.5rem;
+  width: 2.5rem;
+  cursor: pointer;
 }
-/* .selected-star-icon {
+.selected-star-icon {
   display: none;
 }
 .star-container2:hover .selected-star-icon,
@@ -481,7 +489,7 @@
 .star-container:hover .star-icon {
   display: none;
 }
- */
+
 /* ****************** */
 /* SECTION FOOTER*/
 /* ****************** */

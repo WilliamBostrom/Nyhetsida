@@ -1,6 +1,6 @@
 import axios from "axios";
 
-import { isLoggedIn, usersData } from "./utility/login";
+import { isLoggedIn, usersData } from "./william.js";
 
 let fetchData = [];
 let checkingIndex = 0;
@@ -19,27 +19,57 @@ const apiKey = "pub_3689763523f92753a85b5bf7a4f2ffadb650a";
 
 // DENNIS NYCKEL
 // const apiKey = "pub_36893493e88538fc3b8e75bdf04433cf20888";
-
+const newsHeading = document.querySelector(".news-heading");
 const searchQuery = "sverige";
-const searchQuery1 = "dn";
+export const searchQuery1 = "dn";
 const searchInrikes = "inrikes";
 const searchSport = "sport";
 const searchUtrikes = "utrikes";
 // const apiKey = "pub_36673e2a264d14a136dc8d64987d21585bdf5";
 const API_URL_TOP = `https://newsdata.io/api/1/news?apikey=${apiKey}&q=${searchQuery1}&country=se&language=sv`;
 
-function buildApiUrl(category) {
+export function buildApiUrl(category) {
   return `https://newsdata.io/api/1/news?apikey=${apiKey}&q=${category}&country=se&language=sv`;
 }
 
 const latestNews = document.getElementById("latestnews");
 latestNews.addEventListener("click", () => {
   updateContent(buildApiUrl(searchQuery));
+  newsHeading.innerHTML = `  <h3 class="heading-small">
+  Senaste nytt | <a href="">Chas News</a>
+   </h3>
+   <div class="dropdown">
+     <button class="dropbtn">
+       <div>Sortera</div>
+       <div class="drop-img"></div>
+     </button>
+     <div class="dropdown-content">
+       <a href="#" id="sortByNewestDate">Senaste</a>
+       <a href="#" id="sortByOldestDate">Äldsta</a>
+       <a href="#" id="sortByFirstAlfabet">Namn A-Ö</a>
+       <a href="#" id="sortByLastAlfabet">Namn Ö-A</a>
+     </div>
+   </div>`;
 });
 
 const topNews = document.getElementById("topnews");
 topNews.addEventListener("click", () => {
   updateContent(buildApiUrl(searchQuery1));
+  newsHeading.innerHTML = `  <h3 class="heading-small">
+  Toppnyheter | <a href="">Chas News</a>
+   </h3>
+   <div class="dropdown">
+     <button class="dropbtn">
+       <div>Sortera</div>
+       <div class="drop-img"></div>
+     </button>
+     <div class="dropdown-content">
+       <a href="#" id="sortByNewestDate">Senaste</a>
+       <a href="#" id="sortByOldestDate">Äldsta</a>
+       <a href="#" id="sortByFirstAlfabet">Namn A-Ö</a>
+       <a href="#" id="sortByLastAlfabet">Namn Ö-A</a>
+     </div>
+   </div>`;
 });
 
 const domestic = document.querySelectorAll(".inrikes");
@@ -47,6 +77,21 @@ const domestic = document.querySelectorAll(".inrikes");
 domestic.forEach((btn) => {
   btn.addEventListener("click", () => {
     updateContent(buildApiUrl(searchInrikes));
+    newsHeading.innerHTML = `  <h3 class="heading-small">
+  Inrikes | <a href="">Chas News</a>
+   </h3>
+   <div class="dropdown">
+     <button class="dropbtn">
+       <div>Sortera</div>
+       <div class="drop-img"></div>
+     </button>
+     <div class="dropdown-content">
+       <a href="#" id="sortByNewestDate">Senaste</a>
+       <a href="#" id="sortByOldestDate">Äldsta</a>
+       <a href="#" id="sortByFirstAlfabet">Namn A-Ö</a>
+       <a href="#" id="sortByLastAlfabet">Namn Ö-A</a>
+     </div>
+   </div>`;
   });
 });
 
@@ -54,6 +99,21 @@ const sport = document.querySelectorAll(".sport");
 sport.forEach(function (btn) {
   btn.addEventListener("click", function () {
     updateContent(buildApiUrl(searchSport));
+    newsHeading.innerHTML = `  <h3 class="heading-small">
+  Sport | <a href="">Chas News</a>
+   </h3>
+   <div class="dropdown">
+     <button class="dropbtn">
+       <div>Sortera</div>
+       <div class="drop-img"></div>
+     </button>
+     <div class="dropdown-content">
+       <a href="#" id="sortByNewestDate">Senaste</a>
+       <a href="#" id="sortByOldestDate">Äldsta</a>
+       <a href="#" id="sortByFirstAlfabet">Namn A-Ö</a>
+       <a href="#" id="sortByLastAlfabet">Namn Ö-A</a>
+     </div>
+   </div>`;
   });
 });
 
@@ -61,6 +121,21 @@ const utrikes = document.querySelectorAll(".utrikes");
 utrikes.forEach((btn) => {
   btn.addEventListener("click", () => {
     updateContent(buildApiUrl(searchUtrikes));
+    newsHeading.innerHTML = `  <h3 class="heading-small">
+  Utrikes | <a href="">Chas News</a>
+   </h3>
+   <div class="dropdown">
+     <button class="dropbtn">
+       <div>Sortera</div>
+       <div class="drop-img"></div>
+     </button>
+     <div class="dropdown-content">
+       <a href="#" id="sortByNewestDate">Senaste</a>
+       <a href="#" id="sortByOldestDate">Äldsta</a>
+       <a href="#" id="sortByFirstAlfabet">Namn A-Ö</a>
+       <a href="#" id="sortByLastAlfabet">Namn Ö-A</a>
+     </div>
+   </div>`;
   });
 });
 
@@ -83,7 +158,7 @@ async function fetchNews(API_URL) {
   }
 }
 
-async function updateContent(API_URL) {
+export async function updateContent(API_URL) {
   try {
     const fetchData = await fetchNews(API_URL);
     findDuplicates(fetchData);
@@ -201,7 +276,7 @@ function findDuplicates(fetchData) {
 
 // fetchNews(API_URL_TOP);
 updateContent(buildApiUrl(searchQuery1));
-function displayFetchis(fetchData) {
+export function displayFetchis(fetchData) {
   const newsSecondary = document.querySelector(".news-secondary");
 
   newsSecondary.innerHTML = "";
@@ -217,10 +292,9 @@ function displayFetchis(fetchData) {
                 : ""
             }
             <div class="star-container">
-            
-              <img class="star-icon" src="src/img/star.svg" alt="" onclick="favourite(${index})"/>
-              
-            </div>
+            <img class="star-icon" src="src/img/star-!select.svg" alt="" />
+            <img class="selected-star-icon" src="src/img/star-select.svg" alt="" onclick="window.favourite(event)" />
+          </div>
             <div>
               <h3 class="heading-large" id="first-main-heading">${
                 news.title
@@ -252,7 +326,8 @@ function displayFetchis(fetchData) {
               }" target="_blank">Läs mer &rarr;</a>
             </div>
             <div class="star-container2">
-            <img class="star-icon" src="src/img/star.svg" alt="" onclick="favourite(${index})"/>
+              <img class="star-icon" src="src/img/star-!select.svg" alt="" />
+              <img class="selected-star-icon" src="src/img/star-select.svg" alt="" onclick="window.favourite(event)" />
             </div>
             ${
               news.img !== null && news.img !== undefined
@@ -295,16 +370,16 @@ searchBoxes.forEach((searchBox) => {
 });
 
 /* INLOGGAD */
-
+/* 
 const favouritesBtn = document.getElementById("favourites");
 const sectionNews = document.querySelector(".header");
 const sectionHero = document.querySelector(".section-hero");
 
 let isFavouritesClicked = false;
 let newContent = document.createElement("div");
-
+ */
 // Funktion för att hantera innehållet
-async function handleContentClick(title, message) {
+/* async function handleContentClick(title, message) {
   if (!isLoggedIn) {
     sectionHero.style.display = "none";
     newContent.className = "container-nocontent";
@@ -333,20 +408,20 @@ async function handleContentClick(title, message) {
     newContent.innerHTML = content;
     sectionNews.parentNode.insertBefore(newContent, sectionNews.nextSibling);
   }
-}
+} */
 
 // Favoritknappen
-favouritesBtn.addEventListener("click", () => {
+/* favouritesBtn.addEventListener("click", () => {
   if (!isFavouritesClicked) {
     isFavouritesClicked = true;
     handleContentClick("Favoriter", "favoriter");
   } else {
     return;
   }
-});
+}); */
 
 /* FÖR FAVORITER */
-
+/* 
 let favArray = [];
 window.favourite = async function (index) {
   if (!isLoggedIn) {
@@ -374,3 +449,4 @@ window.favourite = async function (index) {
     }
   }
 };
+ */

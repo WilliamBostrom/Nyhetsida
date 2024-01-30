@@ -177,7 +177,7 @@ signInOverlay.addEventListener("click", function () {
 // Om man trycker Escape stängs login
 document.addEventListener("keydown", function (e) {
   if (e.key === "Escape" && !signInContainer.classList.contains("hidden")) {
-    closeMembers();
+    closeLogin();
   }
 });
 

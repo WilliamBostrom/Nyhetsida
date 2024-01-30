@@ -193,15 +193,15 @@ body.modal-open {
 .mp3-player {
   border-radius: 50%;
   width: 200px;
-  height: 200px; 
-  padding: 20px; 
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.25); 
-  color: white; 
+  height: 200px;
+  padding: 20px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.25);
+  color: white;
   text-align: center;
   position: relative;
-  display: flex; 
-  justify-content: center; 
-  align-items: center; 
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .control-btn {
@@ -209,14 +209,25 @@ body.modal-open {
   border: none;
   color: white;
   cursor: pointer;
-  font-size: 24px; 
-  position: absolute; 
+  font-size: 24px;
+  position: absolute;
 }
 
-.prev-btn { top: 50%; left: 20px; transform: translateY(-50%); }
-.play-btn { top: 50%; left: 95px; transform: translateY(-50%); }
-.next-btn { top: 50%; right: 20px; transform: translateY(-50%); }
-
+.prev-btn {
+  top: 50%;
+  left: 20px;
+  transform: translateY(-50%);
+}
+.play-btn {
+  top: 50%;
+  left: 95px;
+  transform: translateY(-50%);
+}
+.next-btn {
+  top: 50%;
+  right: 20px;
+  transform: translateY(-50%);
+}
 
 audio {
   display: none;
