@@ -107,15 +107,17 @@ auth.onAuthStateChanged((user) => {
   if (user) {
     const userId = user.uid;
 
-    const getFavourites = setupFavoritesListener(userId);
-
+    if (favouritesButtonClicked) {
+      const getFavourites = setupFavoritesListener(userId);
+    }
     // Visar rätt knapp vid inlogg/utloggad
     memberBtns.forEach((btn) => (btn.style.display = "none"));
     loginBtns.forEach((btn) => (btn.style.display = "none"));
     logoutBtn.style.display = "block";
   } else {
-    console.log("Utloggad");
-    setupFavourites([]);
+    if (favouritesButtonClicked) {
+      setupFavourites([]);
+    }
     memberBtns.forEach((btn) => (btn.style.display = "flex"));
     loginBtns.forEach((btn) => (btn.style.display = "flex"));
     logoutBtn.style.display = "none";
@@ -298,13 +300,6 @@ const setupFavourites = (data) => {
 };
 
 // ------------------------
-// Visar orginalfetchen när sidan laddas
-// ------------------------
-updateContent(buildApiUrl(searchQuery1), () => {
-  setupFavourites([]); // Skicka en tom array för att inte visa favoriter direkt till vanliga fetchen i script
-});
-
-// ------------------------
 // Favorit knappen
 // ------------------------
 const favouritesBtn = document.getElementById("favourites");
@@ -369,3 +364,10 @@ window.deleteButtonPressed = async (event) => {
     console.error("Error in deleting:", error);
   }
 };
+
+// ------------------------
+// Visar orginalfetchen när sidan laddas
+// ------------------------
+updateContent(buildApiUrl(searchQuery1), () => {
+  setupFavourites([]); // Skicka en tom array för att inte visa favoriter direkt till vanliga fetchen i script
+});
