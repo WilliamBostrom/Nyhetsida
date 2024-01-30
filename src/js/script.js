@@ -15,10 +15,10 @@ const newMainCard = document.querySelector(".news-main-card");
 
 // WILLES NYCKEL
 /* const apiKey = "pub_36673e2a264d14a136dc8d64987d21585bdf5"; */
-const apiKey = "pub_3689763523f92753a85b5bf7a4f2ffadb650a";
+// const apiKey = "pub_3689763523f92753a85b5bf7a4f2ffadb650a";
 
 // DENNIS NYCKEL
-// const apiKey = "pub_36893493e88538fc3b8e75bdf04433cf20888";
+const apiKey = "pub_36893493e88538fc3b8e75bdf04433cf20888";
 const newsHeading = document.querySelector(".news-heading");
 const searchQuery = "sverige";
 export const searchQuery1 = "dn";

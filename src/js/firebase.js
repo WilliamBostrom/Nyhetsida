@@ -22,6 +22,7 @@ import {
   onSnapshot,
   setDoc,
   doc,
+  deleteDoc,
 } from "firebase/firestore";
 import {
   getAuth,
@@ -273,7 +274,7 @@ const setupFavourites = (data) => {
     data.forEach((doc, index) => {
       const favourites = doc.data();
       newsSecondary.innerHTML += `
-        <div class="news-secondary-box">
+        <div class="news-secondary-box" data-index="${index}">
           <div class="news-secondary-textbox">
             <h3 class="heading-news">${favourites.title}</h3>
             ${
@@ -287,8 +288,8 @@ const setupFavourites = (data) => {
             }" target="_blank">Läs mer &rarr;</a>
           </div>
           <div class="star-container2">
-            <img class="star-icon" src="src/img/star-!select.svg" alt="" />
-            <img class="selected-star-icon" src="src/img/star-select.svg" alt="" onclick="favourite(${index})" />
+          <img class="star-icon" src="src/img/star-select.svg" alt=""  />
+          <img class="selected-star-icon delete" src="src/img/star-!select.svg" alt="" onclick="deleteButtonPressed(event)"/>
           </div>
           ${
             favourites.img !== null && favourites.img !== undefined
@@ -318,7 +319,6 @@ const favouritesBtn = document.getElementById("favourites");
 favouritesBtn.addEventListener("click", () => {
   favouritesButtonClicked = true;
 
-  // Highlight the "Favoriter" button
   document.querySelector(".activate").classList.remove("activate");
   favouritesBtn.classList.add("activate");
 
@@ -333,7 +333,6 @@ favouritesBtn.addEventListener("click", () => {
       "favourites"
     );
 
-    // Move the onSnapshot listener setup here
     const getFavourites = setupFavoritesListener(userId, (data) => {
       console.log(data);
       setupFavourites(data);
@@ -342,3 +341,39 @@ favouritesBtn.addEventListener("click", () => {
     setupFavourites([]);
   }
 });
+
+window.deleteButtonPressed = async (event) => {
+  try {
+    const selectedStarIcon = event.target;
+    const selectedNewsBox = selectedStarIcon.closest(".news-secondary-box");
+    const index = selectedNewsBox ? selectedNewsBox.dataset.index : null;
+
+    const user = auth.currentUser;
+    const userId = user ? user.uid : null;
+
+    const userFavouritesCollection = collection(
+      db,
+      "users",
+      userId,
+      "favourites"
+    );
+
+    const querySnapshot = await getDocs(userFavouritesCollection);
+    const favourites = querySnapshot.docs.map((doc) => ({
+      id: doc.id,
+      ...doc.data(),
+    }));
+
+    if (index >= 0 && index < favourites.length) {
+      const docIdToDelete = favourites[index].id;
+      const docRef = doc(userFavouritesCollection, docIdToDelete);
+
+      await deleteDoc(docRef);
+      console.log("Favorite borttagen");
+    } else {
+      console.error("no index");
+    }
+  } catch (error) {
+    console.error("Error in deleting:", error);
+  }
+};
