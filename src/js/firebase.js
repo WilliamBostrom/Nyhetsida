@@ -263,7 +263,7 @@ const setupFavourites = (data) => {
   const user = auth.currentUser;
 
   if (!user) {
-    newsSecondary.innerHTML = `<h3 class="heading-news">Logga in för att använda favoriter</h3>`;
+    newsSecondary.innerHTML = `<h3 class="heading-news">Logga in för att lägga till favoriter</h3>`;
   } else if (data.length > 0) {
     data.forEach((doc, index) => {
       const favourites = doc.data();
