@@ -56,7 +56,8 @@ body.active .side-nav,
 body.active .icon-inner svg,
 body.active .icon-mobil-nav,
 body.active .main-nav-link-cta.nav-cta-2:visited,
-body.active .side-nav-link.nav-cta-2:visited {
+body.active .side-nav-link.nav-cta-2:visited,
+body.active .dropbtn {
   background-color: #333;
   color: #fff;
 }
