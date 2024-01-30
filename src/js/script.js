@@ -1,5 +1,8 @@
 import axios from "axios";
 
+import selectedSvg from "/star-select.svg";
+import starSvg from "/star-!select.svg";
+
 import { isLoggedIn, usersData } from "./william.js";
 
 let fetchData = [];
@@ -232,8 +235,8 @@ export function displayFetchis(fetchData) {
                 : ""
             }
             <div class="star-container">
-            <img class="star-icon" src="src/img/star-!select.svg" alt="" />
-            <img class="selected-star-icon" src="src/img/star-select.svg" alt="" onclick="window.favourite(event)" />
+            <img class="star-icon" src="${starSvg}" alt="" />
+            <img class="selected-star-icon" src="${selectedSvg}" alt="" onclick="window.favourite(event)" />
           </div>
             <div>
               <h3 class="heading-large" id="first-main-heading">${
@@ -266,8 +269,8 @@ export function displayFetchis(fetchData) {
               }" target="_blank">Läs mer &rarr;</a>
             </div>
             <div class="star-container2">
-              <img class="star-icon" src="src/img/star-!select.svg" alt="" />
-              <img class="selected-star-icon" src="src/img/star-select.svg" alt="" onclick="window.favourite(event)" />
+              <img class="star-icon" src="${starSvg}" alt="" />
+              <img class="selected-star-icon" src="${selectedSvg}" alt="" onclick="window.favourite(event)" />
             </div>
             ${
               news.img !== null && news.img !== undefined

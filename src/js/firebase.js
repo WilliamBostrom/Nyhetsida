@@ -1,3 +1,6 @@
+import selectedSvg from "/star-select.svg";
+import starSvg from "/star-!select.svg";
+
 import {
   checkMail,
   checkRequired,
@@ -277,8 +280,8 @@ const setupFavourites = (data) => {
             }" target="_blank">Läs mer &rarr;</a>
           </div>
           <div class="star-container2">
-          <img class="star-icon" src="src/img/star-select.svg" alt=""  />
-          <img class="selected-star-icon delete" src="src/img/star-!select.svg" alt="" onclick="deleteButtonPressed(event)"/>
+          <img class="star-icon" src="${starSvg}" alt=""  />
+          <img class="selected-star-icon delete" src="${selectedSvg}" alt="" onclick="deleteButtonPressed(event)"/>
           </div>
           ${
             favourites.img !== null && favourites.img !== undefined
