@@ -19,7 +19,7 @@ const newMainCard = document.querySelector(".news-main-card");
 
 // DENNIS NYCKEL
 const apiKey = "pub_36893493e88538fc3b8e75bdf04433cf20888";
-const newsHeading = document.querySelector(".news-heading");
+const newsHeading = document.querySelector(".heading-small");
 const searchQuery = "sverige";
 export const searchQuery1 = "dn";
 const searchInrikes = "inrikes";
@@ -35,41 +35,17 @@ export function buildApiUrl(category) {
 const latestNews = document.getElementById("latestnews");
 latestNews.addEventListener("click", () => {
   updateContent(buildApiUrl(searchQuery));
-  newsHeading.innerHTML = `  <h3 class="heading-small">
+  newsHeading.innerHTML = `
   Senaste nytt | <a href="">Chas News</a>
-   </h3>
-   <div class="dropdown">
-     <button class="dropbtn">
-       <div>Sortera</div>
-       <div class="drop-img"></div>
-     </button>
-     <div class="dropdown-content">
-       <a href="#" id="sortByNewestDate">Senaste</a>
-       <a href="#" id="sortByOldestDate">Äldsta</a>
-       <a href="#" id="sortByFirstAlfabet">Namn A-Ö</a>
-       <a href="#" id="sortByLastAlfabet">Namn Ö-A</a>
-     </div>
-   </div>`;
+   `;
 });
 
 const topNews = document.getElementById("topnews");
 topNews.addEventListener("click", () => {
   updateContent(buildApiUrl(searchQuery1));
-  newsHeading.innerHTML = `  <h3 class="heading-small">
+  newsHeading.innerHTML = `
   Toppnyheter | <a href="">Chas News</a>
-   </h3>
-   <div class="dropdown">
-     <button class="dropbtn">
-       <div>Sortera</div>
-       <div class="drop-img"></div>
-     </button>
-     <div class="dropdown-content">
-       <a href="#" id="sortByNewestDate">Senaste</a>
-       <a href="#" id="sortByOldestDate">Äldsta</a>
-       <a href="#" id="sortByFirstAlfabet">Namn A-Ö</a>
-       <a href="#" id="sortByLastAlfabet">Namn Ö-A</a>
-     </div>
-   </div>`;
+   `;
 });
 
 const domestic = document.querySelectorAll(".inrikes");
@@ -77,21 +53,9 @@ const domestic = document.querySelectorAll(".inrikes");
 domestic.forEach((btn) => {
   btn.addEventListener("click", () => {
     updateContent(buildApiUrl(searchInrikes));
-    newsHeading.innerHTML = `  <h3 class="heading-small">
+    newsHeading.innerHTML = `  
   Inrikes | <a href="">Chas News</a>
-   </h3>
-   <div class="dropdown">
-     <button class="dropbtn">
-       <div>Sortera</div>
-       <div class="drop-img"></div>
-     </button>
-     <div class="dropdown-content">
-       <a href="#" id="sortByNewestDate">Senaste</a>
-       <a href="#" id="sortByOldestDate">Äldsta</a>
-       <a href="#" id="sortByFirstAlfabet">Namn A-Ö</a>
-       <a href="#" id="sortByLastAlfabet">Namn Ö-A</a>
-     </div>
-   </div>`;
+  `;
   });
 });
 
@@ -99,21 +63,9 @@ const sport = document.querySelectorAll(".sport");
 sport.forEach(function (btn) {
   btn.addEventListener("click", function () {
     updateContent(buildApiUrl(searchSport));
-    newsHeading.innerHTML = `  <h3 class="heading-small">
+    newsHeading.innerHTML = `
   Sport | <a href="">Chas News</a>
-   </h3>
-   <div class="dropdown">
-     <button class="dropbtn">
-       <div>Sortera</div>
-       <div class="drop-img"></div>
-     </button>
-     <div class="dropdown-content">
-       <a href="#" id="sortByNewestDate">Senaste</a>
-       <a href="#" id="sortByOldestDate">Äldsta</a>
-       <a href="#" id="sortByFirstAlfabet">Namn A-Ö</a>
-       <a href="#" id="sortByLastAlfabet">Namn Ö-A</a>
-     </div>
-   </div>`;
+   `;
   });
 });
 
@@ -121,21 +73,9 @@ const utrikes = document.querySelectorAll(".utrikes");
 utrikes.forEach((btn) => {
   btn.addEventListener("click", () => {
     updateContent(buildApiUrl(searchUtrikes));
-    newsHeading.innerHTML = `  <h3 class="heading-small">
+    newsHeading.innerHTML = `
   Utrikes | <a href="">Chas News</a>
-   </h3>
-   <div class="dropdown">
-     <button class="dropbtn">
-       <div>Sortera</div>
-       <div class="drop-img"></div>
-     </button>
-     <div class="dropdown-content">
-       <a href="#" id="sortByNewestDate">Senaste</a>
-       <a href="#" id="sortByOldestDate">Äldsta</a>
-       <a href="#" id="sortByFirstAlfabet">Namn A-Ö</a>
-       <a href="#" id="sortByLastAlfabet">Namn Ö-A</a>
-     </div>
-   </div>`;
+   `;
   });
 });
 

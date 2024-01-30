@@ -246,22 +246,11 @@ formSignin.addEventListener("submit", async (e) => {
 const setupFavourites = (data) => {
   document.querySelector(".activate").classList.remove("activate");
   favouritesBtn.classList.add("activate");
-  const newsHeading = document.querySelector(".news-heading");
+  const newsHeading = document.querySelector(".heading-small");
   newsHeading.innerHTML = `  <h3 class="heading-small">
   Favoriter | <a href="">Chas News</a>
    </h3>
-   <div class="dropdown">
-     <button class="dropbtn">
-       <div>Sortera</div>
-       <div class="drop-img"></div>
-     </button>
-     <div class="dropdown-content">
-       <a href="#" id="sortByNewestDate">Senaste</a>
-       <a href="#" id="sortByOldestDate">Äldsta</a>
-       <a href="#" id="sortByFirstAlfabet">Namn A-Ö</a>
-       <a href="#" id="sortByLastAlfabet">Namn Ö-A</a>
-     </div>
-   </div>`;
+   `;
   const newsSecondary = document.querySelector(".news-secondary");
 
   newsSecondary.innerHTML = "";
