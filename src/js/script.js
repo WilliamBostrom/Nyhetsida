@@ -57,6 +57,7 @@ domestic.forEach((btn) => {
     newsHeading.innerHTML = `  
   Inrikes | <a href="">Chas News</a>
   `;
+    document.querySelector(".activate").classList.remove("activate");
   });
 });
 
@@ -67,6 +68,7 @@ sport.forEach(function (btn) {
     newsHeading.innerHTML = `
   Sport | <a href="">Chas News</a>
    `;
+    document.querySelector(".activate").classList.remove("activate");
   });
 });
 
@@ -77,6 +79,7 @@ utrikes.forEach((btn) => {
     newsHeading.innerHTML = `
   Utrikes | <a href="">Chas News</a>
    `;
+    document.querySelector(".activate").classList.remove("activate");
   });
 });
 
@@ -467,7 +470,6 @@ function togglePlay() {
 const btnLogOut = document.querySelector(".logout");
 btnLogOut.addEventListener("click", () => {
   stopRadio();
-  isLoggedIn = false;
 });
 
 function stopRadio() {
@@ -482,18 +484,18 @@ let qoute = document.getElementById("qoute");
 let author = document.getElementById("author");
 let btn = document.getElementById("btn");
 
-const url = "https://api.quotable.io/random"
+const url = "https://api.quotable.io/random";
 
 let getQoute = () => {
-  fetch(url)
-  .then((data) => data.json()
-  .then((item) => {
-    console.log(item.content);
-    console.log(item.author);
-    qoute.innerText = item.content;
-    author.innerText = item.author;
-  }))
-}
+  fetch(url).then((data) =>
+    data.json().then((item) => {
+      console.log(item.content);
+      console.log(item.author);
+      qoute.innerText = item.content;
+      author.innerText = item.author;
+    })
+  );
+};
 
 window.addEventListener("load", getQoute);
 btn.addEventListener("click", getQoute);
