@@ -186,7 +186,6 @@ body.modal-open {
   margin: 0 auto;
 }
 
-.welcome-radio-2,
 .welcome-radio {
   display: flex;
   flex-direction: column;
@@ -196,8 +195,10 @@ body.modal-open {
   box-shadow: var(--shadow-ambient--primary);
   position: relative;
 }
-.welcome-radio-2 {
-  margin-top: 1rem;
+
+.radio {
+  font-size: 2rem;
+  margin-bottom: 10px;
 }
 
 .mp3-player {
@@ -224,18 +225,18 @@ body.modal-open {
 }
 
 .prev-btn {
-  top: 50%;
-  left: 20px;
+  top: 55%;
+  left: 76px;
   transform: translateY(-50%);
 }
 .play-btn {
-  top: 50%;
-  left: 95px;
+  top: 55%;
+  left: 155px;
   transform: translateY(-50%);
 }
 .next-btn {
-  top: 50%;
-  right: 20px;
+  top: 55%;
+  right: 76px;
   transform: translateY(-50%);
 }
 

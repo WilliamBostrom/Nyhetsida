@@ -306,6 +306,7 @@
   border-radius: 0.3rem;
   background-color: var(--background_primary);
   box-shadow: var(--shadow-ambient--primary);
+  overflow-y: auto;
 }
 
 .desktop-welcome,

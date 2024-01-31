@@ -90,6 +90,7 @@ body.active .btn-text:link {
 .heading-medium {
   font-size: 2rem;
 }
+
 .heading-news {
   font-size: 2.6rem;
   padding: calc(8px * 1.5) 0 calc(8px * 0.5);

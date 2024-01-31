@@ -13,15 +13,13 @@ let userIndex;
 const newMainCard = document.querySelector(".news-main-card");
 
 // Luays key
-/* const API_KEY =
-  "pub_364847766bd024d75ae2f1bd0f148a57c4faf&country=se&language=sv"; */
-
+/* const API_KEY = "pub_364847766bd024d75ae2f1bd0f148a57c4faf"; */
 // WILLES NYCKEL
 /* const apiKey = "pub_36673e2a264d14a136dc8d64987d21585bdf5"; */
 // const apiKey = "pub_3689763523f92753a85b5bf7a4f2ffadb650a";
 
 // DENNIS NYCKEL
-const apiKey = "pub_36893493e88538fc3b8e75bdf04433cf20888";
+const apiKey = "pub_36893493e88538fc3b8e75bdf04433cf20888a";
 const newsHeading = document.querySelector(".heading-small");
 const searchQuery = "sverige";
 export const searchQuery1 = "dn";
@@ -393,3 +391,89 @@ window.favourite = async function (index) {
   }
 };
  */
+let channels = [];
+let currentChannelIndex = 0;
+let audioPlayer = document.querySelector("audio");
+let mp3Player = document.querySelector(".mp3-player");
+let isPlaying = false;
+
+// Här hämtar jag kanaldata från en SR radio med hjälp av Axios.
+axios
+  .get("http://api.sr.se/api/v2/channels?format=json&size=100")
+  .then((response) => {
+    channels = response.data.channels;
+  })
+  .catch((error) => {
+    console.error("Ett fel inträffade:", error);
+  });
+
+// Här lägger jag till eventlyssnare för att hantera kontrollknappar för kanalbyte och för att stoppa radion.
+document.querySelector(".prev-btn").addEventListener("click", prevChannel);
+document.querySelector(".next-btn").addEventListener("click", nextChannel);
+document.querySelector(".play-btn").addEventListener("click", togglePlay);
+
+// Här definierar jag en funktion för att uppdatera spelaren med aktuell kanal.
+function updatePlayer(channelIndex) {
+  const channel = channels[channelIndex];
+
+  // Uppdaterar bilden och bakgrundsfärgen som följer med i anropet för spelaren.
+  const player = document.querySelector(".mp3-player");
+  player.style.backgroundImage = `url(${channel.image})`;
+  player.style.backgroundColor = `#${channel.color}`;
+  player.style.backgroundSize = "90%";
+
+  audioPlayer.src = channel.liveaudio.url;
+  if (isPlaying) {
+    audioPlayer.play();
+  }
+}
+
+// Här definierar jag funktionen för att byta kanal bakåt.
+function prevChannel() {
+  if (currentChannelIndex > 0) {
+    currentChannelIndex--;
+  } else {
+    currentChannelIndex = channels.length - 1;
+  }
+  updatePlayer(currentChannelIndex);
+}
+// Här definierar jag funktionen för att byta kanal framåt.
+function nextChannel() {
+  if (currentChannelIndex < channels.length - 1) {
+    currentChannelIndex++;
+  } else {
+    currentChannelIndex = 0;
+  }
+  updatePlayer(currentChannelIndex);
+}
+
+// Här definierar jag en funktion för att byta mellan uppspelning och paus.
+function togglePlay() {
+  if (!isPlaying) {
+    isPlaying = true;
+    updatePlayer(currentChannelIndex);
+    document.querySelector(".play-btn i").classList.remove("fa-play");
+    document.querySelector(".play-btn i").classList.add("fa-pause");
+    mp3Player.classList.add("rotate-background");
+  } else {
+    isPlaying = false;
+    audioPlayer.pause();
+    document.querySelector(".play-btn i").classList.remove("fa-pause");
+    document.querySelector(".play-btn i").classList.add("fa-play");
+    mp3Player.classList.remove("rotate-background");
+  }
+}
+
+const btnLogOut = document.querySelector(".logout");
+btnLogOut.addEventListener("click", () => {
+  stopRadio();
+  isLoggedIn = false;
+});
+
+function stopRadio() {
+  isPlaying = false;
+  audioPlayer.pause();
+  document.querySelector(".play-btn i").classList.remove("fa-pause");
+  document.querySelector(".play-btn i").classList.add("fa-play");
+  mp3Player.classList.remove("rotate-background");
+}
