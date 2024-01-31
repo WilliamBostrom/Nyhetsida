@@ -402,7 +402,7 @@ let isPlaying = false;
 
 // Här hämtar jag kanaldata från en SR radio med hjälp av Axios.
 axios
-  .get("http://api.sr.se/api/v2/channels?format=json&size=100")
+  .get("https://api.sr.se/api/v2/channels?format=json&size=100")
   .then((response) => {
     channels = response.data.channels;
   })
