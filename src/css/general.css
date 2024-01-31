@@ -57,7 +57,10 @@ body.active .icon-inner svg,
 body.active .icon-mobil-nav,
 body.active .main-nav-link-cta.nav-cta-2:visited,
 body.active .side-nav-link.nav-cta-2:visited,
-body.active .dropbtn {
+body.active .dropbtn,
+body.active #qoute,
+body.active .q-container,
+body.active .modal-content {
   background-color: #333;
   color: #fff;
 }

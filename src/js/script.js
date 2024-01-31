@@ -20,7 +20,7 @@ const newMainCard = document.querySelector(".news-main-card");
 
 // DENNIS NYCKEL
 // const apiKey = "pub_36893493e88538fc3b8e75bdf04433cf20888a";
-const apiKey = "pub_36893493e88538fc3b8e75bdf04433cf20888";
+const apiKey = "pub_36893493e88538fc3b8e75bdf04433cf20888a";
 const newsHeading = document.querySelector(".heading-small");
 const searchQuery = "sverige";
 export const searchQuery1 = "dn";
@@ -500,3 +500,18 @@ let getQoute = () => {
 
 window.addEventListener("load", getQoute);
 btn.addEventListener("click", getQoute);
+
+const openModalButton = document.getElementById("openModalButton");
+const modal = document.getElementById("myModal");
+
+openModalButton.addEventListener("click", function() {
+  modal.style.display = "block";
+});
+
+modal.addEventListener("click", function(event) {
+  if (event.target === modal) {
+    modal.style.display = "none";
+  }
+});
+
+
