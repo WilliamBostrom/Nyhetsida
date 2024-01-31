@@ -256,3 +256,45 @@ audio {
 .rotate-background {
   animation: rotateBackground 20s linear infinite;
 }
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  margin-top: 20px;
+}
+
+.q-title {
+  font-size: 2rem;
+  margin-bottom: 10px;
+}
+
+.q-container {
+  margin: 0 auto;
+  max-width: 300px;
+  background-color: rgb(213, 233, 220);
+  box-shadow: 0 10px 20px rgba(87, 11,16, 0.5);
+  padding: 20px;
+  font-size: 1rem;
+  border-radius: 30px;
+}
+
+#qoute {
+  max-width: 200px;
+  margin: 0 auto;
+  font-size: 1.5rem;
+}
+
+#author {
+  margin-top: 10px;
+  font-size: 1.5rem;
+}
+
+#btn {
+  padding: 1rem 2rem;
+  color: var(--background_primary);
+  background-color: var(--primary_darken);
+  border-radius: 40px;
+  margin-top: 10px;
+  cursor: pointer;
+}

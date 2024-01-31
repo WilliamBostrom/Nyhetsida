@@ -477,3 +477,23 @@ function stopRadio() {
   document.querySelector(".play-btn i").classList.add("fa-play");
   mp3Player.classList.remove("rotate-background");
 }
+
+let qoute = document.getElementById("qoute");
+let author = document.getElementById("author");
+let btn = document.getElementById("btn");
+
+const url = "https://api.quotable.io/random"
+
+let getQoute = () => {
+  fetch(url)
+  .then((data) => data.json()
+  .then((item) => {
+    console.log(item.content);
+    console.log(item.author);
+    qoute.innerText = item.content;
+    author.innerText = item.author;
+  }))
+}
+
+window.addEventListener("load", getQoute);
+btn.addEventListener("click", getQoute);
