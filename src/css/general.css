@@ -70,7 +70,8 @@ body.active .news-side-cta {
 }
 
 body.active .welcome-in,
-body.active .btn-text:link {
+body.active .btn-text:link,
+body.active .modal-content {
   background-color: #333;
   color: #fff;
 }
