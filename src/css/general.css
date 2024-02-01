@@ -58,9 +58,9 @@ body.active .icon-mobil-nav,
 body.active .main-nav-link-cta.nav-cta-2:visited,
 body.active .side-nav-link.nav-cta-2:visited,
 body.active .dropbtn,
-body.active #qoute,
-body.active .q-container,
-body.active .modal-content {
+body.active #qoute
+body.active .modal-content,
+body.active {
   background-color: #333;
   color: #fff;
 }
@@ -73,6 +73,14 @@ body.active .welcome-in,
 body.active .btn-text:link {
   background-color: #333;
   color: #fff;
+}
+
+body.active .prev-btn,
+body.active .play-btn,
+body.active .next-btn,
+body.active #qoute,
+body.active #author  {
+  color: black;
 }
 
 .container {
