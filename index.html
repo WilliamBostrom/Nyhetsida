@@ -2,13 +2,12 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="" />
+    <link rel="icon" type="image/svg+xml" href="src/img/" />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
     />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
     <script
       type="module"
       src="https://unpkg.com/ionicons@4.5.10-0/dist/ionicons/ionicons.esm.js"
@@ -84,7 +83,11 @@
             </div>
           </div>
           <div class="main-nav-buttons-box">
-            
+            <div>
+              <a class="main-nav-link-cta nav-cta-2 show-members" href="#cta"
+                >Bli medlem</a
+              >
+            </div>
             <div class="login-container">
               <a class="main-nav-btn nav-cta login" href="#cta">Logga in</a>
               <a class="main-nav-btn nav-cta logout" href="#cta">Logga ut</a>
@@ -181,19 +184,7 @@
           />
           <small>Error meddelande</small>
         </div>
-        <!-- 
-        <div class="form-control">
-          <label for="password">Bekräfta lösenord</label>
-          <input
-            type="password"
-            id="password2"
-            name="password"
-            autocomplete="new-password"
-            placeholder="Bekräfta lösenord"
-          />
-          <small>Error meddelande</small>
-        </div> -->
-    
+
         <button class="btn-signup">Bli medlem</button>
       </form>
     </section>
@@ -277,58 +268,7 @@
       <section class="news-container container stickys">
         <!-- Högra sidan nyheter = Bevakningar -->
    <!--      <div class="news-main-side">
-          <div class="news-heading">
-            <h3 class="heading-medium">Favoriter</h3>
-          </div>
-          <div class="new-side-random-shit">
-            <span
-              ><p class="text-normal">
-                <b>Önskar du möjligheten att spara dina favoritnyheter?</b>
-              </p>
-              <p class="text-normal">
-                Logga in för att spara de artiklar som intresserar dig mest och skapa din personliga samling.
-              </p></span
-            >
-            <div class="news-side-button">
-              <a class="news-side-cta login">Logga in</a>
-            </div>
-          </div>
-          <br />
-          <div class="news-heading margin-big">
-            <h3 class="heading-medium">Aktuella ämnen</h3>
-          </div>
-          <div class="news-side-just-now">
-            <div class="new-side-card">
-              <div class="news-side-text-img">
-                <img
-                  src="./src/img/CN-logo-transparent.svg"
-                  alt=""
-                  width="80px"
-                />
-                <h2 class="heading-medium"><a class="inrikes">Inrikes</a></h2>
-              </div>
-            </div>
-            <div class="new-side-card">
-              <div class="news-side-text-img">
-                <img
-                  src="./src/img/CN-logo-transparent.svg"
-                  alt=""
-                  width="80px"
-                />
-                <h2 class="heading-medium"><a class="utrikes">Utrikes</a></h2>
-              </div>
-            </div>
-          </div>
-            <div class="new-side-card">
-              <div class="news-side-text-img">
-                <img
-                  src="./src/img/CN-logo-transparent.svg"
-                  alt=""
-                  width="80px"
-                />
-                <h2 class="heading-medium"><a class="sport">Sport</a></h2>
-              </div>
-            </div>
+     
           </div> -->
         </div>
         <!-- MAIN NYHETER -->
@@ -380,9 +320,9 @@
               <div class="weahter-display">
                 <div><p class="text-normal">Idag</p></div>
                 <div class="weather-temp-grades">
-                  <p id="weather-temp-b" class="text-normal">Grader</p>
+                  <p id="weather-temp-b" class="text-normal"></p>
                   <div>
-                    <p id="weather-condition-b" class="text-normal">Moln</p>
+                    <p id="weather-condition-b" class="text-normal"></p>
                   </div>
                 </div>
               </div>
@@ -476,7 +416,6 @@
               ></a>
             </li>
           </ul>
-
           <p class="copyright">
             Copyright &copy; <span class="year"></span> by Chas News. <br />All
             right reserved.
@@ -488,8 +427,7 @@
             <p class="address">Chas Academy, Stockholm</p>
             <p>
               <a class="footer-link" href="mailto:anntagning@chasacademy.se"
-                >chasnews@real.com</a
-              >
+                >chasnews@real.com</a>
             </p>
           </address>
         </div>
@@ -557,7 +495,6 @@
           <p class="footer-heading">Hjälp</p>
           <ul class="footer-nav">
             <li><a class="footer-link" href="#">Hjälpcenter</a></li>
-            <!--  <li><a href="#">iOS app</a></li> -->
             <li><a class="footer-link" href="#">Privacy & terms</a></li>
           </ul>
         </nav>

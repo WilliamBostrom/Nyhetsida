@@ -19,7 +19,7 @@ const newMainCard = document.querySelector(".news-main-card");
 // const apiKey = "pub_3689763523f92753a85b5bf7a4f2ffadb650a";
 
 // DENNIS NYCKEL
- const apiKey = "pub_36893493e88538fc3b8e75bdf04433cf20888";
+const apiKey = "pub_36893493e88538fc3b8e75bdf04433cf20888";
 /* const apiKey = "pub_36893493e88538fc3b8e75bdf04433cf20888"; */
 const newsHeading = document.querySelector(".heading-small");
 const searchQuery = "sverige";
@@ -87,7 +87,9 @@ utrikes.forEach((btn) => {
 async function fetchNews(API_URL) {
   try {
     const response = await axios.get(API_URL);
+    console.log(response);
     const newsData = response.data;
+    console.log(newsData);
     fetchData = newsData.results.map((news) => ({
       title: news.title,
       img: news.image_url,
@@ -504,14 +506,12 @@ btn.addEventListener("click", getQoute);
 const openModalButton = document.getElementById("openModalButton");
 const modal = document.getElementById("myModal");
 
-openModalButton.addEventListener("click", function() {
+openModalButton.addEventListener("click", function () {
   modal.style.display = "block";
 });
 
-modal.addEventListener("click", function(event) {
+modal.addEventListener("click", function (event) {
   if (event.target === modal) {
     modal.style.display = "none";
   }
 });
-
-

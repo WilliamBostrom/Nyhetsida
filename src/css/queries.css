@@ -43,7 +43,7 @@
 /* BELOW 944px (landscap tablets desktops)*/
 /* ****************** */
 
-@media (max-width: 61em) {
+@media (max-width: 62em) {
   html {
     /*font=size ska bli i rm 9px = 9 / 16px =56.25% */
     font-size: 50%;
@@ -54,7 +54,7 @@
   }
   .main-nav-link-cta.nav-cta-2:link,
   .main-nav-link-cta.nav-cta-2:visited {
-    display: none;
+    display: none !important;
   }
 
   .side-nav-link.nav-cta-2:link,
