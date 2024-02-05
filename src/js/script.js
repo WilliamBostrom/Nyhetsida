@@ -3,23 +3,17 @@ import axios from "axios";
 import selectedSvg from "/star-select.svg";
 import starSvg from "/star-!select.svg";
 
-import { isLoggedIn, usersData } from "./login.js";
-
 let fetchData = [];
 let checkingIndex = 0;
-let isAtTop = false;
-let userIndex;
-
-const newMainCard = document.querySelector(".news-main-card");
 
 // Luays key
-/* const API_KEY = "pub_364847766bd024d75ae2f1bd0f148a57c4faf"; */
+const apiKey = "pub_364847766bd024d75ae2f1bd0f148a57c4faf";
 // WILLES NYCKEL
 /* const apiKey = "pub_36673e2a264d14a136dc8d64987d21585bdf5"; */
 // const apiKey = "pub_3689763523f92753a85b5bf7a4f2ffadb650a";
 
 //Simons
-const apiKey = "pub_3677850ce73d96f2586086f013ecb9f63081f";
+// const apiKey = "pub_3677850ce73d96f2586086f013ecb9f63081f";
 
 // DENNIS NYCKEL
 // const apiKey = "pub_36893493e88538fc3b8e75bdf04433cf20888";
@@ -117,8 +111,6 @@ export async function updateContent(API_URL) {
   }
 }
 
-// ... (Din övriga kod)
-
 const sortByNewestDateButton = document.getElementById("sortByNewestDate");
 const sortByOldestDateButton = document.getElementById("sortByOldestDate");
 const sortByFirstAlfabetButton = document.getElementById("sortByFirstAlfabet");
@@ -207,22 +199,6 @@ function findDuplicates(fetchData) {
   }
 }
 
-// Lägger till en händelselyssnare för att kolla när man scrollar till toppen
-/* window.addEventListener("scroll", () => {
-  if (window.scrollY === 0) {
-    // Du är vid toppen av sidan
-    isAtTop = true;
-  } else {
-    isAtTop = false;
-  }
-
-  if (isAtTop) {
-    // Om man är vid toppen, görs en uppdatering och nya nyhetsartiklar trillar in så slipper man uppdatera sidan
-    fetchNews();
-  }
-});
-
-*/
 
 // fetchNews(API_URL_TOP);
 updateContent(buildApiUrl(searchQuery1));
@@ -319,87 +295,6 @@ searchBoxes.forEach((searchBox) => {
   });
 });
 
-/* INLOGGAD */
-/* 
-const favouritesBtn = document.getElementById("favourites");
-const sectionNews = document.querySelector(".header");
-const sectionHero = document.querySelector(".section-hero");
-
-let isFavouritesClicked = false;
-let newContent = document.createElement("div");
- */
-// Funktion för att hantera innehållet
-/* async function handleContentClick(title, message) {
-  if (!isLoggedIn) {
-    sectionHero.style.display = "none";
-    newContent.className = "container-nocontent";
-    newContent.innerHTML = `<h1 class="heading-large">${title}</h1><p class="text-normal"> Du behöver <a class="btn-link">logga in</a> för att se ${message}.</p>`;
-    sectionNews.parentNode.insertBefore(newContent, sectionNews.nextSibling);
-  } else {
-    const usernameSignin = document.getElementById("username-signin");
-    userIndex = await usersData.findIndex(
-      (user) => user.name === usernameSignin.value
-    );
-
-    const storedUsersData = JSON.parse(localStorage.getItem("usersData")) || [];
-    if (storedUsersData.length > 0 && storedUsersData[userIndex]) {
-      usersData[userIndex] = storedUsersData[userIndex];
-    }
-
-    DisplayPerson(userIndex);
-    let content;
-    if (userIndex !== -1) {
-      sectionHero.style.display = "none";
-      content = `<h1 class="heading-large">${title}</h1><p class="text-normal"> Finns inga ${message} att se än</p>`;
-    } else {
-      content = `<h1 class="heading-large">${title}</h1><p class="text-normal"> Det finns inga ${message} att se här än</p>`;
-    }
-    newContent.className = "container-nocontent";
-    newContent.innerHTML = content;
-    sectionNews.parentNode.insertBefore(newContent, sectionNews.nextSibling);
-  }
-} */
-
-// Favoritknappen
-/* favouritesBtn.addEventListener("click", () => {
-  if (!isFavouritesClicked) {
-    isFavouritesClicked = true;
-    handleContentClick("Favoriter", "favoriter");
-  } else {
-    return;
-  }
-}); */
-
-/* FÖR FAVORITER */
-/* 
-let favArray = [];
-window.favourite = async function (index) {
-  if (!isLoggedIn) {
-    alert("Måste logga in först");
-  } else {
-    let confirmFav = confirm("Lägg till i favoriter");
-    if (confirmFav) {
-      let copiedNews = { ...fetchData[index] };
-      favArray.push(copiedNews);
-      console.log(copiedNews);
-      console.log(favArray);
-      const usernameSignin = document.getElementById("username-signin");
-      const usernameValue = usernameSignin.value;
-      const storedUsersData =
-        JSON.parse(localStorage.getItem("usersData")) || [];
-      userIndex = storedUsersData.findIndex(
-        (user) => user.name === usernameValue
-      );
-
-      if (userIndex >= 0) {
-        storedUsersData[userIndex].favorites.push(copiedNews);
-        localStorage.setItem("usersData", JSON.stringify(storedUsersData));
-        alert("Nyheter har lagts till i favoriter!");
-      }
-    }
-  }
-};
- */
 let channels = [];
 let currentChannelIndex = 0;
 let audioPlayer = document.querySelector("audio");

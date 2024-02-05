@@ -53,40 +53,13 @@ document.addEventListener("keydown", function (e) {
 /* BLI MEDLEM */
 /* /////////// */
 
-const form = document.getElementById("signup-form"),
-  username = document.getElementById("username"),
+// const form = document.getElementById("signup-form")
+const username = document.getElementById("username"),
   email = document.getElementById("email"),
   password = document.getElementById("password");
 // password2 = document.getElementById("password2");
 
 let usersData = JSON.parse(localStorage.getItem("usersData")) || [];
-/* form.addEventListener("submit", async (e) => {
-  e.preventDefault();
-
-  checkRequired([username, email, password, password2]);
-  checkMail(email);
-  matchPassword(password, password2);
-
-  const inputValid = await checkInput();
-
-  if (inputValid.every((isValid) => isValid)) {
-    const createdUser = {
-      name: username.value,
-      password: password.value,
-      email: email.value,
-      favorites: [],
-    };
-
-    // const userJSON = JSON.stringify(createdUser);
-    usersData.push(createdUser);
-    localStorage.setItem("usersData", JSON.stringify(usersData));
-    // localStorage.setItem("currentUser", userJSON);
-
-    closeMembers();
-    openLogin();
-    createUser(createdUser);
-  }
-}); */
 
 async function checkInput() {
   const allFields = [username, email, password, password2];
@@ -123,13 +96,13 @@ function checkMail(input) {
 }
 
 // Ser att lösenordet matchar
-function matchPassword(input1, input2) {
-  if (input1.value !== input2.value) {
-    showError(input2, "Lösenordet matchar inte");
-  } else {
-    showSuccess(input2);
-  }
-}
+// function matchPassword(input1, input2) {
+//   if (input1.value !== input2.value) {
+//     showError(input2, "Lösenordet matchar inte");
+//   } else {
+//     showSuccess(input2);
+//   }
+// }
 
 // Visa Error vid felaktiga rutor
 function showError(input, message) {
@@ -162,8 +135,8 @@ const formSignin = document.getElementById("signin-form"),
   signInContainer = document.querySelector(".signin-container");
 
 let isLoggedIn = false;
-let loginContainer = document.querySelector(".login-container");
-let welcome = document.querySelector(".welcome-in");
+// let loginContainer = document.querySelector(".login-container");
+// let welcome = document.querySelector(".welcome-in");
 
 btnOpenLogin.forEach(function (btn) {
   btn.addEventListener("click", function () {
@@ -199,52 +172,6 @@ function openLogin() {
 /////////////////////////////
 /* FÖR ATT LOGGA IN OCH UT */
 /////////////////////////////
-/* 
-const welcomeName = document.querySelector(".welcome-name");
-
-function handleLogin(username, password) {
-  const storedUserJSON = localStorage.getItem("usersData");
-
-  if (storedUserJSON) {
-    const usersArray = JSON.parse(storedUserJSON);
-    const matchingUser = usersArray.find((user) => {
-      return username === user.name && password === user.password;
-    });
-    let newName =
-      matchingUser.name.charAt(0).toUpperCase() + matchingUser.name.slice(1);
-
-    if (matchingUser) {
-      // Inloggning lyckad
-      isLoggedIn = true;
-      getUserLocation();
-      alert(`Välkommen in ${newName}`);
-      welcome.style.display = "block";
-      loginContainer.innerHTML = `<a class="main-nav-btn nav-cta logout" href="#cta">Logga ut</a>`;
-      welcomeName.innerHTML = `${newName}`;
-      closeLogin();
-
-      // Logga ut
-      const btnLogOut = document.querySelector(".logout");
-      btnLogOut.addEventListener("click", () => {
-        alert("Du är utloggad");
-        isLoggedIn = false;
-        welcome.style.display = "none";
-        loginContainer.innerHTML = `<a class="main-nav-btn nav-cta login" href="#cta">Logga in</a>`;
-      });
-    } else {
-      showError(usernameSignin, "Felaktigt användarnamn eller lösenord");
-    }
-  } else {
-    showError(usernameSignin, "Ingen användare hittad");
-  }
-} */
-
-/* formSignin.addEventListener("submit", (e) => {
-  e.preventDefault();
-  const username = usernameSignin.value;
-  const password = loginPassword.value;
-  handleLogin(username, password);
-}); */
 
 //////// BONUS STYLING FÖR INLOGGAD
 
