@@ -3,7 +3,7 @@ import axios from "axios";
 import selectedSvg from "/star-select.svg";
 import starSvg from "/star-!select.svg";
 
-import { isLoggedIn, usersData } from "./william.js";
+import { isLoggedIn, usersData } from "./login.js";
 
 let fetchData = [];
 let checkingIndex = 0;

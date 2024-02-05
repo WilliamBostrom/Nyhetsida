@@ -8,7 +8,7 @@ import "./src/js/utility/utility.js";
 // import "./src/js/utility/login.js";
 
 /* Testa kod sidor = tillfälliga */
-import "./src/js/login.js.js";
+import "./src/js/login.js";
 import "./src/js/firebase.js";
 
 if ("serviceWorker" in navigator) {
