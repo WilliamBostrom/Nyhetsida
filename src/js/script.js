@@ -19,8 +19,7 @@ const newMainCard = document.querySelector(".news-main-card");
 // const apiKey = "pub_3689763523f92753a85b5bf7a4f2ffadb650a";
 
 //Simons
-const apiKey =
-  "pub_3677850ce73d96f2586086f013ecb9f63081f";
+const apiKey = "pub_3677850ce73d96f2586086f013ecb9f63081f";
 
 // DENNIS NYCKEL
 // const apiKey = "pub_36893493e88538fc3b8e75bdf04433cf20888";
@@ -519,3 +518,19 @@ modal.addEventListener("click", function (event) {
     modal.style.display = "none";
   }
 });
+
+if ("serviceWorker" in navigator) {
+  window.addEventListener("load", () => {
+    navigator.serviceWorker.register("/service-worker.js").then(
+      (registration) => {
+        console.log(
+          "ServiceWorker registration successful with scope: ",
+          registration.scope
+        );
+      },
+      (err) => {
+        console.log("ServiceWorker registration failed: ", err);
+      }
+    );
+  });
+}
