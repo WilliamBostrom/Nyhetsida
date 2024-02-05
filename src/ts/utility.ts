@@ -9,7 +9,8 @@ function openSideNav(): void {
   visible = true;
   if(menuIcon === null || closeIcon === null || side_nav === null){
     return
-  }else{
+
+  } else {
   menuIcon.style.display = "none";
   closeIcon.style.display = "block";
   side_nav.style.display = "block";
@@ -23,7 +24,8 @@ function closeSideNav(): void {
   visible = false;
   if(menuIcon === null || closeIcon === null || side_nav === null){
     return
-  }else{
+
+  } else{
   menuIcon.style.display = "block";
   closeIcon.style.display = "none";
   side_nav.style.display = "none";
@@ -44,7 +46,8 @@ mobileBtn?.addEventListener("click", function (e: Event):void {
 document.addEventListener("click", function (e: Event): void {
   if(side_nav === null || e.target === null){
     return
-  }else{
+     
+  } else {
   if (visible && e.target !== side_nav && !side_nav.contains(e.target as Node) && e.target !== mobileBtn) {
     closeSideNav();
   }
@@ -61,27 +64,27 @@ const navLinksEl = document.querySelectorAll<HTMLAnchorElement>(".main-nav-link"
 
 navLinksEl.forEach((navLink) => {
   navLink.addEventListener("click", () => {
-    document.querySelector(".activate").classList.remove("activate");
+    document.querySelector(".activate")?.classList.remove("activate");
     navLink.classList.add("activate");
   });
 });
 
 // Här definierar jag funktionen som ändrar mellan ljus och mörkt läge
-function toggleDarkMode() {
-  toggle.classList.toggle("active");
-  body.classList.toggle("active");
+function toggleDarkMode(): void {
+  toggle?.classList.toggle("active");
+  body?.classList.toggle("active");
 
   // Här sparar jag valet i localStorage
-  const darkModeEnabled = body.classList.contains("active");
+  const darkModeEnabled: boolean | undefined = body?.classList.contains("active");
   localStorage.setItem("darkMode", darkModeEnabled ? "enabled" : "disabled");
 }
 
 // Här hämtar jag body-elementet och knappen
-const body = document.querySelector("body");
-const toggle = document.getElementById("toggle");
+const body = document.querySelector("body") as HTMLElement | null;
+const toggle = document.getElementById("toggle") as HTMLElement | null;
 
 // Kontrollerar om det finns en sparad preferens i localStorage när sidan laddas
-const isDarkModeEnabled = localStorage.getItem("darkMode") === "enabled";
+const isDarkModeEnabled: boolean = localStorage.getItem("darkMode") === "enabled";
 
 // Om det finns en sparad preferens, tillämpa den
 if (isDarkModeEnabled) {
@@ -89,4 +92,4 @@ if (isDarkModeEnabled) {
 }
 
 // Lyssnare på knappen om den aktiverar/inaktiverar mörkt läge
-toggle.addEventListener("click", toggleDarkMode);
+toggle?.addEventListener("click", toggleDarkMode);
