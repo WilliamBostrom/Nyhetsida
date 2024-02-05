@@ -1,8 +1,10 @@
 const CACHE_NAME = 'nyhetsida-chas-news';
 const urlsToCache = [
-  '/',
+  'index.html',
   '/src/css/style.css',
-  'main.js'
+  '/src/img/CN-logo-box.svg',
+  '/src/img/CN-logo-transparent.svg',
+  'main.js',
 ];
 
 self.addEventListener('install', event => {
@@ -15,16 +17,18 @@ self.addEventListener('install', event => {
   );
 });
 
-self.addEventListener('fetch', event => {
+self.addEventListener("fetch", (event) => {
   event.respondWith(
-    caches.match(event.request)
-      .then(response => {
-        if (response) {
-          return response;
-        }
-        return fetch(event.request);
+    caches.match(event.request).then((response) => {
+      if (response) {
+        return response;
       }
-    )
+      return fetch(event.request).catch(() => {
+        if (event.request.mode === "navigate") {
+          return caches.match("index.html");
+        }
+      });
+    })
   );
 });
 
