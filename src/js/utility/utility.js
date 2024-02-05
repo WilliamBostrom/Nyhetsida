@@ -31,7 +31,7 @@ function closeSideNav() {
         side_nav.style.visibility = "hidden";
     }
 }
-mobileBtn === null || mobileBtn === void 0 ? void 0 : mobileBtn.addEventListener("click", function (e) {
+mobileBtn?.addEventListener("click", function (e) {
     e.stopPropagation();
     if (!visible) {
         openSideNav();
@@ -58,17 +58,16 @@ yearEl.textContent = currentYear.toString();
 const navLinksEl = document.querySelectorAll(".main-nav-link");
 navLinksEl.forEach((navLink) => {
     navLink.addEventListener("click", () => {
-        var _a;
-        (_a = document.querySelector(".activate")) === null || _a === void 0 ? void 0 : _a.classList.remove("activate");
+        document.querySelector(".activate")?.classList.remove("activate");
         navLink.classList.add("activate");
     });
 });
 // Här definierar jag funktionen som ändrar mellan ljus och mörkt läge
 function toggleDarkMode() {
-    toggle === null || toggle === void 0 ? void 0 : toggle.classList.toggle("active");
-    body === null || body === void 0 ? void 0 : body.classList.toggle("active");
+    toggle?.classList.toggle("active");
+    body?.classList.toggle("active");
     // Här sparar jag valet i localStorage
-    const darkModeEnabled = body === null || body === void 0 ? void 0 : body.classList.contains("active");
+    const darkModeEnabled = body?.classList.contains("active");
     localStorage.setItem("darkMode", darkModeEnabled ? "enabled" : "disabled");
 }
 // Här hämtar jag body-elementet och knappen
@@ -81,4 +80,4 @@ if (isDarkModeEnabled) {
     toggleDarkMode();
 }
 // Lyssnare på knappen om den aktiverar/inaktiverar mörkt läge
-toggle === null || toggle === void 0 ? void 0 : toggle.addEventListener("click", toggleDarkMode);
+toggle?.addEventListener("click", toggleDarkMode);
