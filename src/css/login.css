@@ -273,7 +273,7 @@ audio {
   margin: 0 auto;
   max-width: 300px;
   background-color: rgb(213, 233, 220);
-  box-shadow: 0 5px 10px rgba(87, 11,16, 0.5);
+  box-shadow: 0 2px 3px rgba(52, 48, 48, 0.5);
   padding: 20px;
   font-size: 1rem;
   border-radius: 30px;
