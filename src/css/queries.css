@@ -45,8 +45,8 @@
     transition: all 0.2s;
     position: fixed;
     z-index: 2;
-    bottom: 3.2rem;
-    right: 3.2rem;
+    bottom: 0.8rem;
+    right: 0.3rem;
     border: none;
     cursor: pointer;
     background-color: white;
