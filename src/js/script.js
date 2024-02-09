@@ -401,16 +401,21 @@ let getQoute = () => {
 window.addEventListener("load", getQoute);
 btn.addEventListener("click", getQoute);
 
-const openModalButton = document.getElementById("openModalButton");
+const openModalButtonFooter = document.getElementById("openModalButton");
+const openModalButtonSideNav = document.getElementById("openModalBtn");
 const modal = document.getElementById("myModal");
 
-openModalButton.addEventListener("click", function () {
+
+function openModalHandler() {
   modal.style.display = "block";
-});
+}
 
 modal.addEventListener("click", function (event) {
   if (event.target === modal) {
     modal.style.display = "none";
   }
 });
+
+openModalButtonFooter.addEventListener("click", openModalHandler);
+openModalButtonSideNav.addEventListener("click", openModalHandler);
 
