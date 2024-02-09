@@ -58,8 +58,7 @@ body.active .icon-mobil-nav,
 body.active .main-nav-link-cta.nav-cta-2:visited,
 body.active .side-nav-link.nav-cta-2:visited,
 body.active .dropbtn,
-body.active #qoute
-body.active .modal-content,
+body.active #qoute body.active .modal-content,
 body.active {
   background-color: #333;
   color: #fff;
@@ -80,7 +79,7 @@ body.active .prev-btn,
 body.active .play-btn,
 body.active .next-btn,
 body.active #qoute,
-body.active #author  {
+body.active #author {
   color: black;
 }
 
@@ -131,6 +130,14 @@ body.active #author  {
   padding: calc(8px * 1.5) 0 calc(8px * 0.5);
   padding-left: 2.4rem;
   padding-right: 2.4rem;
+}
+.text-bonus {
+  font-size: 1.5rem;
+  /* padding: calc(8px * 1.5) 0 calc(8px * 0.5); */
+  padding: 0.8rem;
+  padding-left: 1.4rem;
+  padding-right: 1.4rem;
+  font-weight: 600;
 }
 
 .text-center {

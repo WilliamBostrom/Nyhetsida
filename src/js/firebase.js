@@ -104,6 +104,8 @@ const setupFavoritesListener = (userId, onDataReceived) => {
 const desktopWelcome = document.querySelector(".dekstop-welcome");
 const newsHeading = document.querySelector(".news-side-check");
 const desktopMember = document.querySelector(".new-side-random-shit");
+const bonusBtn = document.querySelector(".templates_create_btn");
+
 auth.onAuthStateChanged((user) => {
   if (user) {
     const userId = user.uid;
@@ -111,7 +113,11 @@ auth.onAuthStateChanged((user) => {
     if (favouritesButtonClicked) {
       const getFavourites = setupFavoritesListener(userId);
     }
-    // Visar rätt knapp vid inlogg/utloggad
+
+    if (bonusBtn) {
+      bonusBtn.classList.add("authenticated");
+    }
+
     desktopMember.style.display = "none";
     desktopWelcome.style.display = "block";
     newsHeading.innerHTML = `<h3 class="heading-medium">Välkommen in</h3>`;
@@ -129,6 +135,10 @@ auth.onAuthStateChanged((user) => {
     memberBtns.forEach((btn) => (btn.style.display = "flex"));
     loginBtns.forEach((btn) => (btn.style.display = "flex"));
     logoutBtn.style.display = "none";
+
+    if (bonusBtn) {
+      bonusBtn.classList.remove("authenticated");
+    }
   }
 });
 

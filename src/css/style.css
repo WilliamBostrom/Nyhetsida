@@ -12,7 +12,7 @@
   padding: 0 4.8rem;
   box-shadow: var(--shadow-ambient--primary);
   position: sticky;
-  z-index: 2;
+  z-index: 3;
   top: 0;
 }
 

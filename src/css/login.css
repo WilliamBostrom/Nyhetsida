@@ -144,21 +144,24 @@ body.modal-open {
 
 /* Lägga väder och radio snyggt */
 .welcome-bonus {
-  margin-top: 2.4rem;
   display: flex;
 
   justify-content: space-around;
 }
 
 /* Inloggads väder */
-.welcome-weather-2,
-.welcome-weather {
+.welcome-weather-2 {
   display: flex;
   flex-direction: column;
   /* border: 1px solid black; */
   width: 30rem;
   padding: 1rem;
-  box-shadow: var(--shadow-ambient--primary);
+  /* box-shadow: var(--shadow-ambient--primary); */
+}
+.welcome-weather-2,
+.welcome-weather {
+  display: flex;
+  flex-direction: column;
 }
 
 .welcome-weather-2 {
@@ -174,16 +177,14 @@ body.modal-open {
   display: flex;
 }
 
-/* .weahter-display {
+.welcome-weather-container {
   display: flex;
-  flex-direction: column;
-} */
-
-.header-weather {
-  align-self: center;
 }
-.welcome-header {
-  margin: 0 auto;
+
+#weather-img {
+  margin-bottom: -2rem;
+  width: 5.6rem;
+  align-self: flex-end;
 }
 
 .welcome-radio {
@@ -196,6 +197,44 @@ body.modal-open {
   position: relative;
 }
 
+.bonus-mobile-container {
+  width: 100%;
+  padding: 1rem;
+  box-shadow: 3px 3px 3px 0 #dfdfdf;
+  position: fixed;
+  background-color: var(--background_secondary);
+  box-shadow: 0 5px 3px 0 #dfdfdf89;
+  z-index: 1;
+  display: none;
+  animation: fadeDown 1s forwards;
+}
+
+@keyframes fadeDown {
+  0% {
+    transform: translateY(-100px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+#weather-temp,
+#weather-condition {
+  background-color: var(--background_primary);
+  border-radius: 4px;
+  margin-left: 0.5rem;
+}
+
+.welcome-radio-bonus {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  /* padding: 1rem; */
+  /* box-shadow: var(--shadow-ambient--primary); */
+  position: relative;
+}
+
 .radio {
   font-size: 2rem;
   margin-bottom: 10px;
@@ -205,6 +244,19 @@ body.modal-open {
   border-radius: 50%;
   width: 200px;
   height: 200px;
+  padding: 20px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.25);
+  color: white;
+  text-align: center;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.mp3-player-bonus {
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
   padding: 20px;
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.25);
   color: white;
@@ -297,4 +349,8 @@ audio {
   border-radius: 40px;
   margin-top: 10px;
   cursor: pointer;
+}
+
+.templates_create_btn {
+  display: none;
 }

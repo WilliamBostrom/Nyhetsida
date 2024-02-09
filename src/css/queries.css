@@ -34,6 +34,30 @@
   .news-main-card-img {
     width: 100%;
   }
+
+  .templates_create_btn {
+    display: none;
+    align-items: center;
+    justify-content: center;
+    width: 64px;
+    height: 64px;
+    border-radius: 10rem;
+    transition: all 0.2s;
+    position: fixed;
+    z-index: 2;
+    bottom: 3.2rem;
+    right: 3.2rem;
+    border: none;
+    cursor: pointer;
+    background-color: white;
+    color: #333;
+    box-shadow: var(--shadow-ambient--primary);
+  }
+
+  .templates_create_btn.authenticated {
+    display: flex;
+  }
+
   .news-main-side {
     display: none;
   }
@@ -132,7 +156,8 @@
   }
 
   .welcome-bonus {
-    flex-direction: column-reverse;
+    margin-top: 2.4rem;
+    padding-top: 2rem;
     align-items: center;
     gap: 3rem;
   }

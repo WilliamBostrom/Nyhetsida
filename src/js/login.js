@@ -9,6 +9,24 @@ export {
   closeLogin,
 };
 import axios from "axios";
+
+///////////////////
+// Bonus login
+//////////////////
+
+const bonusBtn = document.querySelector(".templates_create_btn");
+const bonusContainer = document.querySelector(".bonus-mobile-container");
+let bonusOpen = false;
+
+bonusBtn.addEventListener("click", () => {
+  bonusOpen = !bonusOpen;
+  if (bonusOpen) {
+    bonusContainer.style.display = "block";
+  } else {
+    bonusContainer.style.display = "none";
+  }
+});
+
 //////////////////////
 /* Modal bli medlem */
 /////////////////////
@@ -118,12 +136,6 @@ async function showSuccess(input) {
   formControl.className = "form-control success";
 }
 
-function createUser(createdUser) {
-  console.log(createdUser);
-
-  // Lägga till saker för användaren
-}
-
 ////////////////////
 /* MODAL LOGGA IN */
 ////////////////////
@@ -179,6 +191,9 @@ const apiKeyWeather = "f8a39f1388cb43adad4191756241601";
 const weatherImg = document.getElementById("weather-img-b");
 const weatherCond = document.getElementById("weather-condition-b");
 const weatherTemp = document.getElementById("weather-temp-b");
+const weatherImg2 = document.getElementById("weather-img");
+const weatherCond2 = document.getElementById("weather-condition");
+const weatherTemp2 = document.getElementById("weather-temp");
 
 const dataCoord = {
   lat: null,
@@ -201,6 +216,9 @@ async function getData() {
     weatherCond.innerText = translatedCondition;
     weatherTemp.innerHTML = `${response.data.current.temp_c}°C`;
     weatherImg.src = response.data.current.condition.icon;
+    weatherCond2.innerText = translatedCondition;
+    weatherTemp2.innerHTML = `${response.data.current.temp_c}°C`;
+    weatherImg2.src = response.data.current.condition.icon;
   } catch (err) {
     console.warn(err);
   }
@@ -219,7 +237,7 @@ getUserLocation();
 function translateWeatherCondition(condition) {
   const conditionMap = {
     Clear: "Klart",
-    "Partly cloudy": "Delvis molnigt",
+    "Partly cloudy": "Molnigt",
     Cloudy: "Molnigt",
     Overcast: "Överlagt",
     Mist: "Dimma",
