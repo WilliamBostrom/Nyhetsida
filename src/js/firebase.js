@@ -101,6 +101,7 @@ const setupFavoritesListener = (userId, onDataReceived) => {
 // ------------------------
 // Lyssnar efter om inloggad/utloggad
 // ------------------------
+
 const desktopWelcome = document.querySelector(".dekstop-welcome");
 const newsHeading = document.querySelector(".news-side-check");
 const desktopMember = document.querySelector(".new-side-random-shit");
@@ -115,7 +116,7 @@ auth.onAuthStateChanged((user) => {
     }
 
     if (bonusBtn) {
-      bonusBtn.classList.add("authenticated");
+      bonusBtn.classList.add("auth");
     }
 
     desktopMember.style.display = "none";
@@ -137,7 +138,7 @@ auth.onAuthStateChanged((user) => {
     logoutBtn.style.display = "none";
 
     if (bonusBtn) {
-      bonusBtn.classList.remove("authenticated");
+      bonusBtn.classList.remove("auth");
     }
   }
 });
@@ -180,6 +181,7 @@ window.favourite = async function (event) {
 // ------------------------
 /* Databas */
 // ------------------------
+
 const colRef = collection(db, "favourites");
 
 const savedDocs = () => {

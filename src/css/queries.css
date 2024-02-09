@@ -46,7 +46,7 @@
     position: fixed;
     z-index: 2;
     bottom: 0.1rem;
-    right: 0.1rem;
+    right: 0.3rem;
     border: none;
     cursor: pointer;
     background-color: white;
@@ -54,7 +54,7 @@
     box-shadow: var(--shadow-ambient--primary);
   }
 
-  .templates_create_btn.authenticated {
+  .templates_create_btn.auth {
     display: flex;
   }
 
