@@ -206,23 +206,19 @@ body.modal-open {
   box-shadow: 0 5px 3px 0 #dfdfdf89;
   z-index: 1;
   opacity: 0;
-  max-height: 0;
   display: none;
   animation: fadeDown 1s forwards;
   display: none;
-  transition: max-height 0.5s ease, opacity 0.5s ease;
 }
 
 @keyframes fadeDown {
   0% {
     transform: translateY(-100px);
     opacity: 0; 
-    max-height: 0; 
   }
   100% {
     transform: translateY(0px);
     opacity: 1;
-    max-height: 200px;
   }
 }
 
