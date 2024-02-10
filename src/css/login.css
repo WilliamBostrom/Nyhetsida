@@ -205,17 +205,24 @@ body.modal-open {
   background-color: var(--background_secondary);
   box-shadow: 0 5px 3px 0 #dfdfdf89;
   z-index: 1;
+  opacity: 0;
+  max-height: 0;
   display: none;
   animation: fadeDown 1s forwards;
   display: none;
+  transition: max-height 0.5s ease, opacity 0.5s ease;
 }
 
 @keyframes fadeDown {
   0% {
     transform: translateY(-100px);
+    opacity: 0; 
+    max-height: 0; 
   }
   100% {
     transform: translateY(0px);
+    opacity: 1;
+    max-height: 200px;
   }
 }
 
@@ -351,19 +358,39 @@ audio {
   margin-top: 20px;
 }
 
+.bonus-wrapper {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  margin-top: 6px;
+}
+
 .q-title {
   font-size: 2rem;
   margin-bottom: 10px;
 }
 
+.bonus-q-title {
+  font-size: 1.5rem;
+  margin-bottom: 5px;
+}
+
 .q-container {
   margin: 0 auto;
-  max-width: 300px;
   background-color: rgb(213, 233, 220);
   box-shadow: 0 2px 3px rgba(52, 48, 48, 0.5);
   padding: 20px;
   font-size: 1rem;
   border-radius: 30px;
+}
+
+.bonus-q-container {
+  background-color: rgb(213, 233, 220);
+  box-shadow: 0 2px 3px rgba(52, 48, 48, 0.5);
+  padding: 10px;
+  font-size: 1rem;
+  border-radius: 20px;
+  text-align: center;
 }
 
 #qoute {
@@ -383,6 +410,16 @@ audio {
   background-color: var(--primary_darken);
   border-radius: 40px;
   margin-top: 10px;
+  cursor: pointer;
+}
+
+#bonus-q-btn {
+  font-size: 1rem;
+  padding: 0.2rem;
+  color: var(--background_primary);
+  background-color: var(--primary_darken);
+  border-radius: 20px;
+  margin-top: 15px;
   cursor: pointer;
 }
 

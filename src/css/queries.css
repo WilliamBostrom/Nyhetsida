@@ -3,6 +3,13 @@
 /* ****************** */
 
 @media (max-width: 84em) {
+  .bonus-control-btn {
+    margin-top: -25px;
+  }
+
+  .welcome-radio-bonus {
+    margin-top: 7px;
+  }
 }
 /* ****************** */
 /* BELOW 1200px (landscap tablets desktops)*/
@@ -60,6 +67,14 @@
 
   .news-main-side {
     display: none;
+  }
+
+  .welcome-radio-bonus {
+    margin-top: 7px;
+  }
+
+  .bonus-control-btn {
+    margin-top: -20px;
   }
 }
 
@@ -164,6 +179,10 @@
 
   .welcome-radio {
     gap: 3rem;
+  }
+
+  .bonus-control-btn {
+    margin-top: -2px;
   }
 }
 

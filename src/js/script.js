@@ -395,25 +395,42 @@ initializeRadio(
 );
 
 
-let qoute = document.getElementById("qoute");
+// Kod för att hämta citat
+let quote = document.getElementById("quote");
 let author = document.getElementById("author");
-let btn = document.getElementById("btn");
+let bigBtn = document.getElementById("btn"); // Knapp för stor skärm
+let smallBtn = document.getElementById("bonus-q-btn"); // Knapp för liten skärm
 
 const url = "https://api.quotable.io/random";
 
-let getQoute = () => {
-  fetch(url).then((data) =>
-    data.json().then((item) => {
-      console.log(item.content);
-      console.log(item.author);
-      qoute.innerText = item.content;
-      author.innerText = item.author;
+let getQuote = () => {
+  fetch(url)
+    .then((response) => response.json())
+    .then((data) => {
+      console.log(data.content);
+      console.log(data.author);
+      quote.innerText = data.content;
+      author.innerText = data.author;
     })
-  );
+    .catch((error) => {
+      console.error("Fetch error:", error);
+    });
 };
 
-window.addEventListener("load", getQoute);
-btn.addEventListener("click", getQoute);
+// Funktion för att hämta citat när sidan laddas
+window.addEventListener("load", () => {
+  getQuote();
+});
+
+// Lyssnare för båda knapparna
+bigBtn.addEventListener("click", () => {
+  getQuote();
+});
+
+smallBtn.addEventListener("click", () => {
+  getQuote();
+});
+
 
 const openModalButtonFooter = document.getElementById("openModalButton");
 const openModalButtonSideNav = document.getElementById("openModalBtn");
