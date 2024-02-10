@@ -286,6 +286,15 @@ body.modal-open {
   position: absolute;
 }
 
+.bonus-control-btn {
+  background: none;
+  border: none;
+  color: white;
+  cursor: pointer;
+  font-size: 10px;
+  position: absolute;
+}
+
 .prev-btn {
   top: 55%;
   left: 76px;
@@ -299,6 +308,22 @@ body.modal-open {
 .next-btn {
   top: 55%;
   right: 76px;
+  transform: translateY(-50%);
+}
+
+.bonus-prev-btn {
+  top: 55%;
+  left: 2px;
+  transform: translateY(-50%);
+}
+.bonus-play-btn {
+  top: 55%;
+  left: 25px;
+  transform: translateY(-50%);
+}
+.bonus-next-btn {
+  top: 55%;
+  right: 2px;
   transform: translateY(-50%);
 }
 

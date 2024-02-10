@@ -295,98 +295,105 @@ searchBoxes.forEach((searchBox) => {
   });
 });
 
-let channels = [];
-let currentChannelIndex = 0;
-let audioPlayer = document.querySelector("audio");
-let mp3Player = document.querySelector(".mp3-player");
-let mp3PlayerBonus = document.querySelector(".mp3-player-bonus");
-mp3Player.style.backgroundImage =
-  'url("https://static-cdn.sr.se/images/132/2186745_512_512.jpg")';
-mp3PlayerBonus.style.backgroundImage =
-  'url("https://static-cdn.sr.se/images/132/2186745_512_512.jpg")';
-mp3PlayerBonus.style.backgroundPosistion = "center";
-let isPlaying = false;
+// Funktion för att initiera en radio med lyssnare och datahämtning
+function initializeRadio(audioPlayerSelector, nextBtnSelector, playBtnSelector, prevBtnSelector, mp3PlayerSelector) {
+  let channels = [];
+  let currentChannelIndex = 0;
+  let audioPlayer = document.querySelector(audioPlayerSelector);
+  let mp3Player = document.querySelector(mp3PlayerSelector);
+  let mp3PlayerBonus = document.querySelector(".mp3-player-bonus");
+      mp3Player.style.backgroundImage =
+     'url("https://static-cdn.sr.se/images/132/2186745_512_512.jpg")';
+      mp3PlayerBonus.style.backgroundImage =
+     'url("https://static-cdn.sr.se/images/132/2186745_512_512.jpg")';
+      mp3PlayerBonus.style.backgroundPosistion = "center";
+  let isPlaying = false;
 
-// Här hämtar jag kanaldata från en SR radio med hjälp av Axios.
-axios
-  .get("https://api.sr.se/api/v2/channels?format=json&size=100")
-  .then((response) => {
-    console.log(response);
-    channels = response.data.channels;
-  })
-  .catch((error) => {
-    console.error("Ett fel inträffade:", error);
-  });
+  // Hämta kanaldata
+  axios
+    .get("https://api.sr.se/api/v2/channels?format=json&size=100")
+    .then((response) => {
+      console.log(response);
+      channels = response.data.channels;
+    })
+    .catch((error) => {
+      console.error("Ett fel inträffade:", error);
+    });
 
-// Här lägger jag till eventlyssnare för att hantera kontrollknappar för kanalbyte och för att stoppa radion.
-document.querySelector(".prev-btn").addEventListener("click", prevChannel);
-document.querySelector(".next-btn").addEventListener("click", nextChannel);
-document.querySelector(".play-btn").addEventListener("click", togglePlay);
+  // Lägg till lyssnare för kontrollknappar
+  document.querySelector(nextBtnSelector).addEventListener("click", nextChannel);
+  document.querySelector(prevBtnSelector).addEventListener("click", prevChannel);
+  document.querySelector(playBtnSelector).addEventListener("click", togglePlay);
 
-// Här definierar jag en funktion för att uppdatera spelaren med aktuell kanal.
-function updatePlayer(channelIndex) {
-  const channel = channels[channelIndex];
-
-  // Uppdaterar bilden och bakgrundsfärgen som följer med i anropet för spelaren.
-  const player = document.querySelector(".mp3-player");
-  player.style.backgroundImage = `url(${channel.image})`;
-  player.style.backgroundColor = `#${channel.color}`;
-  player.style.backgroundSize = "90%";
-
-  audioPlayer.src = channel.liveaudio.url;
-  if (isPlaying) {
-    audioPlayer.play();
+  // Funktion för att uppdatera spelaren med aktuell kanal
+  function updatePlayer(channelIndex) {
+    const channel = channels[channelIndex];
+    mp3Player.style.backgroundImage = `url(${channel.image})`;
+    mp3Player.style.backgroundColor = `#${channel.color}`;
+    mp3Player.style.backgroundSize = "90%";
+    audioPlayer.src = channel.liveaudio.url;
+    if (isPlaying) {
+      audioPlayer.play();
+    }
   }
-}
 
-// Här definierar jag funktionen för att byta kanal bakåt.
-function prevChannel() {
-  if (currentChannelIndex > 0) {
-    currentChannelIndex--;
-  } else {
-    currentChannelIndex = channels.length - 1;
-  }
-  updatePlayer(currentChannelIndex);
-}
-// Här definierar jag funktionen för att byta kanal framåt.
-function nextChannel() {
-  if (currentChannelIndex < channels.length - 1) {
-    currentChannelIndex++;
-  } else {
-    currentChannelIndex = 0;
-  }
-  updatePlayer(currentChannelIndex);
-}
-
-// Här definierar jag en funktion för att byta mellan uppspelning och paus.
-function togglePlay() {
-  if (!isPlaying) {
-    isPlaying = true;
+  // Funktion för att byta kanal bakåt
+  function prevChannel() {
+    if (currentChannelIndex > 0) {
+      currentChannelIndex--;
+    } else {
+      currentChannelIndex = channels.length - 1;
+    }
     updatePlayer(currentChannelIndex);
-    document.querySelector(".play-btn i").classList.remove("fa-play");
-    document.querySelector(".play-btn i").classList.add("fa-pause");
-    mp3Player.classList.add("rotate-background");
-  } else {
-    isPlaying = false;
-    audioPlayer.pause();
-    document.querySelector(".play-btn i").classList.remove("fa-pause");
-    document.querySelector(".play-btn i").classList.add("fa-play");
-    mp3Player.classList.remove("rotate-background");
+  }
+
+  // Funktion för att byta kanal framåt
+  function nextChannel() {
+    if (currentChannelIndex < channels.length - 1) {
+      currentChannelIndex++;
+    } else {
+      currentChannelIndex = 0;
+    }
+    updatePlayer(currentChannelIndex);
+  }
+
+  // Funktion för att byta mellan uppspelning och paus
+  function togglePlay() {
+    const playBtnIcon = document.querySelector(playBtnSelector + " i");
+    if (!isPlaying) {
+      isPlaying = true;
+      updatePlayer(currentChannelIndex);
+      mp3Player.classList.add("rotate-background");
+      playBtnIcon.classList.remove("fa-play");
+      playBtnIcon.classList.add("fa-pause");
+    } else {
+      isPlaying = false;
+      audioPlayer.pause();
+      mp3Player.classList.remove("rotate-background");
+      playBtnIcon.classList.remove("fa-pause");
+      playBtnIcon.classList.add("fa-play");
+    }
   }
 }
 
-const btnLogOut = document.querySelector(".logout");
-btnLogOut.addEventListener("click", () => {
-  stopRadio();
-});
+// Initiera den första radion för desktop-layouten
+initializeRadio(
+  ".welcome-radio audio",
+  ".controls .next-btn",
+  ".controls .play-btn",
+  ".controls .prev-btn",
+  ".welcome-radio .mp3-player"
+);
 
-function stopRadio() {
-  isPlaying = false;
-  audioPlayer.pause();
-  document.querySelector(".play-btn i").classList.remove("fa-pause");
-  document.querySelector(".play-btn i").classList.add("fa-play");
-  mp3Player.classList.remove("rotate-background");
-}
+// Initiera den andra radion för mobil-layouten
+initializeRadio(
+  ".welcome-bonus .welcome-radio-bonus audio",
+  ".bonus-control-btn.bonus-next-btn",
+  ".bonus-control-btn.bonus-play-btn",
+  ".bonus-control-btn.bonus-prev-btn",
+  ".welcome-bonus .welcome-radio-bonus .mp3-player-bonus"
+);
+
 
 let qoute = document.getElementById("qoute");
 let author = document.getElementById("author");

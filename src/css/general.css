@@ -59,7 +59,8 @@ body.active .main-nav-link-cta.nav-cta-2:visited,
 body.active .side-nav-link.nav-cta-2:visited,
 body.active .dropbtn,
 body.active #qoute body.active .modal-content,
-body.active {
+body.active,
+body.active .bonus-mobile-container {
   background-color: #333;
   color: #fff;
 }
@@ -70,17 +71,15 @@ body.active .news-side-cta {
 
 body.active .welcome-in,
 body.active .btn-text:link,
-body.active .modal-content {
+body.active .modal-content,
+body.active #weather-temp, 
+body.active #weather-condition {
   background-color: #333;
   color: #fff;
 }
 
-body.active .prev-btn,
-body.active .play-btn,
-body.active .next-btn,
-body.active #qoute,
-body.active #author {
-  color: black;
+body.active .fas {
+  color: white;
 }
 
 .container {
