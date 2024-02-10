@@ -299,12 +299,19 @@ let channels = [];
 let currentChannelIndex = 0;
 let audioPlayer = document.querySelector("audio");
 let mp3Player = document.querySelector(".mp3-player");
+let mp3PlayerBonus = document.querySelector(".mp3-player-bonus");
+mp3Player.style.backgroundImage =
+  'url("https://static-cdn.sr.se/images/132/2186745_512_512.jpg")';
+mp3PlayerBonus.style.backgroundImage =
+  'url("https://static-cdn.sr.se/images/132/2186745_512_512.jpg")';
+mp3PlayerBonus.style.backgroundPosistion = "center";
 let isPlaying = false;
 
 // Här hämtar jag kanaldata från en SR radio med hjälp av Axios.
 axios
   .get("https://api.sr.se/api/v2/channels?format=json&size=100")
   .then((response) => {
+    console.log(response);
     channels = response.data.channels;
   })
   .catch((error) => {

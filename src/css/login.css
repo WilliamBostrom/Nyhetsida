@@ -207,6 +207,7 @@ body.modal-open {
   z-index: 1;
   display: none;
   animation: fadeDown 1s forwards;
+  display: none;
 }
 
 @keyframes fadeDown {
@@ -240,6 +241,11 @@ body.modal-open {
   margin-bottom: 10px;
 }
 
+/* LITE FÄRG TILL MP3 Tillfälligt */
+.fas {
+  color: #333;
+}
+
 .mp3-player {
   border-radius: 50%;
   width: 200px;
@@ -252,6 +258,8 @@ body.modal-open {
   display: flex;
   justify-content: center;
   align-items: center;
+  background-position: center;
+  background-size: contain;
 }
 .mp3-player-bonus {
   border-radius: 50%;
@@ -265,6 +273,8 @@ body.modal-open {
   display: flex;
   justify-content: center;
   align-items: center;
+  background-position: center;
+  background-size: contain;
 }
 
 .control-btn {
