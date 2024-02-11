@@ -203,4 +203,16 @@
     row-gap: 4.8rem;
     column-gap: 4.8rem;
   }
+
+  .welcome-bonus {
+    margin-top: 2.4rem;
+    padding-top: 2rem;
+    align-items: center;
+    gap: 0rem;
+  }
+  .text-bonus {
+    font-size: 1.5rem;
+    padding: 0.3rem;
+    font-weight: 600;
+  }
 }
