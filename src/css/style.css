@@ -638,3 +638,90 @@ footer {
   width: 50%;
   border-radius: 50%;
 }
+
+/* Mobil styling omx30 */
+.omx30 {
+  display: flex;
+  align-items: center;
+}
+.omxs30 {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
+
+.img-box {
+  width: 1.4rem;
+  height: 1.4rem;
+  border-radius: 50%;
+  margin-right: 5px;
+}
+.img {
+  width: 1.4rem;
+  height: 1.4rem;
+  border-radius: 50%;
+}
+.img-box-phone {
+  width: 1.8rem;
+  height: 1.8rem;
+  border-radius: 50%;
+  margin-right: 5px;
+}
+.img-phone {
+  width: 1.8rem;
+  height: 1.8rem;
+  border-radius: 50%;
+}
+.welcome-weather {
+  justify-content: center;
+}
+.omxs-container-phone {
+  margin: 0;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+}
+.omxs-p-phone,
+.heading-omni-phone {
+  margin: 0;
+}
+.heading-omni-phone {
+  font-weight: 600;
+  font-size: 1.4rem;
+  padding: 0.8rem 0.1rem;
+}
+.omxs-p-phone {
+  font-size: 1.4rem;
+}
+.phone-omx {
+  font-weight: 600;
+}
+
+/* Dator styling för omxs30 */
+.desktop {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  align-items: center;
+  /* font-weight: 600; */
+}
+
+.desktop-omni {
+  background-color: #fafafa;
+  font-size: 1.8rem;
+  font-weight: 600;
+}
+.omxs30-container {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  padding: 2rem;
+  box-shadow: 0 0 5px 0 #dfdfdf;
+}
+.header-omni-desktop {
+  font-size: 2rem;
+  font-weight: 600;
+  margin: 0;
+  margin-bottom: 5px;
+}

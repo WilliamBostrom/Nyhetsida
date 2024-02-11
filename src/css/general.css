@@ -133,7 +133,7 @@ body.active .fas {
 .text-normal-weather {
   font-size: 1.9rem;
   padding: calc(8px * 1.5) 0 calc(8px * 0.5);
-  padding-left: 2.4rem;
+  /* padding-left: 2.4rem; */
   padding-right: 2.4rem;
   font-weight: 600;
 }

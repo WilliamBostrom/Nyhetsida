@@ -310,3 +310,57 @@ const header = document.querySelector(".header");
 }
 
 siteMadeByEnkelt(); */
+
+const apiKey = "1402293712msh68149a58f5bf447p151227jsn91e431009d3d";
+const symbol = "^OMX";
+const region = "ST";
+const url = `https://apidojo-yahoo-finance-v1.p.rapidapi.com/stock/v3/get-historical-data?symbol=${symbol}&region=${region}`;
+
+fetch(url, {
+  method: "GET",
+  headers: {
+    "X-RapidAPI-Key": apiKey,
+    "X-RapidAPI-Host": "apidojo-yahoo-finance-v1.p.rapidapi.com",
+  },
+})
+  .then((response) => {
+    if (!response.ok) {
+      throw new Error("Network response was not ok");
+    }
+    return response.json();
+  })
+  .then((data) => {
+    const prices = data.prices;
+    const firstClose = prices[0].close;
+    const lastClose = prices[prices.length - 1].close;
+    const totalPercentageChange = ((lastClose - firstClose) / firstClose) * 100;
+
+    const dailyChange =
+      ((lastClose - prices[prices.length - 2].close) /
+        prices[prices.length - 2].close) *
+      100;
+    const weeklyChange =
+      ((lastClose - prices[prices.length - 6].close) /
+        prices[prices.length - 6].close) *
+      100;
+    const yearlyChange =
+      ((lastClose - prices[0].close) / prices[0].close) * 100;
+
+    const dailyElements = document.querySelectorAll(".daily");
+    const weeklyElements = document.querySelector(".weekly");
+    const yearlyElements = document.querySelectorAll(".yearly");
+
+    dailyElements.forEach((element) => {
+      element.textContent = `${dailyChange.toFixed(2)} %`;
+      element.style.color = dailyChange >= 0 ? "#0474ca" : "#d0184d";
+    });
+
+    weeklyElements.textContent = `${weeklyChange.toFixed(2)} %`;
+    weeklyElements.style.color = weeklyChange >= 0 ? "#0474ca" : "#d0184d";
+
+    yearlyElements.forEach((element) => {
+      element.textContent = `${yearlyChange.toFixed(2)} %`;
+      element.style.color = yearlyChange >= 0 ? "#0474ca" : "#d0184d";
+    });
+  })
+  .catch((error) => console.error("Fetch error:", error));

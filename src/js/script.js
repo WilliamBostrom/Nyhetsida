@@ -296,17 +296,23 @@ searchBoxes.forEach((searchBox) => {
 });
 
 // Funktion för att initiera en radio med lyssnare och datahämtning
-function initializeRadio(audioPlayerSelector, nextBtnSelector, playBtnSelector, prevBtnSelector, mp3PlayerSelector) {
+function initializeRadio(
+  audioPlayerSelector,
+  nextBtnSelector,
+  playBtnSelector,
+  prevBtnSelector,
+  mp3PlayerSelector
+) {
   let channels = [];
   let currentChannelIndex = 0;
   let audioPlayer = document.querySelector(audioPlayerSelector);
   let mp3Player = document.querySelector(mp3PlayerSelector);
   let mp3PlayerBonus = document.querySelector(".mp3-player-bonus");
-      mp3Player.style.backgroundImage =
-     'url("https://static-cdn.sr.se/images/132/2186745_512_512.jpg")';
-      mp3PlayerBonus.style.backgroundImage =
-     'url("https://static-cdn.sr.se/images/132/2186745_512_512.jpg")';
-      mp3PlayerBonus.style.backgroundPosistion = "center";
+  mp3Player.style.backgroundImage =
+    'url("https://static-cdn.sr.se/images/132/2186745_512_512.jpg")';
+  mp3PlayerBonus.style.backgroundImage =
+    'url("https://static-cdn.sr.se/images/132/2186745_512_512.jpg")';
+  mp3PlayerBonus.style.backgroundPosistion = "center";
   let isPlaying = false;
 
   // Hämta kanaldata
@@ -321,8 +327,12 @@ function initializeRadio(audioPlayerSelector, nextBtnSelector, playBtnSelector, 
     });
 
   // Lägg till lyssnare för kontrollknappar
-  document.querySelector(nextBtnSelector).addEventListener("click", nextChannel);
-  document.querySelector(prevBtnSelector).addEventListener("click", prevChannel);
+  document
+    .querySelector(nextBtnSelector)
+    .addEventListener("click", nextChannel);
+  document
+    .querySelector(prevBtnSelector)
+    .addEventListener("click", prevChannel);
   document.querySelector(playBtnSelector).addEventListener("click", togglePlay);
 
   // Funktion för att uppdatera spelaren med aktuell kanal
@@ -393,7 +403,7 @@ initializeRadio(
   ".bonus-control-btn.bonus-prev-btn",
   ".welcome-bonus .welcome-radio-bonus .mp3-player-bonus"
 );
-
+/* 
 
 // Kod för att hämta citat
 let quote = document.getElementById("quote");
@@ -421,16 +431,15 @@ let getQuote = () => {
 window.addEventListener("load", () => {
   getQuote();
 });
-
+ */
 // Lyssnare för båda knapparna
-bigBtn.addEventListener("click", () => {
+/* bigBtn.addEventListener("click", () => {
   getQuote();
-});
-
+}); */
+/* 
 smallBtn.addEventListener("click", () => {
   getQuote();
-});
-
+}); */
 
 const openModalButtonFooter = document.getElementById("openModalButton");
 const openModalButtonSideNav = document.getElementById("openModalBtn");
