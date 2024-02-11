@@ -73,7 +73,11 @@ body.active .welcome-in,
 body.active .btn-text:link,
 body.active .modal-content,
 body.active #weather-temp,
-body.active #weather-condition {
+body.active #weather-condition,
+body.active .desktop-omni,
+body.active .weather-temp-grades,
+body.active #weather-temp-b,
+body.active #weather-condition-b  {
   background-color: #333;
   color: #ffffff;
 }
