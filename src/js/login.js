@@ -349,60 +349,61 @@ fetch(url, {
   .catch((error) => console.error("Fetch error:", error));
  */
 
-  /* NAMNSDAGAR */
-  const url = "src/js/namnsdagar.json";
+/* NAMNSDAGAR */
+const url = "/namnsdagar.json";
+// const url = namnsDagar;
 
-  function fetchTodaysNameDay() {
-    const today = new Date();
-    const monthsInSwedish = {
-      1: "januari",
-      2: "februari",
-      3: "mars",
-      4: "april",
-      5: "maj",
-      6: "juni",
-      7: "juli",
-      8: "augusti",
-      9: "september",
-      10: "oktober",
-      11: "november",
-      12: "december",
-    };
-    const month = monthsInSwedish[today.getMonth() + 1];
-    const year = today.getFullYear();
-    const day = today.getDate();
-    fetch(url)
-      .then((res) => res.json())
-      .then((json) => {
-        const names = json[month][day];
-        const nameDayText = `Dagens namnsdag är: ${names.join(", ")}`;
-        const dateString = `${day}:e ${month} ${year}`;
-  
-        // Uppdatera HTML med de hämtade datumen och namnen
-        document.getElementById('date').innerText = dateString;
-        document.getElementById('nameDay').innerText = nameDayText;
-        document.getElementById('dateBonus').innerText = dateString;
-        document.getElementById('nameDayBonus').innerText = nameDayText;
-      })
-      .catch((error) => console.error(error));
+function fetchTodaysNameDay() {
+  const today = new Date();
+  const monthsInSwedish = {
+    1: "januari",
+    2: "februari",
+    3: "mars",
+    4: "april",
+    5: "maj",
+    6: "juni",
+    7: "juli",
+    8: "augusti",
+    9: "september",
+    10: "oktober",
+    11: "november",
+    12: "december",
+  };
+  const month = monthsInSwedish[today.getMonth() + 1];
+  const year = today.getFullYear();
+  const day = today.getDate();
+  fetch(url)
+    .then((res) => res.json())
+    .then((json) => {
+      const names = json[month][day];
+      const nameDayText = `Dagens namnsdag är: ${names.join(", ")}`;
+      const dateString = `${day}:e ${month} ${year}`;
+      console.log(names);
+
+      // Uppdatera HTML med de hämtade datumen och namnen
+      document.getElementById("date").innerText = dateString;
+      document.getElementById("nameDay").innerText = nameDayText;
+      document.getElementById("dateBonus").innerText = dateString;
+      document.getElementById("nameDayBonus").innerText = nameDayText;
+    })
+    .catch((error) => console.error(error));
+}
+
+function toggleWelcomeDisplay() {
+  const welcomeName = document.getElementById("welcomeName");
+  const welcomeNameBonus = document.getElementById("welcomeNameBonus");
+
+  if (window.innerWidth <= 1200) {
+    welcomeName.style.display = "none";
+    welcomeNameBonus.style.display = "block";
+  } else {
+    welcomeName.style.display = "block";
+    welcomeNameBonus.style.display = "none";
   }
-  
-  function toggleWelcomeDisplay() {
-    const welcomeName = document.getElementById('welcomeName');
-    const welcomeNameBonus = document.getElementById('welcomeNameBonus');
-  
-    if (window.innerWidth <= 1200) {
-      welcomeName.style.display = 'none'; 
-      welcomeNameBonus.style.display = 'block'; 
-    } else {
-      welcomeName.style.display = 'block';
-      welcomeNameBonus.style.display = 'none'; 
-    }
-  }
-  
-  document.addEventListener('DOMContentLoaded', () => {
-    fetchTodaysNameDay();
-    toggleWelcomeDisplay(); 
-  });
-  window.addEventListener('resize', toggleWelcomeDisplay);
-  
+}
+
+document.addEventListener("DOMContentLoaded", () => {
+  fetchTodaysNameDay();
+  toggleWelcomeDisplay();
+});
+window.addEventListener("resize", toggleWelcomeDisplay);
