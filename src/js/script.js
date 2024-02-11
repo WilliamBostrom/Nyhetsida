@@ -8,16 +8,16 @@ let checkingIndex = 0;
 
 // Luays key
 // const apiKey = "pub_364847766bd024d75ae2f1bd0f148a57c4faf";
-// const apiKey = "pub_364847766bd024d75ae2f1bd0f148a57c4fafa";
-// WILLES NYCKEL
-/* const apiKey = "pub_36673e2a264d14a136dc8d64987d21585bdf5"; */
-// const apiKey = "pub_3689763523f92753a85b5bf7a4f2ffadb650a";
+// // const apiKey = "pub_364847766bd024d75ae2f1bd0f148a57c4fafa";
+// // WILLES NYCKEL
+// /* const apiKey = "pub_36673e2a264d14a136dc8d64987d21585bdf5"; */
+// // const apiKey = "pub_3689763523f92753a85b5bf7a4f2ffadb650a";
 
-//Simons
-const apiKey = "pub_3677850ce73d96f2586086f013ecb9f63081f";
+// //Simons
+// const apiKey = "pub_3677850ce73d96f2586086f013ecb9f63081f";
 
 // DENNIS NYCKEL
-// const apiKey = "pub_36893493e88538fc3b8e75bdf04433cf20888";
+const apiKey = "pub_36893493e88538fc3b8e75bdf04433cf20888";
 /* const apiKey = "pub_36893493e88538fc3b8e75bdf04433cf20888"; */
 const newsHeading = document.querySelector(".heading-small");
 const searchQuery = "sverige";
@@ -85,9 +85,9 @@ utrikes.forEach((btn) => {
 async function fetchNews(API_URL) {
   try {
     const response = await axios.get(API_URL);
-    console.log(response);
+    // console.log(response);
     const newsData = response.data;
-    console.log(newsData);
+    // console.log(newsData);
     fetchData = newsData.results.map((news) => ({
       title: news.title,
       img: news.image_url,
@@ -180,7 +180,7 @@ function sortArticlesByLastAlfabet() {
 // Funktion för att ta bort dubletter
 function findDuplicates(fetchData) {
   const seenTitles = new Set();
-  console.log("Set: ", seenTitles);
+  // console.log("Set: ", seenTitles);
 
   const removedDuplicates = fetchData.filter((article) => {
     if (seenTitles.has(article.title)) {
@@ -319,7 +319,7 @@ function initializeRadio(
   axios
     .get("https://api.sr.se/api/v2/channels?format=json&size=100")
     .then((response) => {
-      console.log(response);
+      // console.log(response);
       channels = response.data.channels;
     })
     .catch((error) => {

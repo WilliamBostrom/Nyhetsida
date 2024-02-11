@@ -293,23 +293,6 @@ function translateWeatherCondition(condition) {
 
   return conditionMap[condition] || condition;
 }
-const header = document.querySelector(".header");
-
-/* function siteMadeByEnkelt() {
-  setTimeout(() => {
-    const div = document.createElement("div");
-    div.innerHTML = `<p class="text-bonus bonus-header">Chas News är en del av Avancerad frontendutveckling på <a href="www.chasacademy.se" target="_blank">  Chas Academy</a></p>`;
-
-    header.parentNode.insertBefore(div, header);
-    div.addEventListener;
-  }, 3000);
-
-  div.addEventListener("click", () => {
-    div.style.display = "none";
-  });
-}
-
-siteMadeByEnkelt(); */
 
 /* const apiKey = "1402293712msh68149a58f5bf447p151227jsn91e431009d3d";
 const symbol = "^OMX";
@@ -365,3 +348,38 @@ fetch(url, {
   })
   .catch((error) => console.error("Fetch error:", error));
  */
+
+/* NAMNSDAGAR */
+const url = "src/js/namnsdagar.json";
+
+function fetchTodaysNameDay() {
+  const today = new Date();
+  const monthsInSwedish = {
+    1: "januari",
+    2: "februari",
+    3: "mars",
+    4: "april",
+    5: "maj",
+    6: "juni",
+    7: "juli",
+    8: "augusti",
+    9: "september",
+    10: "oktober",
+    11: "november",
+    12: "december",
+  };
+  const month = monthsInSwedish[today.getMonth() + 1];
+  const year = today.getFullYear();
+  const day = today.getDate();
+  fetch(url)
+    .then((res) => res.json())
+    .then((json) => {
+      const names = json[month][day];
+      console.log(
+        `${day}:e ${month} ${year} Dagens namnsdag är: ${names.join(", ")}`
+      );
+    })
+    .catch((error) => console.error(error));
+}
+
+fetchTodaysNameDay();
