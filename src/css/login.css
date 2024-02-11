@@ -146,12 +146,17 @@ body.modal-open {
 .welcome-bonus {
   display: flex;
   justify-content: space-around;
+  gap: 15px;
 }
 
 .welcome-name {
   display: flex;
   padding: 1rem;
   box-shadow: 0 0 5px 0 #dfdfdf;
+}
+
+.text-bonus {
+  font-size: 1rem;
 }
 
 /* Inloggads väder */
