@@ -72,7 +72,7 @@ body.active .news-side-cta {
 body.active .welcome-in,
 body.active .btn-text:link,
 body.active .modal-content,
-body.active #weather-temp, 
+body.active #weather-temp,
 body.active #weather-condition {
   background-color: #333;
   color: #fff;
@@ -129,6 +129,13 @@ body.active .fas {
   padding: calc(8px * 1.5) 0 calc(8px * 0.5);
   padding-left: 2.4rem;
   padding-right: 2.4rem;
+}
+.text-normal-weather {
+  font-size: 1.9rem;
+  padding: calc(8px * 1.5) 0 calc(8px * 0.5);
+  padding-left: 2.4rem;
+  padding-right: 2.4rem;
+  font-weight: 600;
 }
 .text-bonus {
   font-size: 1.5rem;

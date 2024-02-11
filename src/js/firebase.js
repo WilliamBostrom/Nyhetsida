@@ -87,7 +87,6 @@ const setupFavoritesListener = (userId, onDataReceived) => {
     userFavouritesCollection,
     (snapshot) => {
       console.log(snapshot.docs);
-      // Pass favorites to logged-in users, but only if the button is clicked
       if (favouritesButtonClicked) {
         onDataReceived(snapshot.docs);
       }

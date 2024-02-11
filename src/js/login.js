@@ -293,3 +293,20 @@ function translateWeatherCondition(condition) {
 
   return conditionMap[condition] || condition;
 }
+const header = document.querySelector(".header");
+
+/* function siteMadeByEnkelt() {
+  setTimeout(() => {
+    const div = document.createElement("div");
+    div.innerHTML = `<p class="text-bonus bonus-header">Chas News är en del av Avancerad frontendutveckling på <a href="www.chasacademy.se" target="_blank">  Chas Academy</a></p>`;
+
+    header.parentNode.insertBefore(div, header);
+    div.addEventListener;
+  }, 3000);
+
+  div.addEventListener("click", () => {
+    div.style.display = "none";
+  });
+}
+
+siteMadeByEnkelt(); */
