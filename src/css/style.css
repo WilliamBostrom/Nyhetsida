@@ -643,6 +643,12 @@ footer {
 .omx30 {
   display: flex;
   align-items: center;
+  margin-bottom: 0.3rem;
+}
+.omx30-phone {
+  display: flex;
+  align-items: center;
+  margin-bottom: 0.3rem;
 }
 .omxs30 {
   display: flex;
@@ -651,25 +657,25 @@ footer {
 }
 
 .img-box {
-  width: 1.4rem;
-  height: 1.4rem;
+  width: 1.8rem;
+  height: 1.8rem;
   border-radius: 50%;
   margin-right: 5px;
 }
 .img {
-  width: 1.4rem;
-  height: 1.4rem;
+  width: 1.8rem;
+  height: 1.8rem;
   border-radius: 50%;
 }
 .img-box-phone {
-  width: 1.8rem;
-  height: 1.8rem;
+  width: 1.6rem;
+  height: 1.6rem;
   border-radius: 50%;
   margin-right: 5px;
 }
 .img-phone {
-  width: 1.8rem;
-  height: 1.8rem;
+  width: 1.6rem;
+  height: 1.6rem;
   border-radius: 50%;
 }
 .welcome-weather {
@@ -689,7 +695,8 @@ footer {
 .heading-omni-phone {
   font-weight: 600;
   font-size: 1.4rem;
-  padding: 0.8rem 0.1rem;
+  padding: 0.6rem 0.1rem;
+  margin-bottom: -0.2rem;
 }
 .omxs-p-phone {
   font-size: 1.4rem;
@@ -723,5 +730,5 @@ footer {
   font-size: 2rem;
   font-weight: 600;
   margin: 0;
-  margin-bottom: 5px;
+  /* margin-bottom: 5px; */
 }

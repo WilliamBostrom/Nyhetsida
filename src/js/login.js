@@ -311,7 +311,7 @@ const header = document.querySelector(".header");
 
 siteMadeByEnkelt(); */
 
-const apiKey = "1402293712msh68149a58f5bf447p151227jsn91e431009d3d";
+/* const apiKey = "1402293712msh68149a58f5bf447p151227jsn91e431009d3d";
 const symbol = "^OMX";
 const region = "ST";
 const url = `https://apidojo-yahoo-finance-v1.p.rapidapi.com/stock/v3/get-historical-data?symbol=${symbol}&region=${region}`;
@@ -364,3 +364,4 @@ fetch(url, {
     });
   })
   .catch((error) => console.error("Fetch error:", error));
+ */
