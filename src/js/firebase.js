@@ -298,8 +298,8 @@ const setupFavourites = (data) => {
             }" target="_blank">Läs mer &rarr;</a>
           </div>
           <div class="star-container2">
-          <img class="star-icon" src="${starSvg}" alt=""  />
-          <img class="selected-star-icon delete" src="${selectedSvg}" alt="" onclick="deleteButtonPressed(event)"/>
+          <img class="star-icon" src="${selectedSvg}" alt=""  />
+          <img class="selected-star-icon delete" src="${starSvg}" alt="" onclick="deleteButtonPressed(event)"/>
           </div>
           ${
             favourites.img !== null && favourites.img !== undefined
