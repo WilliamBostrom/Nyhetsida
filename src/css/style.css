@@ -20,7 +20,7 @@
   height: 4.4rem;
   display: flex;
   align-items: center;
-  justify-content: center;
+  /* justify-content: center; */
   background: #fff;
   font-size: 1.2rem !important;
 }
@@ -199,11 +199,11 @@
   width: 45px;
   height: 25px;
   border-radius: 160px;
-  background: #f3f3f3;
+  /* background: #f3f3f3; */
   transition: 0.5s;
   cursor: pointer;
-  box-shadow: inset 0 8px 60px rgba(0, 0, 0, 0.1),
-    inset 0 8px 8px rgba(0, 0, 0, 0.1), inset 0 -4px 4px rgba(0, 0, 0, 0.1);
+  box-shadow: inset 0 1px 10px rgba(0, 0, 0, 0.1),
+    inset 0 2px 2px rgba(0, 0, 0, 0.1), inset 0 -4px 4px rgba(0, 0, 0, 0.1);
 }
 
 #toggle.active {
@@ -221,7 +221,7 @@
   border-radius: 50%;
   transform: scale(0.9);
   box-shadow: 0 8px 40px rgba(0, 0, 0, 0.5),
-    inset 0 4px 4px rgba(255, 255, 255, 0.2),
+    inset 0 2px 2px rgba(255, 255, 255, 0.2),
     inset 0 -4px 4px rgba(255, 255, 255, 0.2);
   transition: 0.5s;
 }
