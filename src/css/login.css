@@ -145,8 +145,13 @@ body.modal-open {
 /* Lägga väder och radio snyggt */
 .welcome-bonus {
   display: flex;
-
   justify-content: space-around;
+}
+
+.welcome-name {
+  display: flex;
+  padding: 1rem;
+  box-shadow: 0 0 5px 0 #dfdfdf;
 }
 
 /* Inloggads väder */
@@ -157,6 +162,7 @@ body.modal-open {
   width: 30rem;
   padding: 1rem;
   /* box-shadow: var(--shadow-ambient--primary); */
+  box-shadow: 0 0 5px 0 #dfdfdf;
 }
 .welcome-weather-2,
 .welcome-weather {
