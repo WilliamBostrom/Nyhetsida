@@ -77,7 +77,7 @@ body.active #weather-condition,
 body.active .desktop-omni,
 body.active .weather-temp-grades,
 body.active #weather-temp-b,
-body.active #weather-condition-b  {
+body.active #weather-condition-b {
   background-color: #333;
   color: #ffffff;
 }
@@ -139,7 +139,6 @@ body.active .fas {
   padding: calc(8px * 1.5) 0 calc(8px * 0.5);
   /* padding-left: 2.4rem; */
   padding-right: 2.4rem;
-  font-weight: 600;
 }
 .text-bonus {
   font-size: 1.5rem;

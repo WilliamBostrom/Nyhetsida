@@ -728,7 +728,11 @@ footer {
 }
 .header-omni-desktop {
   font-size: 2rem;
-  font-weight: 600;
+  /* font-weight: 600; */
   margin: 0;
   /* margin-bottom: 5px; */
+}
+
+.desktop-dates-name {
+  box-shadow: var(--shadow-ambient--primary);
 }

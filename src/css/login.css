@@ -249,6 +249,7 @@ body.modal-open {
 .radio {
   font-size: 2rem;
   margin-bottom: 10px;
+  font-weight: 500;
 }
 
 /* LITE FÄRG TILL MP3 Tillfälligt */
@@ -369,8 +370,9 @@ audio {
 }
 
 .q-title {
-  font-size: 2rem;
+  font-size: 1.9rem;
   margin-bottom: 10px;
+  font-weight: 500;
 }
 
 .bonus-q-title {
