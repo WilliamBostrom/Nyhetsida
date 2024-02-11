@@ -148,6 +148,11 @@ body.active .fas {
   padding-right: 1.4rem;
   font-weight: 600;
 }
+.text-bonus-date {
+  font-size: 1.2rem;
+  padding: 0rem;
+  font-weight: 600;
+}
 
 .text-center {
   text-align: center;

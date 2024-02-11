@@ -376,7 +376,7 @@ function fetchTodaysNameDay() {
     .then((res) => res.json())
     .then((json) => {
       const names = json[month][day];
-      const nameDayText = `Dagens namnsdag är: ${names.join(", ")}`;
+      const nameDayText = `Dagens namnsdag: ${names.join(", ")}`;
       const dateString = `${day}:e ${month} ${year}`;
       console.log(names);
 
@@ -399,6 +399,7 @@ function toggleWelcomeDisplay() {
   } else {
     welcomeName.style.display = "block";
     welcomeNameBonus.style.display = "none";
+    bonusContainer.style.display = "none";
   }
 }
 

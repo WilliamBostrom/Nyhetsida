@@ -7,10 +7,10 @@ let fetchData = [];
 let checkingIndex = 0;
 
 // Luays key
-// const apiKey = "pub_364847766bd024d75ae2f1bd0f148a57c4faf";
+const apiKey = "pub_364847766bd024d75ae2f1bd0f148a57c4faf";
 // // const apiKey = "pub_364847766bd024d75ae2f1bd0f148a57c4fafa";
 // // WILLES NYCKEL
-const apiKey = "pub_36673e2a264d14a136dc8d64987d21585bdf5";
+// const apiKey = "pub_36673e2a264d14a136dc8d64987d21585bdf5";
 // // const apiKey = "pub_3689763523f92753a85b5bf7a4f2ffadb650a";
 
 // //Simons
