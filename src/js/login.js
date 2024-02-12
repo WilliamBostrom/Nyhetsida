@@ -252,7 +252,7 @@ async function getData() {
   }
 }
 
-function getUserLocation() {
+export function getUserLocation() {
   navigator.geolocation.getCurrentPosition(function (position) {
     dataCoord.lat = position.coords.latitude;
     dataCoord.lng = position.coords.longitude;
@@ -260,7 +260,6 @@ function getUserLocation() {
   });
 }
 
-getUserLocation();
 
 function translateWeatherCondition(condition) {
   const conditionMap = {

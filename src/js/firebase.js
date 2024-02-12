@@ -7,6 +7,7 @@ import {
   closeMembers,
   openLogin,
   closeLogin,
+  getUserLocation,
 } from "./login.js";
 
 import {
@@ -109,7 +110,7 @@ const bonusBtn = document.querySelector(".templates_create_btn");
 auth.onAuthStateChanged((user) => {
   if (user) {
     const userId = user.uid;
-
+    getUserLocation();
     if (favouritesButtonClicked) {
       const getFavourites = setupFavoritesListener(userId);
     }

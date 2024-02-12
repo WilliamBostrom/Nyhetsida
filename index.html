@@ -9,10 +9,10 @@
     <meta property="og:url" content="https://nyhetssida.netlify.app/" />
     <meta name="theme-color" content="#333333" />
     <link rel="manifest" href="/manifest.json" />
-    <link
+ <!--    <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
-    />
+    /> -->
     <link rel="icon" href="/src/img/CN-logo-transparent.svg" type="image/x-icon">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
@@ -47,7 +47,7 @@
       <div class="header-container container-2">
         <div class="header-nav-grid">
           <div class="nav-left">
-            <button class="btn-mobile-nav">
+            <button aria-label="Navigeringsmeny" class="btn-mobile-nav">
               <ion-icon class="icon-mobil-nav" name="menu"></ion-icon>
               <ion-icon class="icon-mobil-nav" name="close"></ion-icon>
             </button>
@@ -74,7 +74,7 @@
                 name="search"
                 placeholder="Sök"
               />
-              <button class="main-nav-search-button">
+              <button aria-label="sök knapp" class="main-nav-search-button">
                 <svg
                   focusable="false"
                   height="24px"
@@ -116,7 +116,7 @@
             name="search"
             placeholder="Sök"
           />
-          <button class="side-nav-search-button">
+          <button aria-label="sök knapp" class="side-nav-search-button">
             <svg
               focusable="false"
               height="24px"
@@ -188,14 +188,14 @@
             <audio controls></audio>
           </div>
           <div class="controls">
-            <button class="bonus-control-btn bonus-next-btn">
+            <button aria-label="byta radiokanal" class="bonus-control-btn bonus-next-btn">
               <i class="fas fa-forward"></i>
             </button>
-            <button class="bonus-control-btn bonus-play-btn">
+            <button aria-label="pausa och starta radio knapp" class="bonus-control-btn bonus-play-btn">
               <i class="fas fa-play"></i>
             </button>
          
-            <button class="bonus-control-btn bonus-prev-btn">
+            <button aria-label="byta radiokanal" class="bonus-control-btn bonus-prev-btn">
               <i class="fas fa-backward"></i>
             </button>
           </div>
@@ -230,7 +230,7 @@
         </div>
       </div>
     </section>
-  <button class="templates_create_btn">
+  <button aria-label="bonus meny knapp" class="templates_create_btn">
     <img src="/src/img/CN-logo-transparent.svg" class="bonus-btn" width="80%">
   </button>
     <!-- För att bli medlem -->
@@ -286,7 +286,7 @@
           <small>Error meddelande</small>
         </div> -->
     
-        <button class="btn-signup">Bli medlem</button>
+        <button aria-label="bli medlem knapp" class="btn-signup">Bli medlem</button>
       </form>
     </section>
     <div class="member-overlay hidden"></div>
@@ -319,7 +319,7 @@
           <small>Error meddelande</small>
         </div>
     
-        <button class="btn-signin">Logga in</button>
+        <button aria-label="logga in knapp" class="btn-signin">Logga in</button>
       </form>
     </section>
     <div class="signin-overlay hidden-signin"></div>
@@ -389,7 +389,7 @@
            Toppnyheter | <a href="">Chas News</a>
             </h3>
             <div class="dropdown">
-              <button class="dropbtn">
+              <button aria-label="sortera nyheter knapp" class="dropbtn">
                 <div>Sortera</div>
                 <div class="drop-img"></div>
               </button>
@@ -478,13 +478,13 @@
               <audio controls></audio>
             </div>
             <div class="controls">
-              <button class="control-btn prev-btn">
+              <button aria-label="byta radiokanal knapp" class="control-btn prev-btn">
                 <i class="fas fa-backward"></i>
               </button>
-              <button class="control-btn play-btn">
+              <button aria-label="pausa och starta radio"  class="control-btn play-btn">
                 <i class="fas fa-play"></i>
               </button>
-              <button class="control-btn next-btn">
+              <button aria-label="byta radiokanal knapp"  class="control-btn next-btn">
                 <i class="fas fa-forward"></i>
               </button>
             </div>
