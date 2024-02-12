@@ -77,7 +77,8 @@ body.active #weather-condition,
 body.active .desktop-omni,
 body.active .weather-temp-grades,
 body.active #weather-temp-b,
-body.active #weather-condition-b {
+body.active #weather-condition-b,
+body.active .time {
   background-color: #333;
   color: #ffffff;
 }
