@@ -219,7 +219,6 @@ body.modal-open {
   opacity: 0;
   display: none;
   animation: fadeDown 1s forwards;
-  display: none;
 }
 
 @keyframes fadeDown {

@@ -18,14 +18,43 @@ const bonusBtn = document.querySelector(".templates_create_btn");
 const bonusContainer = document.querySelector(".bonus-mobile-container");
 let bonusOpen = false;
 
+// Funktion för att visa bonusContainer
+function showBonusContainer() {
+  bonusContainer.style.display = "block";
+}
+
+// Funktion för att dölja bonusContainer
+function hideBonusContainer() {
+  bonusContainer.style.display = "none";
+}
+
+// Hanterar fönstrets storleksändringar
+function handleResize() {
+  // Kontroll om fönstret är 1200px eller bredare
+  if (window.innerWidth >= 1200) {
+    // Om så är fallet, döljer bonus rutan
+    hideBonusContainer();
+  } else {
+    // Om inte, visas bonus rutan om bonusOpen är true
+    if (bonusOpen) {
+      showBonusContainer();
+    }
+  }
+}
+
+// Klickhändelse för knappen
 bonusBtn.addEventListener("click", () => {
   bonusOpen = !bonusOpen;
   if (bonusOpen) {
-    bonusContainer.style.display = "block";
+    showBonusContainer();
   } else {
-    bonusContainer.style.display = "none";
+    hideBonusContainer();
   }
 });
+
+window.addEventListener("resize", handleResize);
+window.addEventListener("load", handleResize);
+
 
 //////////////////////
 /* Modal bli medlem */
