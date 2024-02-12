@@ -51,7 +51,7 @@
               <ion-icon class="icon-mobil-nav" name="menu"></ion-icon>
               <ion-icon class="icon-mobil-nav" name="close"></ion-icon>
             </button>
-            <a href="#">
+            <a href="#logo">
               <img
                 src="./src/img/CN-logo-transparent.svg"
                 alt="bild här"
@@ -66,7 +66,7 @@
             <a id="latestnews" class="main-nav-link" href="#latest"
               >Senaste nytt</a
             >
-            <a class="main-nav-link" href="#" id="favourites">Favoriter</a>
+            <a class="main-nav-link" href="#favourites" id="favourites">Favoriter</a>
 
             <div class="main-nav-search-container">
               <input
@@ -92,13 +92,13 @@
           </div>
           <div class="main-nav-buttons-box">
             <div>
-              <a class="main-nav-link-cta nav-cta-2 show-members" href="#cta"
+              <a class="main-nav-link-cta nav-cta-2 show-members" href="#member"
                 >Bli medlem</a
               >
             </div>
             <div class="login-container">
-              <a class="nav-cta login" href="#cta">Logga in</a>
-              <a class="nav-cta logout" href="#cta">Logga ut</a>
+              <a class="nav-cta login" href="#login">Logga in</a>
+              <a class="nav-cta logout" href="#logout">Logga ut</a>
             </div>
             <div id="toggle">
               <i class="indicator"></i>
@@ -134,16 +134,16 @@
         <div class="side-nav-list">
           <ul class="side-nav-ul-list">
             <li class="side-nav-li-heading">Nyheter</li>
-            <li><a class="inrikes" href="#">Inrikes</a></li>
-            <li><a class="utrikes" href="#">Utrikes</a></li>
-            <li><a class="sport" href="#">Sport</a></li>
+            <li><a class="inrikes" href="#inrikes">Inrikes</a></li>
+            <li><a class="utrikes" href="#utrikes">Utrikes</a></li>
+            <li><a class="sport" href="#sport">Sport</a></li>
             <br />
             <li class="side-nav-li-heading">Om oss</li>
-            <li><a href="#" id="openModalBtn">Utvecklare</a></li>
+            <li><a href="#utvecklare" id="openModalBtn">Utvecklare</a></li>
             <br />
             <li>
               <div>
-                <a class="side-nav-link nav-cta-2 show-members" href="#cta"
+                <a class="side-nav-link nav-cta-2 show-members" href="#member"
                   >Bli medlem</a
                 >
               </div>
@@ -231,7 +231,7 @@
       </div>
     </section>
   <button aria-label="bonus meny knapp" class="templates_create_btn">
-    <img src="/src/img/CN-logo-transparent.svg" class="bonus-btn" width="80%">
+    <img src="/src/img/CN-logo-transparent.svg" alt="logo" class="bonus-btn" width="80%">
   </button>
     <!-- För att bli medlem -->
     <section class="signup-container signup-box hidden">
@@ -386,7 +386,7 @@
         <div class="news-main">
           <div class="news-heading">
             <h3 class="heading-small">
-           Toppnyheter | <a href="">Chas News</a>
+           Toppnyheter | <a href="https://chasacademy.se/" target="_blank">Chas News</a>
             </h3>
             <div class="dropdown">
               <button aria-label="sortera nyheter knapp" class="dropbtn">
@@ -394,10 +394,10 @@
                 <div class="drop-img"></div>
               </button>
               <div class="dropdown-content">
-                <a href="#" id="sortByNewestDate">Senaste</a>
-                <a href="#" id="sortByOldestDate">Äldsta</a>
-                <a href="#" id="sortByFirstAlfabet">Namn A-Ö</a>
-                <a href="#" id="sortByLastAlfabet">Namn Ö-A</a>
+                <a href="#senast" id="sortByNewestDate">Senaste</a>
+                <a href="#oldes" id="sortByOldestDate">Äldsta</a>
+                <a href="#name-a-z" id="sortByFirstAlfabet">Namn A-Ö</a>
+                <a href="#name-z-a" id="sortByLastAlfabet">Namn Ö-A</a>
               </div>
             </div>
           </div>
@@ -418,7 +418,7 @@
               </p></span
             >
             <div class="news-side-button">
-              <a class="news-side-cta login">Logga in</a>
+              <a href="#login" class="news-side-cta login">Logga in</a>
             </div>
           </div>
        <div class="dekstop-welcome">
@@ -512,7 +512,7 @@
                   alt="cn logo"
                   width="80px"
                 />
-                <h2 class="heading-medium"><a class="inrikes">Inrikes</a></h2>
+                <h2 class="heading-medium"><a href="#inrikes" class="inrikes">Inrikes</a></h2>
               </div>
             </div>
             <div class="new-side-card">
@@ -522,7 +522,7 @@
                   alt="cn logo"
                   width="80px"
                 />
-                <h2 class="heading-medium"><a class="utrikes">Utrikes</a></h2>
+                <h2 class="heading-medium"><a href="#utrikes" class="utrikes">Utrikes</a></h2>
               </div>
             </div>
           </div>
@@ -533,7 +533,7 @@
                   alt="cn logo"
                   width="80px"
                 />
-                <h2 class="heading-medium"><a class="sport">Sport</a></h2>
+                <h2 class="heading-medium"><a href="#sport" class="sport">Sport</a></h2>
               </div>
             </div>
           </div>
@@ -544,18 +544,18 @@
     <footer class="footer">
       <div class="container grid grid-footer">
         <div class="logo-col">
-          <a href="#" class="footer-logo">
+          <a href="#logo" class="footer-logo">
             <img src="src/img/CN-logo-box.svg" alt="logo" class="logo"
           /></a>
 
           <ul class="social-links">
             <li>
-              <a class="footer-link" href="#"
+              <a class="footer-link" href="#fb"
                 ><ion-icon class="social-icon" name="logo-facebook"></ion-icon
               ></a>
             </li>
             <li>
-              <a class="footer-link" href="#"
+              <a class="footer-link" href="#github"
                 ><ion-icon class="social-icon" name="logo-github"></ion-icon
               ></a>
             </li>
