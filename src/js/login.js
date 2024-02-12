@@ -55,7 +55,6 @@ bonusBtn.addEventListener("click", () => {
 window.addEventListener("resize", handleResize);
 window.addEventListener("load", handleResize);
 
-
 //////////////////////
 /* Modal bli medlem */
 /////////////////////
@@ -405,7 +404,7 @@ function fetchTodaysNameDay() {
     .then((res) => res.json())
     .then((json) => {
       const names = json[month][day];
-      const nameDayText = `Dagens namnsdag: ${names.join(", ")}`;
+      const nameDayText = `Namnsdag: ${names.join(", ")}`;
       const dateString = `${day}:e ${month} ${year}`;
       console.log(names);
 
