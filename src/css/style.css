@@ -683,10 +683,9 @@ footer {
 }
 .omxs-container-phone {
   margin: 0;
+  margin-top: 1rem;
   display: flex;
-  /* align-items: center; */
-  flex-direction: column;
-  justify-content: center;
+  flex-wrap: wrap;
 }
 .omxs-p-phone,
 .heading-omni-phone {
@@ -695,8 +694,9 @@ footer {
 .heading-omni-phone {
   font-weight: 600;
   font-size: 1.4rem;
-  padding: 0.6rem 0.1rem;
-  margin-bottom: -0.2rem;
+  display: flex;
+  align-items: center;
+  margin-right: 0.3rem;
 }
 .omxs-p-phone {
   font-size: 1.4rem;

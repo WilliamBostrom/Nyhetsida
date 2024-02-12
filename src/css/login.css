@@ -142,6 +142,12 @@ body.modal-open {
   display: none;
 }
 
+.welcome-left {
+  display: grid;
+  grid-template-rows: 1fr 1fr;
+  padding-left: 1.4rem;
+}
+
 /* Lägga väder och radio snyggt */
 .welcome-bonus {
   display: flex;
@@ -155,7 +161,8 @@ body.modal-open {
 }
 
 .welcome-name-bonus {
-  padding: 1rem;
+  display: flex;
+  margin-bottom: -3.2rem;
 }
 
 .text-bonus {
@@ -166,10 +173,8 @@ body.modal-open {
 .welcome-weather-2 {
   display: flex;
   flex-direction: column;
-  /* border: 1px solid black; */
   width: 30rem;
   padding: 1rem;
-  /* box-shadow: var(--shadow-ambient--primary); */
   box-shadow: 0 0 5px 0 #dfdfdf;
 }
 .welcome-weather-2,
@@ -247,6 +252,7 @@ body.modal-open {
   border-radius: 4px;
   margin-left: 0.5rem;
   font-weight: 600;
+  font-size: 1.8rem;
 }
 
 .welcome-radio-bonus {
