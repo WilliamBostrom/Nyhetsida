@@ -260,4 +260,6 @@ body.active .fas {
 .utrikes,
 .sport {
   cursor: pointer;
+  text-decoration: none;
+  color: #333;
 }

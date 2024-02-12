@@ -2,8 +2,8 @@ const CACHE_NAME = "nyhetsida-chas-news";
 const urlsToCache = [
   "index.html",
   "/src/css/style.css",
-  "/src/img/CN-logo-box.svg",
-  "/src/img/CN-logo-transparent.svg",
+  "/CN-logo-box.svg",
+  "/CN-logo-transparent.svg",
   "main.js",
 ];
 
