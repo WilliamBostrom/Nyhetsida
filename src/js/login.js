@@ -380,26 +380,29 @@ fetch(url, {
 /* NAMNSDAGAR */
 const url = "/namnsdagar.json";
 // const url = namnsDagar;
-
+const time = document.querySelector(".time");
 function fetchTodaysNameDay() {
   const today = new Date();
   const monthsInSwedish = {
-    1: "januari",
-    2: "februari",
-    3: "mars",
-    4: "april",
-    5: "maj",
-    6: "juni",
-    7: "juli",
-    8: "augusti",
-    9: "september",
-    10: "oktober",
-    11: "november",
-    12: "december",
+    1: "Januari",
+    2: "Februari",
+    3: "Mars",
+    4: "April",
+    5: "Maj",
+    6: "Juni",
+    7: "Juli",
+    8: "Augusti",
+    9: "September",
+    10: "Oktober",
+    11: "November",
+    12: "December",
   };
   const month = monthsInSwedish[today.getMonth() + 1];
   const year = today.getFullYear();
   const day = today.getDate();
+  const hours = today.getHours().toString().padStart(2, "0");
+  const minutes = today.getMinutes().toString().padStart(2, "0");
+  time.innerHTML = `${hours}:${minutes}`;
   fetch(url)
     .then((res) => res.json())
     .then((json) => {
@@ -425,7 +428,7 @@ function toggleWelcomeDisplay() {
     welcomeName.style.display = "none";
     welcomeNameBonus.style.display = "block";
   } else {
-    welcomeName.style.display = "block";
+    welcomeName.style.display = "flex";
     welcomeNameBonus.style.display = "none";
     bonusContainer.style.display = "none";
   }

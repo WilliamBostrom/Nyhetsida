@@ -1,5 +1,5 @@
 {
-  "januari": {
+  "Januari": {
     "1": ["Nyårsdagen", "Svea"],
     "2": ["Gudmund", "Ingemund"],
     "3": ["Alfred", "Alfrida"],
@@ -32,7 +32,7 @@
     "30": ["Gunhild", "Gunilla"],
     "31": ["Ivar", "Joar"]
   },
-  "februari": {
+  "Februari": {
     "1": ["Max", "Maximilian"],
     "2": ["Kyndelsmässodagen (Maria)", "Maja"],
     "3": ["Disa", "Hjördis"],
@@ -62,7 +62,7 @@
     "27": ["Lage"],
     "28": ["Maria (Kroningsdagen)", "Marianne"]
   },
-  "mars": {
+  "Mars": {
     "1": ["Albin", "Albertina"],
     "2": ["Ernst", "Erna"],
     "3": ["Gunborg", "Gunvor"],
@@ -95,7 +95,7 @@
     "30": ["Holger", "Holmfrid"],
     "31": ["Ester"]
   },
-  "april": {
+  "April": {
     "1": ["Harald", "Hervor"],
     "2": ["Gudmund", "Ingemund"],
     "3": ["Ferdinand", "Nanna"],
@@ -127,7 +127,7 @@
     "29": ["Tyko", "Ingvar"],
     "30": ["Mariana", "Marianne"]
   },
-  "maj": {
+  "Maj": {
     "1": ["Valborg"],
     "2": ["Filip", "Filippa"],
     "3": ["John", "Jane"],
@@ -160,7 +160,7 @@
     "30": ["Vera"],
     "31": ["Petronella", "Pernilla"]
   },
-  "juni": {
+  "Juni": {
     "1": ["Gun", "Gunnel"],
     "2": ["Rutger", "Roger"],
     "3": ["Ingemar", "Gudmar"],
@@ -192,7 +192,73 @@
     "29": ["Peter", "Petra"],
     "30": ["Elof", "Loviisa"]
   },
-  "september": {
+  "Juli": {
+    "1": ["Aron", "Mirjam"],
+    "2": ["Rosa"],
+    "3": ["Aurora"],
+    "4": ["Ulrika"],
+    "5": ["Laila", "Ritva"],
+    "6": ["Esaias", "Jessica"],
+    "7": ["Klas"],
+    "8": ["Kjell"],
+    "9": ["Jörgen"],
+    "10": ["André", "Andrea"],
+    "11": ["Eleonora", "Ellinor"],
+    "12": ["Herman"],
+    "13": ["Joel", "Judit"],
+    "14": ["Folke"],
+    "15": ["Ragnhild", "Ragna"],
+    "16": ["Reinhold", "Reine"],
+    "17": ["Bruno"],
+    "18": ["Fredrik", "Fritz"],
+    "19": ["Sara"],
+    "20": ["Margareta", "Greta"],
+    "21": ["Johanna"],
+    "22": ["Magdalena", "Madeleine"],
+    "23": ["Emma", "Emmy"],
+    "24": ["Kristina", "Kerstin"],
+    "25": ["Jakob"],
+    "26": ["Jesper"],
+    "27": ["Marta"],
+    "28": ["Botvid"],
+    "29": ["Olof"],
+    "30": ["Algot", "Helgot"],
+    "31": ["Hilding"]
+  },
+  "Augusti": {
+    "1": ["Per"],
+    "2": ["Karin", "Kajsa"],
+    "3": ["Tage"],
+    "4": ["Arne", "Arnold"],
+    "5": ["Ulrik", "Alrik"],
+    "6": ["Alfons", "Inez"],
+    "7": ["Dennis", "Denise"],
+    "8": ["Silvia", "Sylvia"],
+    "9": ["Roland"],
+    "10": ["Lars"],
+    "11": ["Susanna"],
+    "12": ["Klara"],
+    "13": ["Kaj"],
+    "14": ["Uno"],
+    "15": ["Stella", "Estelle"],
+    "16": ["Brynolf"],
+    "17": ["Verner", "Valter"],
+    "18": ["Ellen", "Lena"],
+    "19": ["Magnus", "Måns"],
+    "20": ["Bernhard", "Bernt"],
+    "21": ["Jon", "Jonna"],
+    "22": ["Henrietta", "Henrika"],
+    "23": ["Signe", "Signhild"],
+    "24": ["Bartolomeus"],
+    "25": ["Lovisa"],
+    "26": ["Östen"],
+    "27": ["Rolf"],
+    "28": ["Fatima"],
+    "29": ["Hans"],
+    "30": ["Albert", "Albertina"],
+    "31": ["Arvid", "Vidar"]
+  },
+  "September": {
     "1": ["Samuel", "Sam"],
     "2": ["Justus", "Justina"],
     "3": ["Alfhild", "Alva"],
@@ -224,7 +290,7 @@
     "29": ["Mikael", "Mikaela"],
     "30": ["Helge"]
   },
-  "oktober": {
+  "Oktober": {
     "1": ["Ragnar", "Ragna"],
     "2": ["Ludvig", "Love"],
     "3": ["Evald", "Osvald"],
@@ -257,7 +323,7 @@
     "30": ["Elsa", "Isabella"],
     "31": ["Edit", "Edith"]
   },
-  "november": {
+  "November": {
     "1": ["Allhelgonadagen"],
     "2": ["Tobias"],
     "3": ["Hubert", "Hugo"],
@@ -289,7 +355,7 @@
     "29": ["Sune"],
     "30": ["Andreas", "Anders"]
   },
-  "december": {
+  "December": {
     "1": ["Oskar", "Ossian"],
     "2": ["Beata", "Beatrice"],
     "3": ["Lydia"],

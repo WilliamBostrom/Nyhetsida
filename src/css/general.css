@@ -152,10 +152,16 @@ body.active .fas {
   font-weight: 600;
 }
 .text-bonus-date {
-  font-size: 1.2rem;
-  padding: 0rem;
-  font-weight: 600;
+  font-size: 1.4rem;
+  padding: 0.3rem;
 }
+
+.time {
+  font-size: 16px;
+  font-weight: bold;
+  background-color: #fafafa;
+}
+
 .text-bonus-name {
   margin-top: 0.5rem;
   font-size: 1.2rem;
