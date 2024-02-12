@@ -150,13 +150,16 @@ body.modal-open {
 }
 
 .welcome-name {
-  display: flex;
-  padding: 1rem;
+  padding: 1rem 2rem;
   box-shadow: 0 0 5px 0 #dfdfdf;
 }
 
+.welcome-name-bonus {
+  padding: 1rem;
+}
+
 .text-bonus {
-  font-size: 1rem;
+  font-size: 1.5rem;
 }
 
 /* Inloggads väder */
@@ -219,7 +222,6 @@ body.modal-open {
   opacity: 0;
   display: none;
   animation: fadeDown 1s forwards;
-  display: none;
 }
 
 @keyframes fadeDown {
