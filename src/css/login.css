@@ -150,9 +150,12 @@ body.modal-open {
 }
 
 .welcome-name {
-  display: flex;
-  padding: 1rem;
+  padding: 1rem 2rem;
   box-shadow: 0 0 5px 0 #dfdfdf;
+}
+
+.welcome-name-bonus {
+  padding: 1rem;
 }
 
 .text-bonus {
