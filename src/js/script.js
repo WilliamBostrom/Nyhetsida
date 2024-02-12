@@ -214,12 +214,12 @@ export function displayFetchis(fetchData) {
           <div class="news-main-card">
             ${
               news.img !== null && news.img !== undefined
-                ? `<img id="first-main-img" class="news-main-card-img" src="${news.img}" alt="" srcset="" width="100%" />`
+                ? `<img id="first-main-img" class="news-main-card-img" src="${news.img}" alt="bild" srcset="" width="100%" />`
                 : ""
             }
             <div class="star-container">
-            <img class="star-icon" src="${starSvg}" alt="" />
-            <img class="selected-star-icon" src="${selectedSvg}" alt="" onclick="window.favourite(event)" />
+            <img class="star-icon" src="${starSvg}" alt="svg bild" />
+            <img class="selected-star-icon" src="${selectedSvg}" alt="svg bild" onclick="window.favourite(event)" />
           </div>
             <div>
               <h3 class="heading-large" id="first-main-heading">${
@@ -252,14 +252,14 @@ export function displayFetchis(fetchData) {
               }" target="_blank">Läs mer &rarr;</a>
             </div>
             <div class="star-container2">
-              <img class="star-icon" src="${starSvg}" alt="" />
-              <img class="selected-star-icon" src="${selectedSvg}" alt="" onclick="window.favourite(event)" />
+              <img class="star-icon" src="${starSvg}" alt="svg bild" />
+              <img class="selected-star-icon" src="${selectedSvg}" alt="svg bild" onclick="window.favourite(event)" />
             </div>
             ${
               news.img !== null && news.img !== undefined
                 ? `<img class="small-img" src="${
                     news.img || ""
-                  }" alt="" srcset="" width="40%" height="40%"/>`
+                  }" alt="nyhet bild" srcset="" width="40%" height="40%"/>`
                 : ""
             }
           </div>`;
