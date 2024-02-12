@@ -1,10 +1,10 @@
 const CACHE_NAME = "nyhetsida-chas-news";
 const urlsToCache = [
   "index.html",
-  "/src/css/style.css",
+  "/assets/index-tBf-FIsm.css",
+  "/assets/index-OpzxNEWx.js",
   "/CN-logo-box.svg",
   "/CN-logo-transparent.svg",
-  "main.js",
 ];
 
 self.addEventListener("install", (event) => {
