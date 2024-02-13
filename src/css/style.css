@@ -555,7 +555,7 @@ footer {
 
 .copyright {
   font-size: 1.4rem;
-  color: #767676;
+  color: #333;
   line-height: 1.6;
   margin-top: auto;
 }
@@ -593,13 +593,13 @@ footer {
 .footer-link:visited {
   text-decoration: none;
   font-size: 1.6rem;
-  color: #767676;
+  color: #333;
   transition: all 0.3s;
 }
 
 .footer-link:hover,
 .footer-link:active {
-  color: #555;
+  color: #222;
 }
 
 .modal {
@@ -712,7 +712,6 @@ footer {
   flex-direction: column;
   gap: 0.5rem;
   align-items: center;
-  /* font-weight: 600; */
 }
 
 .desktop-omni {
@@ -729,11 +728,5 @@ footer {
 }
 .header-omni-desktop {
   font-size: 2rem;
-  /* font-weight: 600; */
   margin: 0;
-  /* margin-bottom: 5px; */
 }
-
-/* .desktop-dates-name {
-  box-shadow: var(--shadow-ambient--primary);
-} */
