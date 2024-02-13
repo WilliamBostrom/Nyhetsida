@@ -260,7 +260,6 @@ export function getUserLocation() {
   });
 }
 
-
 function translateWeatherCondition(condition) {
   const conditionMap = {
     Clear: "Klart",
@@ -324,9 +323,9 @@ function translateWeatherCondition(condition) {
 /* const apiKey = "1402293712msh68149a58f5bf447p151227jsn91e431009d3d";
 const symbol = "^OMX";
 const region = "ST";
-const url = `https://apidojo-yahoo-finance-v1.p.rapidapi.com/stock/v3/get-historical-data?symbol=${symbol}&region=${region}`;
+const url1 = `https://apidojo-yahoo-finance-v1.p.rapidapi.com/stock/v3/get-historical-data?symbol=${symbol}&region=${region}`;
 
-fetch(url, {
+fetch(url1, {
   method: "GET",
   headers: {
     "X-RapidAPI-Key": apiKey,
@@ -373,12 +372,10 @@ fetch(url, {
       element.style.color = yearlyChange >= 0 ? "#0474ca" : "#d0184d";
     });
   })
-  .catch((error) => console.error("Fetch error:", error));
- */
+  .catch((error) => console.error("Fetch error:", error)); */
 
 /* NAMNSDAGAR */
 const url = "/namnsdagar.json";
-// const url = namnsDagar;
 const time = document.querySelector(".time");
 
 // Funktion för att hämta dagens namnsdag och uppdatera klockan
@@ -405,16 +402,16 @@ function fetchTodaysNameDay() {
   const minutes = today.getMinutes().toString().padStart(2, "0");
   const seconds = today.getSeconds().toString().padStart(2, "0");
   const dateString = `${day}:e ${month} ${year}`;
-  
+
   // Uppdaterar klockan med timmar, minuter och sekunder
   time.innerHTML = `${hours}:${minutes}:${seconds}`;
-  
+
   fetch(url)
     .then((res) => res.json())
     .then((json) => {
       const names = json[month][day];
       const nameDayText = `Namnsdag: ${names.join(", ")}`;
-      
+
       // Uppdatera HTML med de hämtade datumen och namnen
       document.getElementById("date").innerText = dateString;
       document.getElementById("nameDay").innerText = nameDayText;
