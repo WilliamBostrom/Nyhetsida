@@ -17,7 +17,7 @@ let checkingIndex = 0;
 // const apiKey = "pub_3677850ce73d96f2586086f013ecb9f63081f";
 
 // DENNIS NYCKEL
-const apiKey = "pub_36893493e88538fc3b8e75bdf04433cf20888";
+const apiKey = "pub_36893493e88538fc3b8e75bdf04433cf20888a";
 // const apiKey = "pub_36893493e88538fc3b8e75bdf04433cf20888";
 const newsHeading = document.querySelector(".heading-small");
 const searchQuery = "sverige";
