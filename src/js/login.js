@@ -380,6 +380,8 @@ fetch(url, {
 const url = "/namnsdagar.json";
 // const url = namnsDagar;
 const time = document.querySelector(".time");
+
+// Funktion för att hämta dagens namnsdag och uppdatera klockan
 function fetchTodaysNameDay() {
   const today = new Date();
   const monthsInSwedish = {
@@ -401,15 +403,18 @@ function fetchTodaysNameDay() {
   const day = today.getDate();
   const hours = today.getHours().toString().padStart(2, "0");
   const minutes = today.getMinutes().toString().padStart(2, "0");
-  time.innerHTML = `${hours}:${minutes}`;
+  const seconds = today.getSeconds().toString().padStart(2, "0");
+  const dateString = `${day}:e ${month} ${year}`;
+  
+  // Uppdaterar klockan med timmar, minuter och sekunder
+  time.innerHTML = `${hours}:${minutes}:${seconds}`;
+  
   fetch(url)
     .then((res) => res.json())
     .then((json) => {
       const names = json[month][day];
       const nameDayText = `Namnsdag: ${names.join(", ")}`;
-      const dateString = `${day}:e ${month} ${year}`;
-      console.log(names);
-
+      
       // Uppdatera HTML med de hämtade datumen och namnen
       document.getElementById("date").innerText = dateString;
       document.getElementById("nameDay").innerText = nameDayText;
@@ -419,6 +424,16 @@ function fetchTodaysNameDay() {
     .catch((error) => console.error(error));
 }
 
+// Funktion för att uppdatera klockan varje sekund
+function updateClock() {
+  const today = new Date();
+  const hours = today.getHours().toString().padStart(2, "0");
+  const minutes = today.getMinutes().toString().padStart(2, "0");
+  const seconds = today.getSeconds().toString().padStart(2, "0");
+  time.innerHTML = `${hours}:${minutes}:${seconds}`;
+}
+
+// Funktion för att kontrollera om vi ska visa det vanliga eller bonus välkomstområdet baserat på fönsterstorlek
 function toggleWelcomeDisplay() {
   const welcomeName = document.getElementById("welcomeName");
   const welcomeNameBonus = document.getElementById("welcomeNameBonus");
@@ -433,8 +448,17 @@ function toggleWelcomeDisplay() {
   }
 }
 
+// Lyssna på DOMContentLoaded för att köra kod när sidan laddas
 document.addEventListener("DOMContentLoaded", () => {
-  fetchTodaysNameDay();
-  toggleWelcomeDisplay();
+  fetchTodaysNameDay(); // Hämta dagens namnsdagar
+  toggleWelcomeDisplay(); // Kontrollera om vi ska visa det vanliga eller bonus välkomstområdet
+
+  // Uppdatera klockan första gången sidan laddas
+  updateClock();
+
+  // Starta en intervall för att uppdatera klockan varje sekund
+  setInterval(updateClock, 1000);
 });
+
+// Lyssna på fönstrets ändringar för att uppdatera välkomstområdet när fönstret ändras storlek
 window.addEventListener("resize", toggleWelcomeDisplay);
