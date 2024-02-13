@@ -122,6 +122,8 @@
   font-size: 1.4rem;
   width: 11rem;
   background-color: white;
+  flex: 25%;
+  /* margin-right: 20px; */
 }
 
 .side-nav-search-input,
@@ -366,15 +368,12 @@
 .dropbtn {
   display: flex;
   align-items: center;
-  /*  background-color: var(--primary_darken);
-  color: white;
-  padding: 10px;
-  font-size: 16px; */
   background-color: inherit;
   border: none;
   cursor: pointer;
   position: relative;
   border-radius: 40px;
+  margin-left: 20px;
 }
 
 .drop-img {
@@ -740,4 +739,16 @@ footer {
 .header-omni-desktop {
   font-size: 2rem;
   margin: 0;
+}
+
+.center-img-heading {
+  display: flex;
+  align-items: flex-end;
+  gap: 5px;
+  flex: 50;
+}
+
+.img-heading {
+  width: 2rem;
+  height: 2rem;
 }

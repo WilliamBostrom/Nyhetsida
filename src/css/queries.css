@@ -3,7 +3,6 @@
 /* ****************** */
 
 @media (max-width: 84em) {
-
   .welcome-radio-bonus {
     margin-top: 7px;
   }
@@ -29,7 +28,7 @@
     display: none;
   }
 
- /*  .side-nav-search-container {
+  /*  .side-nav-search-container {
     display: block;
   } */
   .main-nav-list {
@@ -45,7 +44,7 @@
   }
   .news-main-card-img {
     width: 100%;
-    height: 100%;
+    height: auto;
   }
 
   .templates_create_btn {
@@ -182,7 +181,6 @@
   .welcome-radio {
     gap: 3rem;
   }
-
 }
 
 /* ****************** */
@@ -213,5 +211,8 @@
     font-size: 1.5rem;
     padding: 0.3rem;
     font-weight: 600;
+  }
+  .dropbtn {
+    margin-left: 5px;
   }
 }

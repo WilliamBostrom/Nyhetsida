@@ -11,10 +11,10 @@ let checkingIndex = 0;
 // const apiKey = "pub_364847766bd024d75ae2f1bd0f148a57c4fafa";
 // // WILLES NYCKEL
 // const apiKey = "pub_36673e2a264d14a136dc8d64987d21585bdf5";
-const apiKey = "pub_3689763523f92753a85b5bf7a4f2ffadb650a";
+// const apiKey = "pub_3689763523f92753a85b5bf7a4f2ffadb650a";
 
 // //Simons
-// const apiKey = "pub_3677850ce73d96f2586086f013ecb9f63081f";
+const apiKey = "pub_3677850ce73d96f2586086f013ecb9f63081f";
 
 // DENNIS NYCKEL
 // const apiKey = "pub_36893493e88538fc3b8e75bdf04433cf20888";
@@ -36,7 +36,7 @@ const latestNews = document.getElementById("latestnews");
 latestNews.addEventListener("click", () => {
   updateContent(buildApiUrl(searchQuery));
   newsHeading.innerHTML = `
-  Senaste nytt | <a href="">Chas News</a>
+  Senaste nytt
    `;
 });
 
@@ -54,7 +54,11 @@ domestic.forEach((btn) => {
   btn.addEventListener("click", () => {
     updateContent(buildApiUrl(searchInrikes));
     newsHeading.innerHTML = `  
-  Inrikes | <a href="">Chas News</a>
+    <div class="center-img-heading">
+    <img class="img-heading" src="https://omni.se/_next/image?url=https%3A%2F%2Fstorage.omni.se%2Fcategory_icons%2Fomni%2FicInrikes.png&w=48&q=75" alt="bild på inrikes" width="50%" height="50%">
+  <h3 class="heading-small">
+  Inrikes</h3>
+</div>
   `;
     document.querySelector(".activate").classList.remove("activate");
   });
@@ -65,7 +69,11 @@ sport.forEach(function (btn) {
   btn.addEventListener("click", function () {
     updateContent(buildApiUrl(searchSport));
     newsHeading.innerHTML = `
-  Sport | <a href="">Chas News</a>
+    <div class="center-img-heading">
+      <img class="img-heading" src="https://omni.se/_next/image?url=https%3A%2F%2Fstorage.omni.se%2Fcategory_icons%2Fomni%2FicSport.png&w=48&q=75" alt="bild på inrikes" width="50%" height="50%">
+    <h3 class="heading-small">
+    Sport</h3>
+  </div>
    `;
     document.querySelector(".activate").classList.remove("activate");
   });
@@ -76,7 +84,11 @@ utrikes.forEach((btn) => {
   btn.addEventListener("click", () => {
     updateContent(buildApiUrl(searchUtrikes));
     newsHeading.innerHTML = `
-  Utrikes | <a href="">Chas News</a>
+    <div class="center-img-heading">
+    <img class="img-heading" src="https://omni.se/_next/image?url=https%3A%2F%2Fstorage.omni.se%2Fcategory_icons%2Fomni%2FicUtrikes.png&w=48&q=75" alt="bild på inrikes" width="50%" height="50%">
+  <h3 class="heading-small">
+  Utrikes</h3>
+</div>
    `;
     document.querySelector(".activate").classList.remove("activate");
   });

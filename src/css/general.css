@@ -101,6 +101,7 @@ body.active .fas {
 /* text-headings */
 .heading-small {
   font-size: 1.7rem;
+  flex: 3.5;
 }
 .heading-medium {
   font-size: 2rem;
