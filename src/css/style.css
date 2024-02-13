@@ -113,6 +113,17 @@
   background-color: white;
 }
 
+.main-nav-search-container-mobile {
+  position: relative;
+  border: 1px solid #ddd;
+  border-radius: 10rem;
+  padding: 0.2rem 0.5rem 0.2rem 4rem;
+  line-height: 2.8rem;
+  font-size: 1.4rem;
+  width: 11rem;
+  background-color: white;
+}
+
 .side-nav-search-input,
 .main-nav-search-input {
   background: inherit;

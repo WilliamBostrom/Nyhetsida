@@ -8,6 +8,13 @@
     margin-top: 7px;
   }
 }
+
+@media (min-width: 1200px) {
+  .main-nav-search-container-mobile {
+    display: none;
+  }
+}
+
 /* ****************** */
 /* BELOW 1200px (landscap tablets desktops)*/
 /* ****************** */
@@ -21,9 +28,10 @@
   .main-nav-search-container {
     display: none;
   }
-  .side-nav-search-container {
+
+ /*  .side-nav-search-container {
     display: block;
-  }
+  } */
   .main-nav-list {
     gap: 0 !important;
   }
