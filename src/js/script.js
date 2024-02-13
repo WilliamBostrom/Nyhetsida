@@ -25,6 +25,7 @@ export const searchQuery1 = "dn";
 const searchInrikes = "inrikes";
 const searchSport = "sport";
 const searchUtrikes = "utrikes";
+const searchTech = "tech";
 // const apiKey = "pub_36673e2a264d14a136dc8d64987d21585bdf5";
 const API_URL_TOP = `https://newsdata.io/api/1/news?apikey=${apiKey}&q=${searchQuery1}&country=se&language=sv`;
 
@@ -44,7 +45,7 @@ const topNews = document.getElementById("topnews");
 topNews.addEventListener("click", () => {
   updateContent(buildApiUrl(searchQuery1));
   newsHeading.innerHTML = `
-  Toppnyheter | <a href="">Chas News</a>
+  Toppnyheter 
    `;
 });
 
@@ -88,6 +89,20 @@ utrikes.forEach((btn) => {
     <img class="img-heading" src="https://omni.se/_next/image?url=https%3A%2F%2Fstorage.omni.se%2Fcategory_icons%2Fomni%2FicUtrikes.png&w=48&q=75" alt="bild på inrikes" width="50%" height="50%">
   <h3 class="heading-small">
   Utrikes</h3>
+</div>
+   `;
+    document.querySelector(".activate").classList.remove("activate");
+  });
+});
+const tech = document.querySelectorAll(".tech");
+tech.forEach((btn) => {
+  btn.addEventListener("click", () => {
+    updateContent(buildApiUrl(searchTech));
+    newsHeading.innerHTML = `
+    <div class="center-img-heading">
+    <img class="img-heading" src="https://omni.se/_next/image?url=https%3A%2F%2Fstorage.omni.se%2Fcategory_icons%2Fomni%2FicTech.png&w=48&q=75" alt="bild på tech" width="50%" height="50%">
+  <h3 class="heading-small">
+  Tech</h3>
 </div>
    `;
     document.querySelector(".activate").classList.remove("activate");

@@ -260,8 +260,16 @@ body.active .fas {
 
 .inrikes,
 .utrikes,
-.sport {
+.sport,
+.tech {
   cursor: pointer;
   text-decoration: none;
   color: #333;
+  transition: 0.3s all;
+}
+.inrikes:hover,
+.utrikes:hover,
+.sport:hover,
+.tech:hover {
+  text-decoration: underline;
 }

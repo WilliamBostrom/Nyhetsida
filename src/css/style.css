@@ -752,3 +752,28 @@ footer {
   width: 2rem;
   height: 2rem;
 }
+
+.align-img-text {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+.link-img {
+  width: 1.6rem;
+  height: 1.6rem;
+}
+
+.img-link {
+  width: 2rem;
+  height: 2rem;
+  margin-right: 0.8rem;
+}
+
+.align-img-text a {
+  margin-top: 0.5rem;
+}
+
+.img-to-link {
+  width: 3.4rem;
+  margin-right: 2rem;
+}
