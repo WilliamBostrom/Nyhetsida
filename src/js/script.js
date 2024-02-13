@@ -10,8 +10,8 @@ let checkingIndex = 0;
 // const apiKey = "pub_364847766bd024d75ae2f1bd0f148a57c4faf";
 // const apiKey = "pub_364847766bd024d75ae2f1bd0f148a57c4fafa";
 // // WILLES NYCKEL
-// const apiKey = "pub_36673e2a264d14a136dc8d64987d21585bdf5";
-const apiKey = "pub_3689763523f92753a85b5bf7a4f2ffadb650a";
+const apiKey = "pub_36673e2a264d14a136dc8d64987d21585bdf5";
+// const apiKey = "pub_3689763523f92753a85b5bf7a4f2ffadb650a";
 
 // //Simons
 // const apiKey = "pub_3677850ce73d96f2586086f013ecb9f63081f";
