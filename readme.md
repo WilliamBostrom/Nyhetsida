@@ -2,16 +2,14 @@
 
 ## Nyhetssida byggd med JavaScript, TypeScript, HTML och CSS, med integrerad användning av Firebase för autentisering och databasfunktionalitet.
 
-Gruppuppgift från Chas Academy.
-
-- Besök live-sidan: https://nyhetssida.netlify.app/
-
-Hemsidan är byggd av:
+### Gruppuppgift från Chas Academy.
 
 - William Bostrom: https://github.com/WilliamBostrom
 - Luay Asadsson: https://github.com/Luayasaadsson
 - Dennis Nilsson: https://github.com/dens0n
-- Simon Klaussen: https://github.com/Simon-jmk
+- Simon Klausen: https://github.com/Simon-jmk
+
+- Besök live-sidan: https://nyhetssida.netlify.app/
 
 ## Beskrivning:
 
@@ -28,9 +26,11 @@ Projektet utfördes mellan 17 januari och 15 februari i grupper om 4-5 personer 
 Uppgiften var att utveckla en nyhetssida inspirerad av Omnis nyhetsjänst. Projektet skulle genomföras i flera steg, och målet var att ta fram den första betaversionen av tjänsten.
 
 _Bild på Omnis hemsida_
+
 ![Omnis hemsida](/src/img/omni.png)
 
 _Bild på Omnis sida för mobil_
+
 ![Omnis hemsida](/src/img/omni-mobil.png)
 
 - Besök Omnis hemsida: https://www.omni.se/
@@ -88,9 +88,11 @@ Dessa extrafunktioner bidrar till en mer omfattande och engagerande användarupp
 ## Vårt slutresultat
 
 _Bild på vårt slutresultat för dator_
+
 ![Omnis hemsida](/src/img/chasnews.png)
 
 _Bild på vårt slutresultat för mobil_
+
 ![Omnis hemsida](/src/img/chasnews-mobil.png)
 
 ## Installation
