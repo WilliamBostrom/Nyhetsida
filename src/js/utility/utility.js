@@ -51,6 +51,15 @@ document.addEventListener("click", function (e) {
     }
   }
 });
+
+// Hämtar alla länkar i side-nav
+const sideNavLinks = document.querySelectorAll(".side-nav a");
+sideNavLinks.forEach(link => {
+  link.addEventListener("click", () => {
+    closeSideNav();
+  });
+});
+
 // uppdatera år i footer
 const yearEl = document.querySelector(".year");
 const currentYear = new Date().getFullYear();
