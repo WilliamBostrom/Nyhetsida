@@ -344,6 +344,7 @@
   background-color: var(--background_primary);
   box-shadow: var(--shadow-ambient--primary);
   overflow-y: auto;
+  height: 100%;
 }
 
 .desktop-welcome,
