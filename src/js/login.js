@@ -66,6 +66,7 @@ const memberContainer = document.querySelector(".signup-container");
 btnsOpenMember.forEach(function (btn) {
   btn.addEventListener("click", function () {
     openMembers();
+    closeLogin();
   });
 });
 

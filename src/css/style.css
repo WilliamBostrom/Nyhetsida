@@ -777,3 +777,19 @@ footer {
   width: 3.4rem;
   margin-right: 2rem;
 }
+
+.singin-signup {
+  display: flex;
+  cursor: pointer;
+  width: 100%;
+  height: 4rem;
+  align-items: center;
+  justify-content: center;
+  padding-top: 2rem;
+  font-size: 1.6rem;
+  color: var(--primary_darken);
+}
+
+.singin-signup:hover {
+  color: var(--primary);
+}
