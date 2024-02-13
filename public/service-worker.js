@@ -31,8 +31,6 @@ self.addEventListener('activate', (event) => {
 });
 
 self.addEventListener('fetch', (event) => {
-  const url = new URL(event.request.url);
-
   event.respondWith(
     fetch(event.request).then(fetchResponse => {
       return caches.open(DYNAMIC_CACHE_NAME).then(cache => {
