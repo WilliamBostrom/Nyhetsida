@@ -101,7 +101,7 @@ const setupFavoritesListener = (userId, onDataReceived) => {
 // ------------------------
 // Lyssnar efter om inloggad/utloggad
 // ------------------------
-
+const navCol = document.querySelector(".nav-col-1");
 const desktopWelcome = document.querySelector(".dekstop-welcome");
 const newsHeading = document.querySelector(".news-side-check");
 const desktopMember = document.querySelector(".new-side-random-shit");
@@ -120,6 +120,7 @@ auth.onAuthStateChanged((user) => {
     }
 
     desktopMember.style.display = "none";
+    navCol.style.display = "none";
     desktopWelcome.style.display = "block";
     newsHeading.innerHTML = `<h3 class="heading-medium">Välkommen in</h3>`;
     memberBtns.forEach((btn) => (btn.style.display = "none"));
@@ -129,7 +130,7 @@ auth.onAuthStateChanged((user) => {
     if (favouritesButtonClicked) {
       setupFavourites([]);
     }
-
+    navCol.style.display = "block";
     desktopWelcome.style.display = "none";
     newsHeading.innerHTML = `<h3 class="heading-medium">Logga in</h3>`;
     desktopMember.style.display = "block";
