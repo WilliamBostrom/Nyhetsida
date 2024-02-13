@@ -14,10 +14,10 @@ let checkingIndex = 0;
 // const apiKey = "pub_3689763523f92753a85b5bf7a4f2ffadb650a";
 
 // //Simons
-const apiKey = "pub_3677850ce73d96f2586086f013ecb9f63081f";
+// const apiKey = "pub_3677850ce73d96f2586086f013ecb9f63081f";
 
 // DENNIS NYCKEL
-// const apiKey = "pub_36893493e88538fc3b8e75bdf04433cf20888";
+const apiKey = "pub_36893493e88538fc3b8e75bdf04433cf20888";
 // const apiKey = "pub_36893493e88538fc3b8e75bdf04433cf20888";
 const newsHeading = document.querySelector(".heading-small");
 const searchQuery = "sverige";
@@ -26,6 +26,8 @@ const searchInrikes = "inrikes";
 const searchSport = "sport";
 const searchUtrikes = "utrikes";
 const searchTech = "tech";
+const searchEkonomi = "ekonomi";
+const searchPolitik = "politik";
 // const apiKey = "pub_36673e2a264d14a136dc8d64987d21585bdf5";
 const API_URL_TOP = `https://newsdata.io/api/1/news?apikey=${apiKey}&q=${searchQuery1}&country=se&language=sv`;
 
@@ -103,6 +105,34 @@ tech.forEach((btn) => {
     <img class="img-heading" src="https://omni.se/_next/image?url=https%3A%2F%2Fstorage.omni.se%2Fcategory_icons%2Fomni%2FicTech.png&w=48&q=75" alt="bild på tech" width="50%" height="50%">
   <h3 class="heading-small">
   Tech</h3>
+</div>
+   `;
+    document.querySelector(".activate").classList.remove("activate");
+  });
+});
+const ekonomi = document.querySelectorAll(".ekonomi");
+ekonomi.forEach((btn) => {
+  btn.addEventListener("click", () => {
+    updateContent(buildApiUrl(searchEkonomi));
+    newsHeading.innerHTML = `
+    <div class="center-img-heading">
+    <img class="img-heading" src="https://omni.se/_next/image?url=https%3A%2F%2Fstorage.omni.se%2Fcategory_icons%2Fomni%2FicEkonomi.png&w=64&q=75" alt="bild på ekonomi" width="50%" height="50%">
+  <h3 class="heading-small">
+  Ekonomi</h3>
+</div>
+   `;
+    document.querySelector(".activate").classList.remove("activate");
+  });
+});
+const politik = document.querySelectorAll(".politik");
+politik.forEach((btn) => {
+  btn.addEventListener("click", () => {
+    updateContent(buildApiUrl(searchPolitik));
+    newsHeading.innerHTML = `
+    <div class="center-img-heading">
+    <img class="img-heading" src="https://omni.se/_next/image?url=https%3A%2F%2Fstorage.omni.se%2Fcategory_icons%2Fomni%2FicPolitik.png&w=64&q=75" alt="bild på ekonomi" width="50%" height="50%">
+  <h3 class="heading-small">
+  Politik</h3>
 </div>
    `;
     document.querySelector(".activate").classList.remove("activate");

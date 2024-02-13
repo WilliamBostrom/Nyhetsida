@@ -261,12 +261,16 @@ body.active .fas {
 .inrikes,
 .utrikes,
 .sport,
-.tech {
+.tech,
+.ekonomi,
+.politik {
   cursor: pointer;
   text-decoration: none;
   color: #333;
   transition: 0.3s all;
 }
+.politik:hover,
+.ekonomi:hover,
 .inrikes:hover,
 .utrikes:hover,
 .sport:hover,
