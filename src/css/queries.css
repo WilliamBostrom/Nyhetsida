@@ -19,11 +19,11 @@
   }
 
   .main-nav-search-container {
-    display: none;
-  }
-  .side-nav-search-container {
     display: block;
   }
+ /*  .side-nav-search-container {
+    display: block;
+  } */
   .main-nav-list {
     gap: 0 !important;
   }
@@ -143,6 +143,10 @@
     grid-row: 1;
     grid-column: 2;
     padding-right: 4.8rem;
+  }
+
+  .main-nav-search-container {
+    margin-right: 10rem;
   }
 
   .container {
