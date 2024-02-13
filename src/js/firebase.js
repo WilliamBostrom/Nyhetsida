@@ -253,10 +253,7 @@ formSignin.addEventListener("submit", async (e) => {
   try {
     const auth = getAuth(app);
     const cred = await signInWithEmailAndPassword(auth, username, password);
-    // console.log(cred.user);
-    // Återställa input i "" ?
     closeLogin();
-    // Additional logic for successful sign-in if needed
   } catch (error) {
     console.error(error.message);
   }
@@ -269,9 +266,11 @@ const setupFavourites = (data) => {
   document.querySelector(".activate").classList.remove("activate");
   favouritesBtn.classList.add("activate");
   const newsHeading = document.querySelector(".heading-small");
-  newsHeading.innerHTML = `  <h3 class="heading-small">
-  Favoriter | <a href="">Chas News</a>
-   </h3>
+  newsHeading.innerHTML = ` <div class="center-img-heading">
+  <img class="img-heading" src="/star-select.svg" alt="bild på inrikes" width="50%" height="50%">
+<h3 class="heading-small">
+Favoriter</h3>
+</div>
    `;
   const newsSecondary = document.querySelector(".news-secondary");
 
