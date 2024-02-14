@@ -1,19 +1,19 @@
 {
-  "name": "Nyhetssida - Website",
-  "short_name": "Nyhetssida by Team Enklare",
-  "description": "Chas Academy - news platform empowered by open APIs, featuring radio broadcasts, weather updates, and more",
+  "name": "Chas News",
+  "short_name": "Chas News",
+  "description": "Chas News - news platform empowered by open APIs, featuring radio broadcasts, weather updates, and more",
   "start_url": "/index.html",
   "display": "standalone",
   "background_color": "#ffffff",
   "theme_color": "#333333",
   "icons": [
     {
-      "src": "/CN-logo-box.svg",
+      "src": "/CN-logo-box-192.png",
       "sizes": "192x192",
-      "type": "image/svg+xml"
+      "type": "image/png"
     },
     {
-      "src": "/test.png",
+      "src": "/CN-logo-box.png",
       "sizes": "512x512",
       "type": "image/png",
       "purpose": "maskable"
