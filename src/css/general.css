@@ -65,7 +65,9 @@ body.active .bonus-mobile-container {
   color: #fff;
 }
 
-body.active .img-to-link{
+body.active .img-to-link,
+body.active .link-img,
+body.active .img-heading{
   background-color: transparent;
   filter: invert(1)
 }
