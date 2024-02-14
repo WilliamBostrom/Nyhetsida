@@ -156,6 +156,12 @@ window.favourite = async function (event) {
 
   const user = auth.currentUser; // Hämtar den inloggade
 
+    // Kontrollerar om en användare är inloggad
+    if (!user) {
+      alert("Du måste vara inloggad för att spara artiklar som favoriter.");
+      return; 
+    }
+
   if (selectedNewsBox && user) {
     const userId = user.uid; // Hämtar inloggades UID
     const userFavouritesCollection = collection(
