@@ -67,9 +67,9 @@ body.active .bonus-mobile-container {
 
 body.active .img-to-link,
 body.active .link-img,
-body.active .img-heading{
+body.active .img-heading {
   background-color: transparent;
-  filter: invert(1)
+  filter: invert(1);
 }
 
 body.active .news-side-cta {
@@ -92,6 +92,11 @@ body.active .time {
 
 body.active .fas {
   color: white;
+}
+
+body.active .singin-signup {
+  background-color: inherit;
+  color: var(--primary_darken);
 }
 
 .container {
