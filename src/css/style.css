@@ -61,7 +61,7 @@
   font-weight: 500;
   font-size: 1.4rem;
   transition: all 0.3s;
-  height: 100% !important;
+  height: 103% !important;
   width: 112% !important;
   text-align: center;
   display: flex;
@@ -255,7 +255,8 @@
   border: none;
   background: none;
   cursor: pointer;
-  display: block;
+  display: flex;
+  align-items: flex-end;
 }
 
 .icon-mobil-nav {
