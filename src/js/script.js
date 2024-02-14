@@ -7,7 +7,7 @@ let fetchData = [];
 let checkingIndex = 0;
 
 // Luays key
-// const apiKey = "pub_364847766bd024d75ae2f1bd0f148a57c4faf";
+ const apiKey = "pub_364847766bd024d75ae2f1bd0f148a57c4faf";
 // const apiKey = "pub_364847766bd024d75ae2f1bd0f148a57c4fafa";
 // // WILLES NYCKEL
 // const apiKey = "pub_36673e2a264d14a136dc8d64987d21585bdf5";
@@ -17,7 +17,7 @@ let checkingIndex = 0;
 // const apiKey = "pub_3677850ce73d96f2586086f013ecb9f63081f";
 
 // DENNIS NYCKEL
-const apiKey = "pub_36893493e88538fc3b8e75bdf04433cf20888";
+// const apiKey = "pub_36893493e88538fc3b8e75bdf04433cf20888";
 // const apiKey = "pub_36893493e88538fc3b8e75bdf04433cf20888";
 const newsHeading = document.querySelector(".heading-small");
 const searchQuery = "sverige";
