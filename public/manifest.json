@@ -1,6 +1,6 @@
 {
-  "name": "Chas News",
-  "short_name": "Nyhetssida by Chas News",
+  "name": "Nyhetssida by Chas News",
+  "short_name": "Chas News",
   "description": "Chas News - news platform empowered by open APIs, featuring radio broadcasts, weather updates, and more",
   "start_url": "/index.html",
   "display": "standalone",
