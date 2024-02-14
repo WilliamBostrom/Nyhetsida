@@ -460,13 +460,7 @@ initializeRadio(
   ".bonus-control-btn.bonus-prev-btn",
   ".welcome-bonus .welcome-radio-bonus .mp3-player-bonus"
 );
-/* 
 
-// Kod för att hämta citat
-let quote = document.getElementById("quote");
-let author = document.getElementById("author");
-let bigBtn = document.getElementById("btn"); // Knapp för stor skärm
-let smallBtn = document.getElementById("bonus-q-btn"); // Knapp för liten skärm
 
 const url = "https://api.quotable.io/random";
 
@@ -474,29 +468,22 @@ let getQuote = () => {
   fetch(url)
     .then((response) => response.json())
     .then((data) => {
-      console.log(data.content);
-      console.log(data.author);
-      quote.innerText = data.content;
-      author.innerText = data.author;
+      // Uppdatera båda citaten och författarna
+      document.getElementById("quote").innerText = data.content;
+      document.getElementById("author").innerText = data.author;
+/*       document.getElementById("bonus-quote").innerText = data.content;
+      document.getElementById("bonus-author").innerText = data.author; */
     })
     .catch((error) => {
       console.error("Fetch error:", error);
     });
 };
 
-// Funktion för att hämta citat när sidan laddas
-window.addEventListener("load", () => {
-  getQuote();
-});
- */
-// Lyssnare för båda knapparna
-/* bigBtn.addEventListener("click", () => {
-  getQuote();
-}); */
-/* 
-smallBtn.addEventListener("click", () => {
-  getQuote();
-}); */
+// Lägg till eventlyssnare för att hämta citat när sidan laddas och när knapparna klickas
+window.addEventListener("load", getQuote);
+document.getElementById("btn").addEventListener("click", getQuote);
+/* document.getElementById("bonus-q-btn").addEventListener("click", getQuote); */
+
 
 const openModalButtonFooter = document.getElementById("openModalButton");
 const openModalButtonSideNav = document.getElementById("openModalBtn");

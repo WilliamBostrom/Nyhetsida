@@ -90,6 +90,11 @@ body.active .time {
   color: #ffffff;
 }
 
+body.active .quote-text,
+body.active #author {
+  color: #333;
+}
+
 body.active .fas {
   color: white;
 }
