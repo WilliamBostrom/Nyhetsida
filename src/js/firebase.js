@@ -132,7 +132,7 @@ auth.onAuthStateChanged((user) => {
     }
     navCol.style.display = "block";
     desktopWelcome.style.display = "none";
-    newsHeading.innerHTML = `<h3 class="heading-medium">Logga in</h3>`;
+    newsHeading.innerHTML = `<h3 class="heading-medium">Mina favoriter</h3>`;
     desktopMember.style.display = "block";
     memberBtns.forEach((btn) => (btn.style.display = "flex"));
     loginBtns.forEach((btn) => (btn.style.display = "flex"));
