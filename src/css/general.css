@@ -44,7 +44,7 @@ body.active {
   background-color: #333;
   color: #fff;
 }
-
+body.active .q-container,
 body.active .news-main,
 body.active header,
 body.active a,
@@ -89,12 +89,20 @@ body.active .time {
   background-color: #333;
   color: #ffffff;
 }
+body.active #btn {
+  background-color: #333;
+  color: #fff;
+}
 
-body.active .quote-text,
+body.active #btn:hover {
+  background-color: #444;
+  border: 1px solid var(--primary);
+}
+
 body.active #author {
   color: #333;
 }
-
+body.active .quote-text,
 body.active .fas {
   color: white;
 }

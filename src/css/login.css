@@ -407,8 +407,8 @@ audio {
 
 .q-container {
   margin: 0 auto;
-  background-color: rgb(213, 233, 220);
-  box-shadow: 0 2px 3px rgba(52, 48, 48, 0.5);
+  background-color: var(--background_secondary);
+  box-shadow: var(--shadow-ambient--primary);
   padding: 20px;
   font-size: 1rem;
   border-radius: 30px;
@@ -425,7 +425,7 @@ audio {
 } */
 
 .quote-text {
-  max-width:25rem;
+  max-width: 25rem;
   margin: 0 auto;
   font-size: 2rem;
 }
@@ -437,14 +437,21 @@ audio {
 
 #btn {
   padding: 0.3rem 2rem;
-  color: var(--background_primary);
-  background-color: var(--primary_darken);
+  color: black;
   border-radius: 40px;
   margin-top: 10px;
   cursor: pointer;
   font-size: 2rem;
+  border: none;
+  font-size: 14px;
+  padding: 10px 30px;
+  border: 1px solid var(--primary_darken);
+  font-weight: 600;
 }
 
+#btn:hover {
+  background-color: var(--background_primary);
+}
 /* #bonus-q-btn {
   font-size: 1rem;
   padding: 0.2rem;
