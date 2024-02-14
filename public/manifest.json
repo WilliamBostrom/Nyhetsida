@@ -8,12 +8,12 @@
   "theme_color": "#333333",
   "icons": [
     {
-      "src": "src/img/CN-logo-transparent.svg",
+      "src": "src/img/CN-logo-box-192.png",
       "sizes": "192x192",
-      "type": "image/svg+xml"
+      "type": "image/png"
     },
     {
-      "src": "/test.png",
+      "src": "src/img/CN-logo-box.png",
       "sizes": "512x512",
       "type": "image/png",
       "purpose": "maskable"
