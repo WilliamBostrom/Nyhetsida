@@ -7,11 +7,11 @@ let fetchData = [];
 let checkingIndex = 0;
 
 // Luays key
-// const apiKey = "pub_364847766bd024d75ae2f1bd0f148a57c4faf";
+const apiKey = "pub_364847766bd024d75ae2f1bd0f148a57c4faf";
 // const apiKey = "pub_364847766bd024d75ae2f1bd0f148a57c4fafa";
 // // WILLES NYCKEL
 // const apiKey = "pub_36673e2a264d14a136dc8d64987d21585bdf5";
-const apiKey = "pub_3689763523f92753a85b5bf7a4f2ffadb650a";
+// const apiKey = "pub_3689763523f92753a85b5bf7a4f2ffadb650a";
 
 // //Simons
 // const apiKey = "pub_3677850ce73d96f2586086f013ecb9f63081f";
@@ -461,7 +461,6 @@ initializeRadio(
   ".welcome-bonus .welcome-radio-bonus .mp3-player-bonus"
 );
 
-
 const url = "https://api.quotable.io/random";
 
 let getQuote = () => {
@@ -471,7 +470,7 @@ let getQuote = () => {
       // Uppdatera båda citaten och författarna
       document.getElementById("quote").innerText = data.content;
       document.getElementById("author").innerText = data.author;
-/*       document.getElementById("bonus-quote").innerText = data.content;
+      /*       document.getElementById("bonus-quote").innerText = data.content;
       document.getElementById("bonus-author").innerText = data.author; */
     })
     .catch((error) => {
@@ -483,7 +482,6 @@ let getQuote = () => {
 window.addEventListener("load", getQuote);
 document.getElementById("btn").addEventListener("click", getQuote);
 /* document.getElementById("bonus-q-btn").addEventListener("click", getQuote); */
-
 
 const openModalButtonFooter = document.getElementById("openModalButton");
 const openModalButtonSideNav = document.getElementById("openModalBtn");
