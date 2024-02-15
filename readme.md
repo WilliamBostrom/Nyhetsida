@@ -11,6 +11,8 @@
 
 - Besök live-sidan: https://nyhetssida.netlify.app/
 
+- Agil planering: https://github.com/users/WilliamBostrom/projects/2
+
 ## Beskrivning:
 
 Projektet utfördes mellan 17 januari och 15 februari i grupper om 4-5 personer och var obligatoriskt för att bedömas på följande kursmål:
@@ -74,6 +76,8 @@ Följande punkter var extra krav som inte var absoluta, men som man skulle strä
 ## Ytterligare funktionalitet på sidan
 
 Vi har genomfört samtliga obligatoriska krav och bonuskrav i uppgiften för att förbättra användarupplevelsen och tillhandahålla ett mer omfattande tjänsteutbud. För att ytterligare förbättra sidans funktionalitet har vi inkluderat flera extrafunktioner:
+
+- Lampknapp: För att förbättra användarupplevelsen har vi implementerat en lampknapp på hemsidan. Denna funktion ger användaren möjlighet att välja mellan ljus- och mörkerläge för att anpassa visningsinställningarna efter deras preferenser.
 
 - Yahoo Finance API integration: Vi har integrerat Yahoo Finance API för att visa OMXS30-börsdata på sidan, vilket ger användarna aktuella och relevanta ekonomiska uppgifter.
 
