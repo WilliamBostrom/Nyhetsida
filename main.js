@@ -11,7 +11,7 @@ import "./src/js/utility/utility.js";
 import "./src/js/login.js";
 import "./src/js/firebase.js";
 
-/* if ("serviceWorker" in navigator) {
+if ("serviceWorker" in navigator) {
   window.addEventListener("load", () => {
     navigator.serviceWorker.register("/service-worker.js").then(
       (registration) => {
@@ -25,4 +25,4 @@ import "./src/js/firebase.js";
       }
     );
   });
-} */
+}
